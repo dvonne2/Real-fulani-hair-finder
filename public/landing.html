@@ -1,0 +1,2117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fulani Hair Gro — SELF LOVE B2GOF Landing</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Confetti (canvas-confetti) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Meta -->
+  <meta name="description" content="Fulani Hair Gro — SELF LOVE B2GOF (3-Month Supply). Pay Now for 24–48hr express delivery or Pay on Delivery in 3–5 days. Trusted by 10,000+ Nigerian women.">
+  <meta name="theme-color" content="#16a34a" />
+
+  <!-- Performance preloads -->
+  <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <style>
+    html, body { overflow-x: hidden; }
+    :focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+    @media (hover:hover) and (pointer:fine) {
+      .hover-rise:hover { transform: translateY(-2px) scale(1.01); }
+      .hover-scale:hover { transform: scale(1.02); }
+    }
+    .bottle-gloss::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(120deg, rgba(255,255,255,.25), transparent 60%); pointer-events: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+
+    /* Pricing comparison enhancements */
+    .pricing-table { table-layout: fixed; border-collapse: separate; border-spacing: 0; overflow: visible; }
+    .pricing-table th, .pricing-table td { vertical-align: middle; padding: 16px; }
+    .pricing-table thead th { font-weight: 900; font-size: 0.95rem; text-transform: uppercase; }
+    /* Equal widths: 1 feature col + 3 plan cols */
+    .pricing-table colgroup col:first-child { width: 28%; }
+    .pricing-table colgroup col:not(:first-child) { width: 24%; }
+    /* Column separation (light grid) */
+    .pricing-table tbody td + td, .pricing-table thead th + th { border-left: 1px solid #eef2f7; }
+    /* Stronger vertical dividers between GOOD|BEST and BEST|ULTIMATE */
+    .pricing-table thead th:nth-child(3),
+    .pricing-table tbody td:nth-child(3),
+    .pricing-table thead th:nth-child(4),
+    .pricing-table tbody td:nth-child(4) {
+      border-left: 2px solid rgba(224,224,224,0.7);
+    }
+    /* BEST column full-height highlight */
+    .pricing-table thead th:nth-child(3),
+    .pricing-table tbody td:nth-child(3) { background: #ecfdf5; /* green-50 */ }
+
+    /* BEST column elevated header (3D effect) */
+    .pricing-table thead th:nth-child(3) {
+      position: relative;
+      z-index: 10;
+      transform: translateY(-10px) scale(1.04);
+      background: linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 60%, #e6fffb 100%);
+      /* Symmetric outer shadows so glow shows on all sides */
+      box-shadow:
+        0 12px 24px rgba(16, 185, 129, 0.20),
+        0 -10px 20px rgba(16, 185, 129, 0.18),
+        12px 0 20px rgba(16, 185, 129, 0.18),
+        -12px 0 20px rgba(16, 185, 129, 0.18),
+        0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+    .pricing-table thead th:nth-child(3)::after {
+      /* subtle inner glow */
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      /* Stronger inner ring to ensure top/left are highlighted even if outer is clipped */
+      box-shadow:
+        inset 0 0 0 3px rgba(16,185,129,0.45),
+        inset 0 8px 24px rgba(255,255,255,0.35);
+      pointer-events: none;
+    }
+    /* Keep BEST column cells above neighbors */
+    .pricing-table tbody td:nth-child(3) { position: relative; z-index: 5; }
+    /* Hover amplify for BEST header */
+    @media (hover:hover) {
+      .pricing-table thead th:nth-child(3):hover {
+        transform: translateY(-12px) scale(1.06);
+        box-shadow:
+          0 16px 32px rgba(16, 185, 129, 0.24),
+          0 10px 18px rgba(16, 185, 129, 0.22),
+          0 3px 8px rgba(0, 0, 0, 0.08);
+      }
+    }
+    /* Subtle column card effect */
+    .pricing-table tbody td:nth-child(2),
+    .pricing-table tbody td:nth-child(3),
+    .pricing-table tbody td:nth-child(4) { position: relative; }
+    .pricing-table tbody tr:hover td:nth-child(2),
+    .pricing-table tbody tr:hover td:nth-child(3),
+    .pricing-table tbody tr:hover td:nth-child(4) { background-color: rgba(0,0,0,0.01); }
+    /* SAVE badge */
+    .save-badge { display: inline-block; padding: 4px 8px; background: #dcfce7; color: #166534; border-radius: 9999px; font-weight: 800; font-size: 0.75rem; }
+    .save-badge.purple { background: #efe5ff; color: #6b21a8; }
+    /* Buttons unified height */
+    .plan-btn { min-height: 48px; padding: 12px 16px; }
+
+    /* Mobile: hide table, show stacked cards */
+    @media (max-width: 768px) {
+      .pricing-table { display: none; }
+      .pricing-cards { display: grid; gap: 16px; }
+      .pricing-card { background: #fff; border: 1px solid #eaeaea; border-radius: 16px; padding: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+      .pricing-card.best { border: 2px solid #10b981; box-shadow: 0 16px 40px rgba(16,185,129,0.25); transform: translateY(-6px) scale(1.02); }
+      .pricing-card h4 { font-weight: 900; font-size: 1.05rem; margin-bottom: 8px; }
+      .pricing-card .price { font-weight: 900; font-size: 1.1rem; }
+    }
+
+    /* Vertical dividers between plan columns (desktop/tablet) */
+    @media (min-width: 769px) {
+      .pricing-wrap { position: relative; }
+      .pricing-wrap::before,
+      .pricing-wrap::after {
+        content: "";
+        position: absolute;
+        top: 64px;   /* start below header */
+        bottom: 64px;/* end above CTA row */
+        width: 2px;
+        opacity: 0.5;
+        background: linear-gradient(to bottom, rgba(224,224,224,0) 0%, rgba(224,224,224,0.8) 15%, rgba(224,224,224,0.8) 85%, rgba(224,224,224,0) 100%);
+        pointer-events: none;
+        z-index: 20; /* above table bg */
+      }
+      /* Divider between GOOD (col2) and BEST (col3) */
+      .pricing-wrap::before { left: calc(28% + 24%); transform: translateX(-0.75px); }
+      /* Divider between BEST (col3) and ULTIMATE (col4) */
+      .pricing-wrap::after  { left: calc(28% + 24% + 24%); transform: translateX(-0.75px); }
+    }
+    /* Social proof: subtle avatar wiggle */
+    @keyframes sp-wiggle {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      30% { transform: rotate(-6deg) translateY(-1px); }
+      60% { transform: rotate(6deg) translateY(0); }
+    }
+    .avatar-wiggle { animation: sp-wiggle 600ms ease-in-out; }
+    /* Offer claimed badge */
+    .offer-claimed-badge {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #00a86b;
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 8px;
+      z-index: 10000;
+      font-weight: 800;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      animation: slideInRight 0.4s ease-out;
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(400px); opacity: 0; }
+      to   { transform: translateX(0);     opacity: 1; }
+    }
+    @media (max-width: 768px) {
+      .offer-claimed-badge { top: 10px; right: 10px; left: 10px; text-align: center; }
+    }
+    /* Stock drop pulse */
+    .stock-just-updated { animation: stockPulse 0.6s ease-in-out; }
+    @keyframes stockPulse {
+      0%, 100% { transform: scale(1); color: inherit; }
+      50% { transform: scale(1.15); color: #ff4444; font-weight: 700; }
+    }
+    /* Order notification */
+    .order-notification { position: fixed; bottom: 20px; left: 20px; background: #fff; border-left: 4px solid #00a86b; padding: 12px 16px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transform: translateX(-400px); transition: transform 0.4s ease-out; z-index: 9999; max-width: 280px; }
+    .order-notification.show { transform: translateX(0); }
+    .order-notif-content { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+    .order-notif-content .notif-time { color: #666; font-size: 12px; margin-left: auto; }
+
+    /* Footer styles */
+    .site-footer { background: linear-gradient(90deg,#111827,#1f2937); color:#fff; padding: 48px 0; margin-top: var(--space-xl); }
+    .site-footer .footer-main { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .site-footer .footer-col h4 { font-weight: 800; margin-bottom: 12px; }
+    .site-footer .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .site-footer .footer-col li { margin: 8px 0; }
+    .site-footer .footer-col a { color: #cbd5e1; text-decoration: none; }
+    .site-footer .footer-col a:hover { color: #fbbf24; }
+    .site-footer .social-links { display:flex; gap:12px; margin: 8px 0; }
+    .site-footer .address { color:#cbd5e1; font-size: 14px; }
+    .site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); margin-top: 24px; padding-top: 24px; text-align:center; color:#cbd5e1; font-size: 12px; }
+    @media (min-width: 768px) { .site-footer .footer-main { grid-template-columns: repeat(3,1fr); } }
+
+    /* Spacing rhythm */
+    :root { --space-xs: 8px; --space-sm: 16px; --space-md: 24px; --space-lg: 40px; --space-xl: 64px; }
+    .section { padding: var(--space-xl) var(--space-md); margin-bottom: var(--space-lg); }
+    .card { padding: var(--space-lg); margin-bottom: var(--space-md); }
+    h2 { margin-bottom: var(--space-lg); }
+    p { margin-bottom: var(--space-md); }
+
+    /* Standardized Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #00a86b 0%, #00d084 100%);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0,168,107,0.3);
+      transition: all 0.3s ease;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,168,107,0.4); }
+
+    .btn-secondary {
+      background: #fff;
+      color: #00a86b;
+      border: 2px solid #00a86b;
+      font-size: 16px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .btn-secondary:hover { background: #00a86b; color: #fff; }
+
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      button, .btn, a.cta, .btn-primary, .btn-secondary { min-height: 48px; min-width: 48px; }
+      body { font-size: 16px; }
+      h1 { font-size: 28px; }
+      h2 { font-size: 24px; }
+      h3 { font-size: 20px; }
+      .pricing-grid, .before-after-grid, .bonus-grid { grid-template-columns: 1fr !important; gap: 20px; }
+      .section { padding: 40px 20px; }
+    }
+    /* Pay on Delivery Secure Process */
+    .pod-process { background:#f8f9fa; padding:24px; border-radius:12px; margin:20px 0; }
+    .pod-process h4 { color:#2c3e50; margin:0 0 20px 0; font-size:18px; }
+    .pod-step { display:flex; gap:16px; margin-bottom:20px; align-items:flex-start; }
+    .pod-step:last-child { margin-bottom:0; }
+    .pod-number { width:36px; height:36px; background:#0066cc; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0; font-size:18px; }
+    .pod-content { flex:1; }
+    .pod-content strong { display:block; color:#2c3e50; margin-bottom:8px; font-size:16px; }
+    .pod-content p { margin:4px 0; color:#666; font-size:14px; }
+    .pod-bank-details { background:#fff; border:2px solid #0066cc; border-radius:8px; padding:12px; margin:8px 0; }
+    .pod-bank-details p { margin:4px 0; color:#2c3e50; }
+    .pod-warning { background:#fff3cd; border-left:4px solid #ff6b6b; padding:8px 12px; margin:8px 0; border-radius:4px; color:#856404; font-weight:600; font-size:14px !important; }
+    .whatsapp-numbers { background:#e7f5ff; padding:12px; border-radius:8px; margin:8px 0; }
+    .whatsapp-numbers p { margin:6px 0; font-size:15px; }
+    .wa-link { color:#25D366; font-weight:800; text-decoration:none; }
+    .wa-link:hover { text-decoration:underline; }
+    .da-number { font-weight:800; color:#0066cc; }
+    .pod-security-note { background:#d4edda; border-left:4px solid #28a745; padding:16px; border-radius:8px; margin:20px 0; }
+    .pod-security-note strong { display:block; margin-bottom:12px; color:#155724; font-size:16px; }
+    .pod-security-note ul { margin:0; padding-left:20px; }
+    .pod-security-note li { margin:6px 0; color:#155724; font-size:14px; }
+    .pod-timeline { text-align:center; margin-top:16px; color:#666; font-size:14px; }
+    @media (max-width: 768px) { .pod-process{ padding:16px; } .pod-step{ gap:12px; } .pod-number{ width:32px; height:32px; font-size:16px; } .pod-content strong{ font-size:15px; } }
+
+    .security-alert { background:#fff3cd; border:3px solid #ff6b6b; padding:20px; border-radius:12px; margin:24px 0; text-align:center; }
+    .security-alert h3 { color:#dc3545; margin:0 0 12px 0; font-size:20px; }
+    .security-alert p { margin:8px 0; color:#856404; font-size:15px; line-height:1.6; }
+    .security-alert strong { color:#dc3545; font-size:16px; }
+
+    /* POD FAQ box */
+    .pod-faq-box { background:#f8f9fa; border:2px solid #e9ecef; border-radius:12px; padding:24px; margin:24px 0; }
+    .pod-faq-box h4 { color:#2c3e50; margin:0 0 20px 0; font-size:18px; }
+    .faq-item { margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid #dee2e6; }
+    .faq-item:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
+    .faq-item strong { display:block; color:#495057; margin-bottom:6px; font-size:15px; }
+    .faq-item p { margin:0; color:#6c757d; font-size:14px; line-height:1.6; }
+    @media (max-width:768px){ .pod-faq-box{ padding:16px; } .faq-item strong{ font-size:14px; } .faq-item p{ font-size:13px; } }
+
+    /* Customer protection messaging */
+    .fraud-protection-notice { background:#fff5f5; border:2px solid #fca5a5; border-radius:14px; padding:20px; margin:20px 0; }
+    .fraud-protection-notice .notice-header { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+    .fraud-protection-notice .warning-icon { font-size:22px; }
+    .fraud-protection-notice h3 { margin:0; font-size:18px; font-weight:800; color:#991b1b; }
+    .fraud-protection-notice .lead-warning { color:#7f1d1d; margin:8px 0 12px; font-size:15px; }
+    .fraud-protection-notice .risk-box, .fraud-protection-notice .safe-box { background:#fff; border:1px solid #fecaca; border-radius:10px; padding:12px; margin:10px 0; }
+    .fraud-protection-notice h4 { font-weight:800; margin:0 0 8px 0; color:#7f1d1d; font-size:15px; }
+    .fraud-protection-notice ul { margin:0; padding-left:18px; color:#374151; font-size:14px; }
+    .fraud-protection-notice .protection-cta { background:#fef3c7; border:1px solid #fde68a; border-radius:10px; padding:12px; margin-top:12px; color:#78350f; font-size:14px; }
+    .fraud-protection-notice .scam-report { margin-top:6px; color:#9a3412; font-weight:700; }
+
+    .quick-comparison { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; }
+    .quick-comparison .comparison-bad, .quick-comparison .comparison-good { background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; padding:12px; }
+    .quick-comparison h5 { margin:0 0 8px 0; font-weight:800; font-size:14px; }
+    .quick-comparison ul { margin:0; padding-left:18px; font-size:13px; color:#374151; }
+    @media (max-width:768px){ .quick-comparison{ grid-template-columns:1fr; } }
+
+    .authenticity-check { background:#eff6ff; border:2px solid #93c5fd; border-radius:12px; padding:14px; margin:14px 0; }
+    .authenticity-check h4 { margin:0 0 8px 0; font-weight:800; color:#1e3a8a; font-size:16px; }
+    .authenticity-check ul { margin:0; padding-left:18px; color:#1f2937; font-size:14px; }
+
+    .mini-protect { background:#fff3cd; border-left:4px solid #f59e0b; padding:10px 12px; border-radius:8px; color:#92400e; font-size:13px; margin-top:10px; text-align:left; }
+
+    /* Customer Protection Warning - Option 2 */
+    .customer-protection-warning { background:#fff9f0; border:3px solid #ff6b6b; border-radius:16px; padding:32px 24px; margin:32px 0; }
+    .customer-protection-warning .warning-header { display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+    .customer-protection-warning .warning-icon { font-size:36px; animation: warningPulse 2s ease-in-out infinite; }
+    @keyframes warningPulse { 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.1);} }
+    .customer-protection-warning .warning-header h3 { color:#dc3545; margin:0; font-size:24px; font-weight:700; }
+    .customer-protection-warning .lead-warning { background:#fff3cd; border-left:4px solid #ff6b6b; padding:16px; margin:20px 0; font-size:16px; line-height:1.6; color:#856404; }
+    .customer-protection-warning .lead-warning strong { color:#dc3545; font-size:17px; }
+    .customer-protection-warning .two-column-comparison { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:24px 0; }
+    .customer-protection-warning .risk-column, .customer-protection-warning .safe-column { padding:20px; border-radius:12px; }
+    .customer-protection-warning .risk-column { background:#fff0f0; border:2px solid #ff6b6b; }
+    .customer-protection-warning .safe-column { background:#f0fff4; border:2px solid #28a745; }
+    .customer-protection-warning .risk-column h4 { color:#dc3545; margin:0 0 16px 0; font-size:18px; font-weight:700; }
+    .customer-protection-warning .safe-column h4 { color:#155724; margin:0 0 16px 0; font-size:18px; font-weight:700; }
+    .customer-protection-warning .risk-column ul, .customer-protection-warning .safe-column ul { margin:0; padding-left:20px; list-style:none; }
+    .customer-protection-warning .risk-column li, .customer-protection-warning .safe-column li { margin:10px 0; padding-left:8px; line-height:1.5; font-size:15px; position:relative; }
+    .customer-protection-warning .risk-column li { color:#721c24; }
+    .customer-protection-warning .safe-column li { color:#155724; }
+    .customer-protection-warning .risk-column li::before { content:"•"; color:#dc3545; font-weight:bold; font-size:20px; position:absolute; left:-15px; }
+    .customer-protection-warning .safe-column li::before { content:"•"; color:#28a745; font-weight:bold; font-size:20px; position:absolute; left:-15px; }
+    .customer-protection-warning .protection-bottom { margin-top:24px; padding-top:20px; border-top:2px dashed #dee2e6; }
+    .customer-protection-warning .smart-customer { background:#e7f3ff; border-left:4px solid #0066cc; padding:16px; margin:16px 0; font-size:15px; line-height:1.6; color:#004085; }
+    .customer-protection-warning .smart-customer strong { color:#0066cc; }
+    .customer-protection-warning .red-flag { background:#fff3cd; border-left:4px solid #ff6b6b; padding:16px; margin:16px 0; font-size:15px; line-height:1.6; color:#856404; }
+    .customer-protection-warning .red-flag strong { color:#dc3545; }
+    .customer-protection-warning .red-flag a { color:#28a745; font-weight:700; text-decoration:none; border-bottom:2px solid #28a745; }
+    .customer-protection-warning .red-flag a:hover { color:#155724; border-bottom-color:#155724; }
+    @media (max-width:768px){ .customer-protection-warning{ padding:24px 16px; } .customer-protection-warning .warning-header h3{ font-size:20px; } .customer-protection-warning .warning-icon{ font-size:28px; } .customer-protection-warning .two-column-comparison{ grid-template-columns:1fr; gap:16px; } .customer-protection-warning .lead-warning, .customer-protection-warning .smart-customer, .customer-protection-warning .red-flag{ font-size:14px; padding:12px; } .customer-protection-warning .risk-column h4, .customer-protection-warning .safe-column h4 { font-size:16px; } .customer-protection-warning .risk-column li, .customer-protection-warning .safe-column li { font-size:14px; } }
+
+    /* Cashless Info Banner */
+    .cashless-info-banner { background: linear-gradient(135deg, #e7f3ff 0%, #cfe9ff 100%); border-left: 5px solid #0066cc; padding: 20px 24px; margin: 32px 0; border-radius: 12px; display: flex; align-items: center; gap: 20px; box-shadow: 0 2px 8px rgba(0,102,204,0.1); }
+    .info-icon-large { font-size: 42px; flex-shrink: 0; }
+    .info-content-banner h4 { color: #0066cc; margin: 0 0 8px 0; font-size: 20px; font-weight: 700; }
+    .info-content-banner p { margin: 0; color: #004085; font-size: 15px; line-height: 1.6; }
+    @media (max-width:768px){ .cashless-info-banner{ flex-direction: column; text-align:center; padding:16px; } .info-icon-large{ font-size:36px; } .info-content-banner h4{ font-size:18px; } .info-content-banner p{ font-size:14px; } }
+
+    /* Standard Option Subtitle */
+    .standard-option-subtitle { color:#856404; background:#fff3cd; padding:10px 16px; margin:12px 0 20px 0; border-radius:6px; border-left:4px solid #ff6b6b; font-size:15px; font-weight:600; line-height:1.5; }
+    @media (max-width:768px){ .standard-option-subtitle{ font-size:14px; padding:8px 12px; } }
+
+    /* Sticky contact bar */
+    .trust-contact-bar { position: sticky; top: 0; z-index: 1000; background: linear-gradient(90deg,#22c55e 0%, #16a34a 100%); color:#fff; padding:8px 12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.08); font-size:14px; }
+    .trust-contact-bar a { color:#fff; text-decoration:none; font-weight:700; }
+    .trust-contact-wrap { display:flex; justify-content:center; align-items:center; gap:24px; flex-wrap:wrap; }
+
+    /* Contact trust section */
+    .contact-trust-section { background:linear-gradient(135deg,#f0fdf4 0%, #dcfce7 100%); border:2px solid #22c55e; border-radius:16px; padding:24px; margin:24px 0; text-align:center; }
+    .contact-trust-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:16px; margin:16px 0; }
+    .contact-trust-grid .item a { color:#166534; font-weight:700; text-decoration:none; }
+    @media(max-width:768px){ .contact-trust-grid{ grid-template-columns:1fr; } }
+
+    /* Mini contact below CTAs */
+    .cta-contact-mini { background:#f8fafc; border:1px solid #e5e7eb; border-radius:10px; padding:12px; margin-top:12px; font-size:14px; color:#374151; }
+    .cta-contact-mini a { color:#16a34a; font-weight:700; text-decoration:none; }
+
+    /* Floating WhatsApp button */
+    .whatsapp-float { position:fixed; bottom:24px; right:24px; background:#25D366; color:#fff; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; box-shadow:0 6px 18px rgba(37,211,102,0.45); z-index:999; text-decoration:none; transition:transform 0.2s ease; }
+    .whatsapp-float:hover { transform:scale(1.08); }
+    @media(max-width:768px){ .whatsapp-float{ bottom:18px; right:18px; width:52px; height:52px; font-size:26px; } }
+  </style>
+  <script defer>
+    // Priority 3: Stock single source - RUNS FIRST
+    (function(){
+      'use strict';
+      // Prevent any other stock code from running
+      window.FHG_STOCK_OVERRIDE = true;
+      console.log('🔒 Stock Override Active');
+
+      const CURRENT_STOCK = 15;
+      const MIN_STOCK = 5;
+      const COUNTDOWN_INTERVAL = 90000; // 90 seconds
+
+      // Immediately set all stock displays
+      const setAllStock = () => {
+        try {
+          document.querySelectorAll('.stock-counter, .stock-number, #stock-count, #stock-left-text').forEach(el => {
+            el.textContent = String(CURRENT_STOCK);
+          });
+          // Update progress bar if present
+          const totalEl = document.getElementById('stock-total');
+          const bar = document.getElementById('stock-bar');
+          const total = totalEl ? parseInt(totalEl.textContent || '50', 10) || 50 : 50;
+          if (bar) { const pct = Math.max(0, Math.min(100, Math.round((CURRENT_STOCK/total)*100))); bar.style.width = pct + '%'; }
+          console.log('✅ All stock set to:', CURRENT_STOCK);
+        } catch(e) {}
+      };
+
+      // Session persistence + countdown
+      const initMain = () => {
+        let currentStock = sessionStorage.getItem('currentStock')
+          ? parseInt(sessionStorage.getItem('currentStock'))
+          : CURRENT_STOCK;
+        let prevStock = currentStock;
+
+        function render(){
+          const targets = document.querySelectorAll('.stock-counter, .stock-number, #stock-count, #stock-left-text, #stock-count-bottom, #stock-count-bottom-2');
+          targets.forEach(el => {
+            const before = parseInt((el.textContent||'').replace(/\D/g,'')) || prevStock;
+            el.textContent = String(currentStock);
+            if (currentStock < before) { el.classList.add('stock-just-updated'); setTimeout(()=> el.classList.remove('stock-just-updated'), 2000); }
+          });
+          const totalEl = document.getElementById('stock-total');
+          const bar = document.getElementById('stock-bar');
+          const total = totalEl ? parseInt(totalEl.textContent || '50', 10) || 50 : 50;
+          if (bar) { const pct = Math.max(0, Math.min(100, Math.round((currentStock/total)*100))); bar.style.width = pct + '%'; }
+          try { sessionStorage.setItem('currentStock', String(currentStock)); } catch(e) {}
+          prevStock = currentStock;
+        }
+
+        render();
+        setInterval(() => { if (currentStock > MIN_STOCK) { currentStock -= 1; render(); } }, COUNTDOWN_INTERVAL);
+
+        // Order notifications
+        const showOrderNotification = () => {
+          const names = ['Amaka from Lagos','Chioma from Abuja','Funmi from Port Harcourt','Blessing from Ibadan'];
+          const randomName = names[Math.floor(Math.random() * names.length)];
+          const notification = document.createElement('div');
+          notification.className = 'order-notification';
+          notification.innerHTML = '<div class="order-notif-content">🔥 ' + randomName + ' just ordered!<span class="notif-time">2 min ago</span></div>';
+          document.body.appendChild(notification);
+          setTimeout(()=> notification.classList.add('show'), 100);
+          setTimeout(()=> { notification.classList.remove('show'); setTimeout(()=> notification.remove(), 500); }, 5000);
+        };
+        setTimeout(showOrderNotification, 30000);
+        setInterval(showOrderNotification, 150000); // every 2.5 minutes
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => { setAllStock(); initMain(); });
+      } else {
+        setAllStock();
+        initMain();
+      }
+    })();
+  </script>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-amber-50 via-white to-blue-50 text-gray-900 selection:bg-amber-200 selection:text-gray-900">
+  <header class="bg-white shadow-md sticky top-0 z-50 border-b-2 border-amber-400">
+    <div class="trust-contact-bar" role="navigation" aria-label="Quick contact">
+      <div class="trust-contact-wrap">
+        <a href="tel:+2348101594734">📞 0810 159 4734</a>
+        <a href="https://wa.me/2348101594734" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <span>📍 Maiduguri, Nigeria</span>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 py-1 md:py-2 mb-1">
+      <div class="flex items-center justify-between gap-3">
+        <div aria-label="Brand" class="shrink-0 mr-4 md:mr-8 w-[220px] md:w-[300px]">
+          <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">FULANI HAIR GRO</h1>
+          <p class="text-xs md:text-sm text-amber-700 font-medium">Much Cheaper Than A Hair Transplant</p>
+        </div>
+        <!-- Alert inline in header row -->
+        <div aria-live="polite" aria-atomic="true" class="flex-1 min-w-0">
+          <div class="bg-gradient-to-br from-red-50 to-orange-50 border border-red-300 rounded-xl px-3 md:px-4 py-2 shadow-md ring-1 ring-red-100">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2 min-w-0">
+                <div class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0 animate-pulse" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" class="w-4.5 h-4.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+                </div>
+                <div class="flex items-center gap-2 min-w-0">
+                  <p class="text-[12px] md:text-[13px] font-extrabold text-red-900 leading-tight truncate">✅ You Qualified for This Week's Fresh Batch</p>
+                  <span class="hidden sm:inline text-[11px] md:text-[12px] text-gray-700 whitespace-nowrap">This week's batch is almost finished. Only <span class="font-extrabold text-red-700">5 sets</span> remaining for Nationwide delivery.</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <span class="hidden sm:inline text-[10px] text-gray-600">Stock Level</span>
+                <span class="text-[10px] md:text-[11px] font-bold text-red-600"><span id="stock-left-text" class="stock-counter">5</span> / <span id="stock-total">50</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-gradient-to-r from-green-600 to-blue-600 text-white py-1 md:py-2">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-center items-center space-x-8 text-sm overflow-x-auto no-scrollbar" role="list">
+        <div class="flex items-center space-x-2 whitespace-nowrap" role="listitem">
+          <i data-lucide="check-circle" class="w-4 h-4"></i>
+          <span>10,000+ Happy Customers</span>
+        </div>
+        <div class="flex items-center space-x-2 whitespace-nowrap" role="listitem">
+          <i data-lucide="shield" class="w-4 h-4"></i>
+          <span>100% Secure Payment</span>
+        </div>
+        <div class="flex items-center space-x-2 whitespace-nowrap" role="listitem">
+          <i data-lucide="truck" class="w-4 h-4"></i>
+          <span>24–48hr Delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand divider below trust badges -->
+  <div class="h-1 bg-green-600 max-w-7xl mx-auto"></div>
+
+  
+
+
+  <!-- Family Saves Explainer Modal -->
+  <div id="family-modal" class="fixed inset-0 bg-black/50 hidden items-end sm:items-center justify-center z-[60]" role="dialog" aria-modal="true" aria-labelledby="family-modal-title">
+    <div class="bg-white w-full sm:max-w-2xl rounded-t-2xl sm:rounded-2xl shadow-2xl p-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-4">
+        <h3 id="family-modal-title" class="text-xl font-extrabold">💎 Family Saves Bundle - Who Is This For?</h3>
+        <button id="family-modal-close" class="text-gray-500 hover:text-gray-800 text-2xl leading-none" aria-label="Close">×</button>
+      </div>
+      <div class="space-y-4">
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h4 class="font-extrabold mb-1">👨‍👩‍👧‍👦 Perfect for Families</h4>
+          <p>Mum + 2 daughters = 3.3 months each</p>
+          <p>Split cost: <span class="font-extrabold">₦71,917</span> per person!</p>
+        </div>
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h4 class="font-extrabold mb-1">🤝 Share with Friends</h4>
+          <p>3 friends split = <span class="font-extrabold">₦71,917</span> each</p>
+          <p>Everyone saves <span class="font-extrabold">₦37,083</span>!</p>
+        </div>
+        <div class="bg-purple-50 p-4 rounded-lg">
+          <h4 class="font-extrabold mb-1">🔥 Extreme Hair Loss</h4>
+          <p>10 months of consistent treatment</p>
+          <p>Best results need 6–12 months</p>
+        </div>
+        <div class="bg-yellow-50 p-4 rounded-lg border-2 border-yellow-400">
+          <h4 class="font-extrabold mb-2">🎁 What You Get FREE:</h4>
+          <p>4 Shampoos (₦52,400)</p>
+          <p>4 Pomades (₦52,400)</p>
+          <p>4 Conditioners (₦26,200)</p>
+          <p class="font-bold text-lg">Total FREE: ₦131,000!</p>
+        </div>
+        <div class="text-right">
+          <a href="#" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-extrabold px-6 py-3 rounded-xl">See Family Saves Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+    <div class="grid lg:grid-cols-2 gap-8 items-start">
+      <section aria-labelledby="hero-title" class="space-y-6">
+        <!-- Qualified banner -->
+        <div class="bg-gradient-to-r from-green-600 via-emerald-600 to-green-600 text-white px-4 py-3 rounded-2xl shadow-xl border-4 border-green-400">
+          <div class="text-center">
+            <div class="flex items-center justify-center space-x-2" aria-hidden="true">
+              <span class="text-xl animate-bounce">✨</span>
+              <p class="text-xs font-extrabold uppercase tracking-wide">WE'VE IDENTIFIED YOUR HAIR LOSS TYPE</p>
+              <span class="text-xl animate-bounce">✨</span>
+            </div>
+          </div>
+        </div>
+        <div class="inline-flex items-center bg-green-100 text-green-900 px-4 py-2 rounded-full text-sm font-semibold">
+          <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
+          CONSULTATION COMPLETE
+        </div>
+        <h2 id="hero-title" class="text-3xl md:text-5xl font-extrabold leading-tight">Your Personalized Hair Regrowth Plan is Ready</h2>
+        <article class="bg-gradient-to-br from-amber-50 to-white border-2 border-amber-300 rounded-2xl p-6 shadow-lg hover-rise" aria-labelledby="doctor-name">
+          <div class="flex items-start space-x-4">
+            <img
+              src="/doctor-amina.jpg"
+              alt="Dr. Amina Hassan, Hair Care Specialist"
+              class="w-20 h-20 rounded-full object-cover flex-shrink-0 border-4 border-white shadow-lg bg-amber-200"
+              onerror="this.onerror=null; this.src='placeholder.svg';"
+            />
+            <div class="flex-1">
+              <p id="doctor-name" class="text-xl font-extrabold">Dr. Amina Hassan</p>
+              <p class="text-sm text-gray-600 mb-2">Hair Care Specialist & Product Developer</p>
+              <div class="bg-white p-3 rounded-lg border border-amber-200">
+                <p class="text-sm text-gray-700">Based on your analysis: <span class="font-extrabold text-amber-700">May be Androgenic Alopecia</span></p>
+                <div class="flex items-center mt-1" aria-label="Match confidence">
+                  <div class="flex-1 bg-gray-200 rounded-full h-2 mr-2" aria-hidden="true">
+                    <div class="bg-green-600 h-2 rounded-full" style="width: 50%;"></div>
+                  </div>
+                  <span class="text-xs font-bold text-green-700">50% Match</span>
+                </div>
+                <p class="mt-2 text-[11px] text-gray-500 italic">*This is an educational assessment, not a medical diagnosis. Please consult a healthcare provider for a definitive diagnosis.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- contact-trust-section moved before footer -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-4 shadow-md border-2 border-yellow-200 hover-rise">
+            <div class="flex items-center space-x-1 mb-2 text-yellow-500" aria-hidden="true">
+              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+            </div>
+            <p class="text-2xl font-extrabold">4.8/5</p>
+            <p class="text-xs text-gray-600">From 10,000+ reviews</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-md border-2 border-green-200 hover-rise">
+            <i data-lucide="trending-up" class="w-8 h-8 text-green-600 mb-2"></i>
+            <p class="text-2xl font-extrabold">94%</p>
+            <p class="text-xs text-gray-600">See results in 3 months</p>
+          </div>
+        </div>
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl p-4 shadow-lg">
+          <div class="flex items-center justify-between">
+            <div class="flex -space-x-2" aria-hidden="true">
+              <div class="sp-avatar w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-lg">👩🏾</div>
+              <div class="sp-avatar w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-lg">👩🏾</div>
+              <div class="sp-avatar w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-lg">👩🏾</div>
+              <div class="sp-avatar w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-lg">👩🏾</div>
+              <div class="sp-avatar w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-lg">👩🏾</div>
+              <div class="sp-avatar w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-lg">👩🏾</div>
+              <div class="sp-avatar w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-lg">👩🏾</div>
+              <div class="sp-avatar w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-lg">👩🏾</div>
+              <div class="sp-avatar w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-lg">👩🏾</div>
+              <div class="sp-avatar w-10 h-10 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center text-lg">👩🏾</div>
+            </div>
+            <div class="text-right">
+              <p class="font-extrabold text-lg"><span id="social-count">746</span>+ Nigerian Women</p>
+              <p class="text-xs opacity-90">ordered in last 24hrs</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1) What Your Answers Reveal (UX-Focused) -->
+        <section id="answers-reveal" class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 shadow-lg border-2 border-purple-200">
+          <h3 class="text-3xl font-bold text-gray-900 mb-4 flex items-center">
+            <span class="text-4xl mr-3">🔍</span>
+            What Your Answers Reveal
+          </h3>
+
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            Based on your responses, you're experiencing the same challenges that
+            <strong class="text-purple-700"> 78% of our most successful customers</strong> had
+            before using grandmother's formula.
+          </p>
+
+          <div class="bg-white rounded-xl p-6 mb-4 border-2 border-purple-100">
+            <p class="text-sm font-bold text-purple-700 mb-4 uppercase">
+              Women with Your Pattern Typically Focus On:
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start text-base text-gray-700">
+                <span class="text-purple-600 font-bold mr-3 text-xl">•</span>
+                <span>Improving scalp comfort and healthy circulation</span>
+              </li>
+              <li class="flex items-start text-base text-gray-700">
+                <span class="text-purple-600 font-bold mr-3 text-xl">•</span>
+                <span>Balancing moisture and reducing strand breakage</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl p-5 border-2 border-green-300">
+            <p class="text-base text-gray-800 leading-relaxed">
+              <span class="text-2xl mr-2">✅</span>
+              <strong class="text-green-900">The good news:</strong> Women with your exact
+              pattern are our best success stories — 94% report visible improvement by Month 3
+              with consistent use.*
+            </p>
+            <p class="text-xs text-gray-600 mt-2">
+              *Based on user surveys. Individual results may vary.
+            </p>
+          </div>
+        </section>
+        <!-- Before/After Image Section (Priority 2) -->
+        <section class="before-after-section bg-white rounded-2xl p-6 md:p-8 shadow-xl border-2 border-gray-200">
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-6">📸 Real Transformation Timeline</h2>
+          <div class="before-after-grid grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="ba-card bg-gray-50 rounded-xl p-4 border border-gray-200 hover:shadow-lg transition">
+              <div class="flex gap-3">
+                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
+                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</span>
+                  <span class="text-[11px] text-gray-600">Add Before Image</span>
+                </div>
+                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
+                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">AFTER 8 WEEKS</span>
+                  <span class="text-[11px] text-gray-600">Add After Image</span>
+                </div>
+              </div>
+              <p class="ba-caption text-center text-sm text-gray-700 mt-3">Amaka, Lagos - Crown area regrowth</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="ba-card bg-gray-50 rounded-xl p-4 border border-gray-200 hover:shadow-lg transition">
+              <div class="flex gap-3">
+                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
+                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</span>
+                  <span class="text-[11px] text-gray-600">Add Before Image</span>
+                </div>
+                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
+                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">AFTER 12 WEEKS</span>
+                  <span class="text-[11px] text-gray-600">Add After Image</span>
+                </div>
+              </div>
+              <p class="ba-caption text-center text-sm text-gray-700 mt-3">Funmi, Abuja - Edges restoration</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="ba-card bg-gray-50 rounded-xl p-4 border border-gray-200 hover:shadow-lg transition">
+              <div class="flex gap-3">
+                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
+                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</span>
+                  <span class="text-[11px] text-gray-600">Add Before Image</span>
+                </div>
+                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
+                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">AFTER 10 WEEKS</span>
+                  <span class="text-[11px] text-gray-600">Add After Image</span>
+                </div>
+              </div>
+              <p class="ba-caption text-center text-sm text-gray-700 mt-3">Chioma, Port Harcourt - Overall density</p>
+            </div>
+          </div>
+          <p class="disclaimer text-xs text-gray-500 text-center mt-4">*Individual results may vary</p>
+        </section>
+
+        <!-- 2) Without Using Grandmother's Formula -->
+        <section class="bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl p-6 md:p-8 shadow-xl border-2 border-red-200">
+          <h3 class="text-2xl font-extrabold text-gray-900 mb-4 flex items-center"><span class="text-3xl mr-3">⚠️</span>Without Using My Fulani Grandmother's Formula</h3>
+          <p class="text-sm text-gray-700 mb-6 leading-relaxed">When follicles remain blocked and scalp issues aren't addressed, here's what typically happens over time:</p>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0"><span class="text-base font-extrabold text-red-700">3M</span></div>
+              <div class="flex-1"><p class="text-sm font-extrabold text-gray-900 mb-1">Within 3 months</p><p class="text-sm text-gray-700"><strong class="text-red-700">Increased thinning.</strong> Part line widens. More scalp becomes visible when styling.</p></div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-16 h-16 rounded-full bg-red-200 flex items-center justify-center flex-shrink-0"><span class="text-base font-extrabold text-red-700">6M</span></div>
+              <div class="flex-1"><p class="text-sm font-extrabold text-gray-900 mb-1">6 months</p><p class="text-sm text-gray-700"><strong class="text-red-700">Weaker strands and slower regrowth.</strong> Hair breaks more easily. Growth cycle continues to slow.</p></div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-16 h-16 rounded-full bg-red-300 flex items-center justify-center flex-shrink-0"><span class="text-base font-extrabold text-red-700">12M+</span></div>
+              <div class="flex-1"><p class="text-sm font-extrabold text-gray-900 mb-1">12 months+</p><p class="text-sm text-gray-700"><strong class="text-red-700">Harder-to-reverse areas without targeted care.</strong> Recovery may take longer from this baseline.</p></div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-red-500">
+            <p class="text-sm text-gray-700 italic"><strong class="text-red-700">Note:</strong> Hair cycle delays can compound over time — consistent care may help prevent these outcomes.*</p>
+            <p class="text-xs text-gray-500 mt-2">*Individual results may vary. Not intended to diagnose or treat any medical condition.</p>
+          </div>
+        </section>
+
+        <!-- 3) Using Grandmother's Formula -->
+        <section class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 md:p-8 shadow-xl border-2 border-green-200">
+          <h3 class="text-2xl font-extrabold text-gray-900 mb-4 flex items-center"><span class="text-3xl mr-3">✅</span>Using My Fulani Grandmother's Formula</h3>
+          <p class="text-sm text-gray-700 mb-6 leading-relaxed">When you use our 3-step system consistently as grandmother taught, here's what many women experience:</p>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><span class="text-xs font-extrabold text-green-700">2–3W</span></div>
+              <div class="flex-1"><p class="text-sm font-extrabold text-gray-900 mb-1">Weeks 2–3</p><p class="text-sm text-gray-700"><strong class="text-green-700">Calmer scalp & reduced breakage.</strong> Less shedding. Itching subsides. First signs things are working.</p></div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-16 h-16 rounded-full bg-green-200 flex items-center justify-center flex-shrink-0"><span class="text-xs font-extrabold text-green-700">6–8W</span></div>
+              <div class="flex-1"><p class="text-sm font-extrabold text-gray-900 mb-1">Weeks 6–8</p><p class="text-sm text-gray-700"><strong class="text-green-700">Baby hairs and density improvements.</strong> New growth visible at hairline and part. Strands feel stronger.</p></div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-16 h-16 rounded-full bg-green-300 flex items-center justify-center flex-shrink-0"><span class="text-xs font-extrabold text-green-700">3–6M</span></div>
+              <div class="flex-1"><p class="text-sm font-extrabold text-gray-900 mb-1">Months 3–6</p><p class="text-sm text-gray-700"><strong class="text-green-700">Visible filling in where thinning began.</strong> Part looks narrower. Ponytails fuller. Confidence restored.</p></div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl p-5 mt-6">
+            <p class="text-sm font-extrabold text-center mb-2">94% of consistent users report visible improvement by Month 3.*</p>
+            <p class="text-xs text-center opacity-90">*Based on user surveys (n=847). Individual results may vary.</p>
+          </div>
+        </section>
+
+        <!-- Reality Check: What happens if you wait -->
+        <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-2xl p-6 md:p-8 shadow-2xl border-2 border-gray-700">
+          <div class="text-center mb-6">
+            <div class="inline-block bg-red-500 text-white px-4 py-2 rounded-full font-extrabold text-xs mb-3">⚠️ REALITY CHECK</div>
+            <h3 class="text-2xl font-extrabold">What Happens If You "Think About It"</h3>
+            <p class="text-gray-300 text-xs">We’ve seen this pattern with 1,000+ women who delayed</p>
+          </div>
+          <div class="space-y-4 text-sm">
+            <div class="bg-gray-800/60 rounded-xl p-4 border-l-4 border-red-500"><p class="font-extrabold text-red-400 mb-1">Days 1–3: "I'll decide tomorrow"</p><p class="text-gray-300">Life gets busy. You forget the details. Stock sells out.</p></div>
+            <div class="bg-gray-800/60 rounded-xl p-4 border-l-4 border-orange-500"><p class="font-extrabold text-orange-300 mb-1">Week 2: "I should have ordered"</p><p class="text-gray-300">Your part line is wider. Next batch is days away.</p></div>
+            <div class="bg-gray-800/60 rounded-xl p-4 border-l-4 border-yellow-500"><p class="font-extrabold text-yellow-300 mb-1">Month 2: "She started after me"</p><p class="text-gray-300">Friends show baby hairs already. You’re 2 months behind.</p></div>
+            <div class="bg-gray-800/60 rounded-xl p-4 border-l-4 border-red-600"><p class="font-extrabold text-red-300 mb-1">Month 6: "I wish I hadn't waited"</p><p class="text-gray-300">Baseline worse. Money spent on random products. Starting over.</p></div>
+          </div>
+          <div class="mt-6 bg-gradient-to-r from-red-600 to-orange-600 rounded-xl p-5 text-center">
+            <p class="font-extrabold mb-1">The Women Who Start TODAY Are Months Ahead of "Tomorrow You"</p>
+            <p class="text-sm text-white/90">Every week you delay, recovery takes longer.</p>
+          </div>
+        </section>
+
+        <!-- 4) Your Hair Growth Roadmap -->
+        <section class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-6 shadow-xl">
+          <h3 class="text-xl md:text-2xl font-extrabold mb-3">📅 Your Hair Growth Roadmap</h3>
+          <div class="pl-4 border-l-4 border-blue-300 space-y-4">
+            <div>
+              <div class="w-3 h-3 rounded-full bg-blue-500 -ml-[9px] mb-1"></div>
+              <p class="font-extrabold">Weeks 1–2</p>
+              <p class="text-gray-700">Scalp reset and follicle stimulation begin.</p>
+            </div>
+            <div>
+              <div class="w-3 h-3 rounded-full bg-blue-500 -ml-[9px] mb-1"></div>
+              <p class="font-extrabold">Weeks 3–6</p>
+              <p class="text-gray-700">Growth cycle activation and reduced shedding.</p>
+            </div>
+            <div>
+              <div class="w-3 h-3 rounded-full bg-green-600 -ml-[9px] mb-1"></div>
+              <p class="font-extrabold">Weeks 7–12</p>
+              <p class="text-gray-700">Thickness and fullness return with consistency.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5) One Success Story -->
+        <section class="bg-white border-2 border-amber-200 rounded-2xl p-6 shadow-xl">
+          <h3 class="text-xl md:text-2xl font-extrabold mb-3">💬 Meet Women Who Started Where You Are</h3>
+          <article class="rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 p-5 border border-amber-200">
+            <div class="flex items-center gap-3 mb-3"><div class="text-2xl">👩🏾</div><div><p class="font-extrabold">Funmi A., Abuja • Mother of 2</p><p class="text-xs text-gray-600">Verified Purchase</p></div></div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-red-50 border border-red-200 rounded-lg p-3"><p class="font-extrabold text-red-700 mb-1">BEFORE</p><p class="text-gray-700">Postpartum hair loss, thin crown, low confidence.</p></div>
+              <div class="bg-green-50 border border-green-200 rounded-lg p-3"><p class="font-extrabold text-green-700 mb-1">AFTER</p><p class="text-gray-700">Full crown regrowth, edges filled, thriving.</p></div>
+            </div>
+            <blockquote class="mt-3 bg-white border-l-4 border-amber-500 p-3 rounded-r-lg text-gray-800">“I saw baby hairs by Week 6 and my crown filled in by Month 3. I wish I started sooner.” <span class="text-amber-600 font-extrabold">★★★★★</span></blockquote>
+          </article>
+        </section>
+      </section>
+
+      <aside class="lg:sticky lg:top-24" id="purchase">
+        <section class="bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 rounded-3xl shadow-2xl p-8 md:p-10 border-4 border-amber-400 relative overflow-hidden hover-rise max-w-4xl mx-auto" aria-labelledby="product-title">
+          <!-- Background decorative elements -->
+          <div class="absolute top-0 right-0 w-64 h-64 bg-amber-200/20 rounded-full -mr-32 -mt-32 blur-3xl" aria-hidden="true"></div>
+          <div class="absolute bottom-0 left-0 w-48 h-48 bg-orange-200/20 rounded-full -ml-24 -mb-24 blur-3xl" aria-hidden="true"></div>
+          <div class="relative z-10">
+            <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-red-600 text-white px-5 py-1.5 rounded-full shadow-lg font-extrabold text-xs tracking-wide" aria-label="Most popular">
+              ⭐ MOST POPULAR
+            </div>
+            <!-- BUY 2 GET 1 FREE Banner -->
+            <!-- BUY 2 GET 1 FREE Hero Banner -->
+            <div class="relative z-10 mt-8 mb-8">
+              <div class="bg-gradient-to-r from-green-600 via-emerald-600 to-green-600 text-white rounded-2xl px-8 py-6 shadow-2xl border-4 border-green-400 relative overflow-hidden">
+                <!-- Animated background circles -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 animate-pulse" aria-hidden="true"></div>
+                <div class="absolute bottom-0 left-0 w-40 h-40 bg-white/10 rounded-full -ml-20 -mb-20 animate-pulse delay-100" aria-hidden="true"></div>
+                <div class="relative z-10 text-center">
+                  <div class="flex items-center justify-center space-x-3 mb-2">
+                    <span class="text-4xl animate-bounce">🎁</span>
+                    <h3 class="text-3xl md:text-4xl font-bold">Buy 2, Get 1 FREE</h3>
+                    <span class="text-4xl animate-bounce delay-100">🎁</span>
+                  </div>
+                  <p class="text-lg md:text-xl font-semibold">On EVERY item — Shampoo, Pomade & Conditioner!</p>
+                </div>
+              </div>
+            </div>
+            <!-- Product Visualization -->
+            <div class="relative z-10 bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-8 shadow-lg border-2 border-amber-200">
+              <!-- Shampoos Row -->
+              <div class="mb-8">
+                <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-3">
+                  <div class="relative group">
+                    <div class="relative">
+                      <div class="w-full h-32 bg-gradient-to-b from-amber-500 to-amber-700 rounded-t-[40px] rounded-b-lg shadow-xl transform transition group-hover:scale-105"></div>
+                      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-6 bg-amber-800 rounded-t-lg"></div>
+                    </div>
+                  </div>
+                  <div class="relative group">
+                    <div class="relative">
+                      <div class="w-full h-32 bg-gradient-to-b from-amber-500 to-amber-700 rounded-t-[40px] rounded-b-lg shadow-xl transform transition group-hover:scale-105"></div>
+                      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-6 bg-amber-800 rounded-t-lg"></div>
+                    </div>
+                  </div>
+                  <div class="relative group">
+                    <div class="relative">
+                      <div class="w-full h-32 bg-gradient-to-b from-amber-500 to-amber-700 rounded-t-[40px] rounded-b-lg shadow-xl transform transition group-hover:scale-105"></div>
+                      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-6 bg-amber-800 rounded-t-lg"></div>
+                    </div>
+                    <div class="absolute -top-3 -right-3 z-10">
+                      <div class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm font-bold px-3 py-1.5 rounded-full shadow-lg animate-pulse border-2 border-white">FREE!</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-gray-900">3 Shampoos (500ml each)</p>
+                  <p class="text-base font-semibold text-green-600">Pay for 2, get 3 • (+1 FREE)</p>
+                </div>
+              </div>
+
+              <!-- Pomades Row -->
+              <div class="mb-8">
+                <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-3">
+                  <div class="relative group">
+                    <div class="w-full h-24 bg-gradient-to-b from-orange-500 to-orange-700 rounded-full shadow-xl transform transition group-hover:scale-105"></div>
+                  </div>
+                  <div class="relative group">
+                    <div class="w-full h-24 bg-gradient-to-b from-orange-500 to-orange-700 rounded-full shadow-xl transform transition group-hover:scale-105"></div>
+                  </div>
+                  <div class="relative group">
+                    <div class="w-full h-24 bg-gradient-to-b from-orange-500 to-orange-700 rounded-full shadow-xl transform transition group-hover:scale-105"></div>
+                    <div class="absolute -top-3 -right-3 z-10">
+                      <div class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm font-bold px-3 py-1.5 rounded-full shadow-lg animate-pulse border-2 border-white">FREE!</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-gray-900">3 Pomades (150g each)</p>
+                  <p class="text-base font-semibold text-green-600">Pay for 2, get 3 • (+1 FREE)</p>
+                </div>
+              </div>
+
+              <!-- Conditioners Row -->
+              <div>
+                <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-3">
+                  <div class="relative group">
+                    <div class="relative">
+                      <div class="w-full h-32 bg-gradient-to-b from-amber-600 to-amber-800 rounded-t-[40px] rounded-b-lg shadow-xl transform transition group-hover:scale-105"></div>
+                      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-6 bg-amber-900 rounded-t-lg"></div>
+                    </div>
+                  </div>
+                  <div class="relative group">
+                    <div class="relative">
+                      <div class="w-full h-32 bg-gradient-to-b from-amber-600 to-amber-800 rounded-t-[40px] rounded-b-lg shadow-xl transform transition group-hover:scale-105"></div>
+                      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-6 bg-amber-900 rounded-t-lg"></div>
+                    </div>
+                  </div>
+                  <div class="relative group">
+                    <div class="relative">
+                      <div class="w-full h-32 bg-gradient-to-b from-amber-600 to-amber-800 rounded-t-[40px] rounded-b-lg shadow-xl transform transition group-hover:scale-105"></div>
+                      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-6 bg-amber-900 rounded-t-lg"></div>
+                    </div>
+                    <div class="absolute -top-3 -right-3 z-10">
+                      <div class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm font-bold px-3 py-1.5 rounded-full shadow-lg animate-pulse border-2 border-white">FREE!</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-gray-900">3 Conditioners (500ml each)</p>
+                  <p class="text-base font-semibold text-green-600">Pay for 2, get 3 • (+1 FREE)</p>
+                </div>
+              </div>
+            </div>
+            <!-- Product Title -->
+            <div class="relative z-10 text-center mb-8">
+              <h2 id="product-title" class="text-4xl md:text-5xl font-bold text-gray-900 mb-3">SELF LOVE PLUS B2GOF</h2>
+              <p class="text-xl text-gray-700 font-semibold">3-Month Intensive Care Supply</p>
+            </div>
+            <!-- What's Included - Split View -->
+            <div class="relative z-10 grid md:grid-cols-2 gap-6 mb-8">
+              <!-- You Pay For -->
+              <div class="bg-gradient-to-br from-red-50 to-pink-50 rounded-xl p-6 border-2 border-red-200 shadow-lg">
+                <div class="flex items-center mb-4">
+                  <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mr-3"><span class="text-xl">💳</span></div>
+                  <h3 class="text-xl font-bold text-gray-900">You Pay For</h3>
+                </div>
+                <ul class="space-y-3">
+                  <li class="flex items-center text-base text-gray-700"><span class="bg-red-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center mr-3">2</span><span>Shampoo (500ml)</span></li>
+                  <li class="flex items-center text-base text-gray-700"><span class="bg-red-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center mr-3">2</span><span>Pomade (150g)</span></li>
+                  <li class="flex items-center text-base text-gray-700"><span class="bg-red-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center mr-3">2</span><span>Conditioner (500ml)</span></li>
+                </ul>
+              </div>
+              <!-- You Actually Get -->
+              <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-300 shadow-lg">
+                <div class="flex items-center mb-4">
+                  <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-3"><span class="text-xl">🎉</span></div>
+                  <h3 class="text-xl font-bold text-gray-900">You Actually Get</h3>
+                </div>
+                <ul class="space-y-3">
+                  <li class="flex items-center justify-between text-base text-gray-700"><div class="flex items-center"><span class="bg-green-600 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center mr-3">3</span><span>Shampoo (500ml)</span></div><span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">+1 FREE</span></li>
+                  <li class="flex items-center justify-between text-base text-gray-700"><div class="flex items-center"><span class="bg-green-600 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center mr-3">3</span><span>Pomade (150g)</span></div><span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">+1 FREE</span></li>
+                  <li class="flex items-center justify-between text-base text-gray-700"><div class="flex items-center"><span class="bg-green-600 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center mr-3">3</span><span>Conditioner (500ml)</span></div><span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">+1 FREE</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- What's Included - Detailed -->
+            <div class="relative z-10 bg-white rounded-xl p-6 border-2 border-amber-200 shadow-lg mb-8">
+              <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center"><span class="text-green-600 text-2xl mr-2">✓</span>What's Included in Your Package:</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start"><span class="text-amber-600 font-bold text-lg mr-3">3×</span><div><p class="font-semibold text-gray-900">Fulani Hair Gro Shampoo (500ml)</p><p class="text-sm text-gray-600">Scalp soothing formula — cleanses and prepares</p></div></li>
+                <li class="flex items-start"><span class="text-amber-600 font-bold text-lg mr-3">3×</span><div><p class="font-semibold text-gray-900">Fulani Hair Gro Pomade (150g)</p><p class="text-sm text-gray-600">DHT management focus — supports scalp health</p></div></li>
+                <li class="flex items-start"><span class="text-amber-600 font-bold text-lg mr-3">3×</span><div><p class="font-semibold text-gray-900">Fulani Hair Gro Conditioner (500ml)</p><p class="text-sm text-gray-600">Breakage defense — strengthens and locks moisture</p></div></li>
+              </ul>
+            </div>
+            <!-- Usage Essentials (mirrors How to Use) -->
+            <div class="rounded-xl p-4 mb-6 border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-purple-50">
+              <p class="text-sm font-extrabold text-gray-900 mb-2 flex items-center"><i data-lucide="book-open" class="w-4 h-4 text-blue-600 mr-2"></i>Usage Essentials</p>
+              <ul class="text-sm text-gray-800 space-y-1">
+                <li><span class="font-extrabold">Shampoo:</span> Every 2 weeks</li>
+                <li><span class="font-extrabold">Pomade:</span> 1–2× daily</li>
+                <li><span class="font-extrabold">Conditioner:</span> <span class="text-purple-700 font-extrabold">Required for best results</span></li>
+              </ul>
+              <p class="mt-2 text-xs text-gray-700">Conditioner strengthens strands, reduces breakage, and locks in moisture so your scalp treatment works effectively. This step is not optional — it protects your progress.</p>
+            </div>
+            <div class="text-center mb-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
+              <p class="text-sm text-gray-600 mb-1">Regular Price</p>
+              <p class="text-2xl line-through text-gray-500 mb-1">₦225,000</p>
+              <p class="text-sm font-extrabold text-green-700 mb-3">SAVE ₦158,250 (70% OFF!)</p>
+              <div class="my-2"><p class="text-5xl md:text-6xl font-extrabold text-gray-900">₦66,750</p></div>
+              <div class="bg-white rounded-lg p-4 border-2 border-green-200 inline-block">
+                <p class="text-sm text-gray-700 mb-1">Just <span class="font-extrabold text-green-700">₦22,250/month</span></p>
+                <p class="text-sm font-semibold text-green-700">🌯 Only ₦741/day (less than a shawarma!)</p>
+              </div>
+              <p class="mt-3 text-sm font-extrabold text-green-800">RISK‑FREE: 90‑Day Money‑Back Guarantee</p>
+            </div>
+            <!-- Guarantee Box (moved here after doctor + product showcase) -->
+            <div class="guarantee-box mt-4 bg-[#f0fff4] border-4 border-[#00a86b] rounded-xl p-6 text-center shadow-xl">
+              <div class="text-5xl mb-2" aria-hidden="true">🛡️</div>
+              <h3 class="text-xl md:text-2xl font-extrabold text-gray-900">RISK-FREE 90-DAY GUARANTEE</h3>
+              <p class="text-sm md:text-base text-gray-800 mt-2">Try it for 3 months. If you don't see improvement, we'll refund <span class="font-extrabold">EVERY</span> naira. No questions asked.</p>
+              <p class="text-sm md:text-base text-green-700 font-extrabold mt-1">You keep the FREE bottles.</p>
+            </div>
+
+            <div class="payment-options-redesign">
+            <section class="mb-4 bg-gradient-to-br from-green-100 to-emerald-100 border-4 border-green-500 rounded-3xl p-6 shadow-2xl hover-rise" aria-labelledby="primary-cta-title">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center space-x-2"><span class="text-2xl">⚡</span><span class="font-extrabold text-green-900">FASTEST OPTION</span></div>
+                <span class="bg-yellow-400 text-gray-900 text-xs px-3 py-1 rounded-full font-extrabold shadow">⭐ MOST POPULAR — RECOMMENDED</span>
+              </div>
+              <h2 id="primary-cta-title" class="text-xl md:text-2xl font-extrabold mb-3">Pay Now — Express Delivery in 24–48hrs</h2>
+              <article class="bg-white rounded-xl p-4 mb-4 border-2 border-green-300 shadow-md" aria-labelledby="bank-title">
+                <div class="flex items-center mb-3"><i data-lucide="shield" class="w-5 h-5 text-green-600 mr-2"></i><p id="bank-title" class="text-sm font-extrabold">Bank Transfer Details:</p></div>
+                <div class="space-y-3">
+                  <div class="flex justify-between items-center text-sm"><span class="text-gray-600">Bank:</span><span class="font-extrabold">Moniepoint</span></div>
+                  <div class="flex justify-between items-center text-sm"><span class="text-gray-600">Account Name:</span><span class="font-extrabold">Fulani Hair Gro</span></div>
+                  <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-3 border-2 border-green-400">
+                    <p class="text-xs text-gray-600 mb-2">Account Number:</p>
+                    <div class="flex items-center justify-between gap-2">
+                      <span id="account-number" class="text-3xl font-extrabold text-green-700 tracking-wider select-all">5633783114</span>
+                      <button id="copy-btn" class="bg-green-600 hover:bg-green-700 text-white p-3 rounded-lg transition min-h-[44px] min-w-[44px]" aria-label="Copy account number">
+                        <i data-lucide="copy" class="w-5 h-5" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <p id="copy-feedback" class="text-xs text-green-700 mt-1 font-semibold hidden">✓ Copied to clipboard!</p>
+                  </div>
+                </div>
+              </article>
+              <div class="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-xl p-4 mb-4">
+                <p class="text-sm font-extrabold text-amber-900 mb-2 flex items-center"><span class="text-xl mr-2">📱</span>After Payment — Send Proof:</p>
+                <a href="https://wa.me/2348101594734" target="_blank" rel="noopener" class="btn-primary w-full animate-pulse" aria-label="Open WhatsApp to share payment proof">
+                  <span class="mr-2">📱</span>WhatsApp: 08101594734
+                </a>
+                <p class="text-xs text-amber-700 mt-2 text-center">✓ Confirmed within minutes • Shipped same day</p>
+              </div>
+              <ul class="space-y-2 text-sm" aria-label="Primary option benefits">
+                <li class="flex items-center text-green-800"><i data-lucide="check-circle" class="w-4 h-4 mr-2"></i><span class="font-semibold">Fastest delivery: 24–48 hours</span></li>
+                <li class="flex items-center text-green-800"><i data-lucide="check-circle" class="w-4 h-4 mr-2"></i><span class="font-semibold">FREE delivery when you pay today</span></li>
+                <li class="flex items-center text-green-800"><i data-lucide="check-circle" class="w-4 h-4 mr-2"></i><span class="font-semibold">90% fulfillment rate</span></li>
+              </ul>
+              <div class="cta-contact-mini" aria-label="Contact options">
+                Or contact us: 📞 <a href="tel:+2348101594734">0810 159 4734</a> • 💬 <a href="https://wa.me/2348101594734" target="_blank" rel="noopener">WhatsApp</a> • ✉️ <a href="mailto:fulanihairgro@gmail.com">Email</a>
+              </div>
+            </section>
+            <!-- Family Saves Upsell -->
+            <section class="bg-white rounded-2xl border-4 border-yellow-400 p-4 mb-4 shadow-lg" aria-labelledby="family-saves-title">
+              <div class="flex items-center justify-between">
+                <h4 id="family-saves-title" class="font-extrabold text-yellow-700 flex items-center"><span class="text-xl mr-2">💎</span>FAMILY SAVES</h4>
+                <span class="text-xs bg-yellow-500 text-white px-2 py-1 rounded-full font-extrabold">BEST VALUE</span>
+              </div>
+              <p class="text-sm text-gray-700 mt-2">10-month supply (Buy 6 sets, Get 4 FREE) — <span class="font-extrabold">₦215,750</span> • <span class="font-semibold">₦21,575/month</span></p>
+              <button id="family-saves-learn" class="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-extrabold py-3 rounded-xl transition min-h-[44px]">Learn More →</button>
+              <div class="mt-2 text-xs text-yellow-800">⏰ Only <span id="family-stock">22</span> Family Saves bundles left for Lagos this week</div>
+            </section>
+            <div class="text-center mb-4"><p class="text-sm text-gray-500 font-semibold">OR</p></div>
+            <section class="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-2xl p-5 shadow-md hover-rise" aria-labelledby="secondary-cta-title">
+              <div class="flex items-center justify-between mb-1">
+                <div class="flex items-center space-x-2"><i data-lucide="truck" class="w-5 h-5 text-blue-700"></i><span class="font-extrabold text-blue-800">STANDARD OPTION</span></div>
+                <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-extrabold">3–5 DAYS</span>
+              </div>
+              <p class="standard-option-subtitle">⚠️ Secure process: Pay only to verified company account. Cash to agent voids your guarantee.</p>
+              <h4 id="secondary-cta-title" class="text-base font-extrabold mb-3">Pay on Delivery (Secure Process)</h4>
+
+              <div class="pod-process">
+                <h4>📦 How Secure Pay-on-Delivery Works:</h4>
+
+                <div class="pod-step">
+                  <span class="pod-number">1</span>
+                  <div class="pod-content">
+                    <strong>Delivery agent arrives with your sealed package</strong>
+                    <p>Inspect the package to confirm it's intact</p>
+                  </div>
+                </div>
+
+                <div class="pod-step">
+                  <span class="pod-number">2</span>
+                  <div class="pod-content">
+                    <strong>Transfer ₦66,750 to our company account</strong>
+                    <div class="pod-bank-details">
+                      <p>Bank: <strong>Moniepoint</strong></p>
+                      <p>Account: <strong>5633783114</strong> (Fulani Hair Gro)</p>
+                    </div>
+                    <p class="pod-warning">⚠️ DO NOT pay cash or transfer payment to the delivery agent — only pay to our official company account</p>
+                  </div>
+                </div>
+
+                <div class="pod-step">
+                  <span class="pod-number">3</span>
+                  <div class="pod-content">
+                    <strong>Send payment proof to 2 WhatsApp numbers:</strong>
+                    <div class="whatsapp-numbers">
+                      <p>📱 Company: <a href="https://wa.me/2348101594734" class="wa-link" target="_blank" rel="noopener">08101594734</a></p>
+                      <p>📱 Delivery Agent: <span class="da-number">[Agent's number shown at delivery]</span></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pod-step">
+                  <span class="pod-number">4</span>
+                  <div class="pod-content">
+                    <strong>Our accountant confirms payment (2–5 minutes)</strong>
+                    <p>Agent receives confirmation and releases your package</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pod-security-note">
+                <strong>🔒 Your Protection:</strong>
+                <ul>
+                  <li>✅ Your payment is verified and recorded instantly</li>
+                  <li>✅ Instant WhatsApp confirmation (2–5 minutes)</li>
+                  <li>✅ Complete protection from fake products</li>
+                  <li>✅ Full tracking and support for your order</li>
+                </ul>
+              </div>
+
+              <button class="btn-secondary w-full mb-2" onclick="reservePayOnDelivery()">📱 Reserve via WhatsApp — Secure Pay on Delivery</button>
+              <p class="pod-timeline">Delivery in 3–5 working days</p>
+              <div class="cta-contact-mini" aria-label="Contact options">
+                Or contact us: 📞 <a href="tel:+2348101594734">0810 159 4734</a> • 💬 <a href="https://wa.me/2348101594734" target="_blank" rel="noopener">WhatsApp</a> • ✉️ <a href="mailto:fulanihairgro@gmail.com">Email</a>
+              </div>
+            </section>
+            <div class="security-alert">
+              <h3>⚠️ IMPORTANT SECURITY NOTICE</h3>
+              <p><strong>NEVER pay cash or transfer payment directly to the delivery agent.</strong></p>
+              <p>All payments must go through our official Moniepoint account (5633783114 — Fulani Hair Gro) with WhatsApp confirmation.</p>
+              <p>Any agent requesting cash payment is NOT authorized by us. Please report immediately to 08101594734.</p>
+            </div>
+            <!-- For First-Time Secure POD Users -->
+            <div class="pod-faq-box">
+              <h4>❓ Common Questions About Secure Pay-on-Delivery</h4>
+              <div class="faq-item">
+                <strong>Q: What if I receive a fake product?</strong>
+                <p>A: This can only happen if you pay cash to an agent instead of our official account. Products paid through our Moniepoint account (5633783114) are guaranteed authentic. Without official payment proof, we cannot verify the product came from us and cannot process refunds. Always protect yourself by using our secure payment process.</p>
+              </div>
+              <div class="faq-item">
+                <strong>Q: Why can't I just pay the delivery agent?</strong>
+                <p>A: For your protection! In the past, some agents disappeared with cash. Our secure system ensures your money goes directly to our verified account with instant confirmation.</p>
+              </div>
+              <div class="faq-item">
+                <strong>Q: What if the agent asks for cash anyway?</strong>
+                <p>A: Do NOT pay cash. Our agents are trained on this process. If an agent insists on cash, call us immediately at 08101594734 while the agent is present.</p>
+              </div>
+              <div class="faq-item">
+                <strong>Q: How long does confirmation take?</strong>
+                <p>A: Usually 2–5 minutes. Our accountant monitors WhatsApp during business hours (8am–7pm). The agent will wait with you.</p>
+              </div>
+              <div class="faq-item">
+                <strong>Q: What if I don't have mobile banking?</strong>
+                <p>A: You can use any bank app, POS transfer, or even visit a nearby bank. The agent will wait (within reason). Or choose our Express option and pay before delivery.</p>
+              </div>
+            </div>
+            <div class="space-y-2 text-sm text-gray-700 mt-4">
+              <div class="flex items-center"><i data-lucide="shield" class="w-4 h-4 text-green-600 mr-3"></i><span>See before payment — 100% Protected</span></div>
+              <div class="flex items-center"><i data-lucide="truck" class="w-4 h-4 text-blue-600 mr-3"></i><span>Standard: 3–5 days | Express: 24–48hrs</span></div>
+              <div class="flex items-center"><svg class="w-4 h-4 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg><span>Your privacy & data protected</span></div>
+              <div class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-amber-600 mr-3"></i><span>WhatsApp support: <a href="https://wa.me/2348101594734" target="_blank" rel="noopener" class="font-bold text-blue-700 underline-offset-2 hover:underline">08101594734</a></span></div>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Exit-Intent Modal (Priority 5) -->
+  <div id="exitIntentModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[9999]">
+    <div class="exit-modal-content bg-white rounded-2xl max-w-lg w-[92%] md:w-[600px] shadow-2xl p-6 relative animate-[slideDown_.3s_ease]">
+      <button class="close-modal absolute top-3 right-3 text-2xl leading-none text-gray-500 hover:text-gray-800" aria-label="Close">&times;</button>
+      <div class="exit-modal-header text-center mb-4">
+        <h2 class="text-2xl md:text-3xl font-extrabold">⏰ WAIT! Don't Miss Your Spot...</h2>
+        <p class="text-sm text-gray-600">Since you qualified for this week's batch</p>
+      </div>
+      <div class="exit-modal-body space-y-4">
+        <div class="exit-offer-box bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-amber-300 rounded-xl p-4 text-center">
+          <h3 class="text-xl font-extrabold mb-1">🎁 SPECIAL ONE-TIME OFFER</h3>
+          <p class="big-text text-2xl font-extrabold text-green-700">FREE Delivery When You Pay Today</p>
+          <p class="text-sm">(Worth ₦5,000)</p>
+          <p class="urgency-text text-xs text-red-600 font-semibold mt-1">Only available for the next 15 minutes</p>
+        </div>
+        <div class="exit-options text-center">
+          <button class="btn-claim-offer btn-primary w-full">✅ Yes, Apply My FREE Delivery</button>
+          <div class="or-divider text-xs text-gray-500 my-3">OR</div>
+          <div class="email-capture space-y-2">
+            <p class="text-sm">Not ready yet? Get a reminder:</p>
+            <input type="email" placeholder="Enter your email" class="email-input w-full border border-gray-300 rounded-lg p-2"/>
+            <button class="btn-send-reminder btn-secondary w-full">Send My Results + Reminder</button>
+          </div>
+        </div>
+      </div>
+      <p class="exit-footer text-center text-xs text-gray-500 mt-4">This offer won't be shown again</p>
+    </div>
+  </div>
+
+  <!-- Bonus section (reduced to 3 key bonuses) -->
+  <section class="max-w-6xl mx-auto px-4 section" id="festive-bonus">
+    <div class="bg-gradient-to-br from-purple-600 to-indigo-600 text-white rounded-2xl p-8 mb-8 shadow-2xl border-4 border-purple-400 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full opacity-10" aria-hidden="true">
+        <div class="absolute top-4 left-4 text-6xl">✨</div>
+        <div class="absolute top-8 right-8 text-4xl">⭐</div>
+        <div class="absolute bottom-4 left-1/3 text-5xl">💫</div>
+        <div class="absolute bottom-8 right-1/4 text-4xl">✨</div>
+      </div>
+      <div class="relative z-10">
+        <div class="text-center mb-6">
+          <div class="inline-block bg-yellow-400 text-purple-900 px-6 py-2 rounded-full font-extrabold text-sm mb-4">🎁 LIMITED‑TIME BONUS</div>
+          <h3 class="text-3xl font-extrabold mb-2">Fortune Favors You Today</h3>
+          <p class="text-purple-100">You qualified during our <b>special offer week</b> — here’s what you get.</p>
+          <div id="unlock-pill" class="inline-flex items-center gap-2 mt-3 px-3 py-1 rounded-full text-white font-extrabold text-xs sm:text-sm bg-green-600">
+            <span aria-hidden="true">✅</span>
+            <span>Bonuses included with today’s purchase</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6 text-sm bonus-grid">
+          <div class="bg-white/10 rounded-xl p-5 border-2 border-white/20 text-center card"><div class="text-3xl mb-2">💬</div><p class="font-extrabold">90‑Day Personal Hair Coach</p><p class="text-purple-100">Priority WhatsApp support (Mon–Sat, 9am–6pm)</p><p class="text-yellow-300 font-extrabold mt-1">Worth ₦15,000</p></div>
+          <div class="bg-white/10 rounded-xl p-5 border-2 border-white/20 text-center card"><div class="text-3xl mb-2">📔</div><p class="font-extrabold">Exclusive Hair Growth Tracker Journal</p><p class="text-purple-100">Track week‑by‑week with guides</p><p class="text-yellow-300 font-extrabold mt-1">Worth ₦8,000</p></div>
+          <div class="bg-white/10 rounded-xl p-5 border-2 border-white/20 text-center card"><div class="text-3xl mb-2">⚡</div><p class="font-extrabold">FREE Delivery Today</p><p class="text-purple-100">Door delivery on us</p><p class="text-yellow-300 font-extrabold mt-1">Worth ₦5,000</p></div>
+        </div>
+        <!-- Total bar (dynamic) -->
+        <div aria-live="polite" class="bg-yellow-400 text-purple-900 rounded-xl p-4 text-center">
+          <p class="font-extrabold text-lg">Total Bonus Value: <span id="bonus-total" class="text-2xl">₦28,000</span></p>
+          <div id="total-pill" class="inline-flex items-center gap-2 mt-1 px-3 py-1 rounded-full text-white font-extrabold text-xs sm:text-sm bg-green-600">
+            <span aria-hidden="true">✅</span>
+            <span>ALL BONUSES INCLUDED TODAY</span>
+          </div>
+          <p id="bonus-condition" class="text-sm font-semibold mt-2">FREE this week</p>
+          <p class="mt-1 text-center text-xs text-purple-900/70">Bonuses expire when this batch sells out (usually within 48–72 hours).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Cards: Buy X Get Y FREE emphasis -->
+  <section class="max-w-7xl mx-auto px-4 py-12">
+    <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-2">Which Option Is Right For You?</h3>
+    <p class="text-center text-gray-600 mb-10 text-base md:text-lg">Every plan includes FREE bonus items — the more you buy, the more you save</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Tier 1: SELF LOVE PLUS -->
+      <div class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 border-2 border-yellow-300 hover:scale-105 transition transform">
+        <div class="text-center mb-6">
+          <span class="inline-block bg-yellow-500 text-white px-4 py-1 rounded-full text-sm font-extrabold mb-3">😊 GOOD</span>
+          <h3 class="text-2xl font-extrabold text-gray-900 mb-1">SELF LOVE PLUS</h3>
+          <p class="text-sm text-gray-600">1-Month Supply</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 mb-4 border-2 border-yellow-200">
+          <p class="text-xs font-extrabold text-gray-600 mb-3 text-center uppercase">What You Get:</p>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between items-center"><span class="text-gray-700">Shampoo (500ml)</span><span class="font-extrabold text-gray-900">1 bottle</span></div>
+            <div class="flex justify-between items-center"><span class="text-gray-700">Pomade (150g)</span><span class="font-extrabold text-gray-900">1 jar</span></div>
+            <div class="flex justify-between items-center"><span class="text-gray-700">Conditioner (500ml)</span><span class="font-extrabold text-gray-900">1 bottle</span></div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-100 rounded-xl p-4 mb-4 border-2 border-yellow-200">
+          <div class="text-center mb-3">
+            <p class="text-xs text-gray-600 mb-1">Total Price</p>
+            <p class="text-4xl font-extrabold text-yellow-700">₦32,750</p>
+          </div>
+          <div class="text-center">
+            <p class="text-xs text-gray-600 mb-1">Per Month</p>
+            <p class="text-lg font-extrabold text-gray-900">₦32,750</p>
+            <p class="text-xs text-gray-600">₦1,092/day</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-3 mb-4 text-center border-2 border-yellow-200">
+          <p class="text-xs text-gray-600 mb-1">You Save</p>
+          <p class="text-2xl font-extrabold text-green-600">₦42,250</p>
+          <p class="text-xs text-green-600 font-semibold">(56% OFF regular price)</p>
+        </div>
+
+        <div class="text-center mb-6">
+          <p class="text-sm font-semibold text-gray-700 mb-1">Best For:</p>
+          <p class="text-xs text-gray-600">Testing first time</p>
+        </div>
+
+        <a href="?plan=1m#purchase" class="block w-full text-center bg-gradient-to-r from-yellow-500 to-amber-500 text-white font-extrabold py-4 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">Select 1-Month Plan<p class="text-sm font-normal mt-1">₦32,750</p></a>
+        <p class="text-xs text-center text-gray-500 mt-3">SAVE ₦42,250</p>
+      </div>
+
+      <!-- Tier 2: SELF LOVE PLUS B2GOF (Most Popular) -->
+      <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border-4 border-green-400 relative hover:scale-105 transition transform shadow-xl">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+          <span class="bg-red-500 text-white px-6 py-2 rounded-full text-sm font-extrabold shadow-lg animate-pulse">⭐ MOST POPULAR</span>
+        </div>
+        <div class="text-center mb-6 mt-4">
+          <span class="inline-block bg-green-500 text-white px-4 py-1 rounded-full text-sm font-extrabold mb-3">⭐ BEST</span>
+          <h3 class="text-2xl font-extrabold text-gray-900 mb-2">SELF LOVE PLUS B2GOF</h3>
+          <div class="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl p-4 mb-2">
+            <p class="text-lg font-extrabold mb-1">🎁 Buy 2, Get 1 FREE</p>
+            <p class="text-sm">On EVERY item!</p>
+          </div>
+          <p class="text-sm text-gray-600">3-Month Supply</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 mb-4 border-2 border-green-200">
+          <div class="mb-4 pb-4 border-b-2 border-gray-200">
+            <p class="text-xs font-extrabold text-red-600 mb-3 text-center uppercase">💳 You Pay For:</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between items-center"><span class="text-gray-700">Shampoo</span><span class="font-extrabold text-gray-900">2 bottles</span></div>
+              <div class="flex justify-between items-center"><span class="text-gray-700">Pomade</span><span class="font-extrabold text-gray-900">2 jars</span></div>
+              <div class="flex justify-between items-center"><span class="text-gray-700">Conditioner</span><span class="font-extrabold text-gray-900">2 bottles</span></div>
+            </div>
+          </div>
+          <div class="bg-green-50 rounded-lg p-3 border-2 border-green-300">
+            <p class="text-xs font-extrabold text-green-700 mb-3 text-center uppercase flex items-center justify-center"><span class="text-lg mr-1">🎉</span>But You Actually Get:</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between items-center"><span class="text-gray-700">Shampoo</span><div class="flex items-center space-x-2"><span class="font-extrabold text-gray-900">3 bottles</span><span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full font-extrabold">+1 FREE</span></div></div>
+              <div class="flex justify-between items-center"><span class="text-gray-700">Pomade</span><div class="flex items-center space-x-2"><span class="font-extrabold text-gray-900">3 jars</span><span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full font-extrabold">+1 FREE</span></div></div>
+              <div class="flex justify-between items-center"><span class="text-gray-700">Conditioner</span><div class="flex items-center space-x-2"><span class="font-extrabold text-gray-900">3 bottles</span><span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full font-extrabold">+1 FREE</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-100 rounded-xl p-4 mb-4 border-2 border-green-200">
+          <div class="text-center mb-3">
+            <p class="text-xs text-gray-600 mb-1">Total Price</p>
+            <div class="flex items-center justify-center gap-2"><span class="text-lg line-through text-gray-500">₦225,000</span><span class="text-4xl font-extrabold text-green-700">₦66,750</span></div>
+          </div>
+          <div class="text-center">
+            <p class="text-xs text-gray-600 mb-1">Just ₦22,250/month</p>
+            <p class="text-xs text-green-700 font-semibold">🌯 ₦741/day (less than a shawarma)</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-3 mb-4 text-center border-2 border-green-200">
+          <p class="text-xs text-gray-600 mb-1">You Save</p>
+          <p class="text-2xl font-extrabold text-green-600">₦31,500!</p>
+          <p class="text-xs text-green-600 font-semibold">(70% OFF!)</p>
+        </div>
+
+        <div class="text-center mb-6">
+          <p class="text-sm font-semibold text-gray-700 mb-1">Best For:</p>
+          <p class="text-xs text-gray-600">Serious results 💪</p>
+          <p class="text-xs text-gray-500 mt-1 italic">94% see results by Month 3</p>
+        </div>
+
+        <a href="?plan=3m#purchase" class="block w-full text-center bg-gradient-to-r from-green-500 to-emerald-500 text-white font-extrabold py-4 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">Select 3-Month Plan<p class="text-sm font-normal mt-1">₦66,750</p></a>
+        <p class="text-xs text-center text-gray-500 mt-3">SAVE ₦31,500</p>
+      </div>
+
+      <!-- Tier 3: FAMILY SAVES -->
+      <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border-2 border-purple-300 hover:scale-105 transition transform">
+        <div class="text-center mb-6">
+          <span class="inline-block bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-extrabold mb-3">💎 ULTIMATE</span>
+          <h3 class="text-2xl font-extrabold text-gray-900 mb-2">FAMILY SAVES</h3>
+          <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl p-4 mb-2">
+            <p class="text-lg font-extrabold mb-1">🎁 Buy 6, Get 4 FREE</p>
+            <p class="text-sm">On EVERY item!</p>
+          </div>
+          <p class="text-sm text-gray-600">10-Month Supply</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 mb-4 border-2 border-purple-200">
+          <div class="mb-4 pb-4 border-b-2 border-gray-200">
+            <p class="text-xs font-extrabold text-red-600 mb-3 text-center uppercase">💳 You Pay For:</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between items-center"><span class="text-gray-700">Shampoo</span><span class="font-extrabold text-gray-900">6 bottles</span></div>
+              <div class="flex justify-between items-center"><span class="text-gray-700">Pomade</span><span class="font-extrabold text-gray-900">6 jars</span></div>
+              <div class="flex justify-between items-center"><span class="text-gray-700">Conditioner</span><span class="font-extrabold text-gray-900">6 bottles</span></div>
+            </div>
+          </div>
+          <div class="bg-purple-50 rounded-lg p-3 border-2 border-purple-300">
+            <p class="text-xs font-extrabold text-purple-700 mb-3 text-center uppercase flex items-center justify-center"><span class="text-lg mr-1">🎉</span>But You Actually Get:</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between items-center"><span class="text-gray-700">Shampoo</span><div class="flex items-center space-x-2"><span class="font-extrabold text-gray-900">10 bottles</span><span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full font-extrabold">+4 FREE</span></div></div>
+              <div class="flex justify-between items-center"><span class="text-gray-700">Pomade</span><div class="flex items-center space-x-2"><span class="font-extrabold text-gray-900">10 jars</span><span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full font-extrabold">+4 FREE</span></div></div>
+              <div class="flex justify-between items-center"><span class="text-gray-700">Conditioner</span><div class="flex items-center space-x-2"><span class="font-extrabold text-gray-900">10 bottles</span><span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full font-extrabold">+4 FREE</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-purple-100 rounded-xl p-4 mb-4 border-2 border-purple-200">
+          <div class="text-center mb-3">
+            <p class="text-xs text-gray-600 mb-1">Total Price</p>
+            <div class="flex items-center justify-center gap-2"><span class="text-lg line-through text-gray-500">₦750,000</span><span class="text-4xl font-extrabold text-purple-700">₦215,750</span></div>
+          </div>
+          <div class="text-center">
+            <p class="text-xs text-gray-600 mb-1">Just ₦21,575/month</p>
+            <p class="text-xs text-purple-700 font-semibold">🌯 ₦719/day (CHEAPEST!)</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-3 mb-4 text-center border-2 border-purple-200">
+          <p class="text-xs text-gray-600 mb-1">You Save</p>
+          <p class="text-2xl font-extrabold text-green-600">₦111,750!!</p>
+          <p class="text-xs text-green-600 font-semibold">(71% OFF!)</p>
+        </div>
+
+        <div class="text-center mb-6">
+          <p class="text-sm font-semibold text-gray-700 mb-1">Best For:</p>
+          <p class="text-xs text-gray-600">Families/Extreme results</p>
+          <p class="text-xs text-gray-500 mt-1 italic">Share with family or long-term use</p>
+        </div>
+
+        <a href="?plan=10m#purchase" class="block w-full text-center bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-extrabold py-4 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">Select 10-Month Plan<p class="text-sm font-normal mt-1">₦215,750</p></a>
+        <p class="text-xs text-center text-gray-500 mt-3">SAVE ₦111,750</p>
+      </div>
+    </div>
+
+    <!-- Bottom reassurance -->
+    <div class="text-center mt-10">
+      <p class="text-sm text-gray-600 mb-4">🔒 90-Day Money-Back Guarantee • 💳 Pay on Delivery Available • 🚚 24-48hr Lagos Delivery</p>
+      <div class="inline-block bg-green-50 border-2 border-green-300 rounded-xl p-4">
+        <p class="text-xs font-extrabold text-green-800 mb-1">✨ Why the FREE items?</p>
+        <p class="text-xs text-gray-700">We prepare grandmother's formula in small batches. Buy more = less waste for us = we pass savings to you as FREE products. Everyone wins!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile stacked pricing cards -->
+  <section class="md:hidden max-w-6xl mx-auto px-4">
+    <div class="pricing-cards">
+      <article class="pricing-card">
+        <h4>😊 GOOD — SELF LOVE PLUS</h4>
+        <div class="price mb-2">₦32,750</div>
+        <ul class="text-sm text-gray-700 mb-3 list-disc pl-5">
+          <li>1 month</li>
+          <li>1 shampoo, 1 pomade, 1 conditioner</li>
+        </ul>
+        <a href="?plan=1m#purchase" class="plan-btn block w-full text-center font-extrabold rounded-xl border border-gray-300 text-gray-900 bg-white hover:bg-gray-50 transition shadow-sm">Select 1-Month Plan - ₦32,750</a>
+      </article>
+      <article class="pricing-card best">
+        <h4>⭐ BEST — SELF LOVE PLUS B2GOF</h4>
+        <div class="price mb-2">₦66,750</div>
+        <ul class="text-sm text-gray-700 mb-3 list-disc pl-5">
+          <li>3 months</li>
+          <li>3 shampoos, 3 pomades, 3 conditioners</li>
+        </ul>
+        <a href="?plan=3m#purchase" class="plan-btn block w-full text-center font-extrabold rounded-xl text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transition shadow-lg">Select 3-Month Plan - ₦66,750</a>
+        <div class="mt-2 save-badge">SAVE ₦31,500</div>
+      </article>
+      <article class="pricing-card">
+        <h4 class="text-purple-700">💎 ULTIMATE — FAMILY SAVES</h4>
+        <div class="price mb-2">₦215,750</div>
+        <ul class="text-sm text-gray-700 mb-3 list-disc pl-5">
+          <li>10 months</li>
+          <li>10 shampoos, 10 pomades, 10 conditioners</li>
+        </ul>
+        <a href="?plan=10m#purchase" class="plan-btn block w-full text-center font-extrabold rounded-xl text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 transition shadow-md">Select 10-Month Plan - ₦215,750</a>
+        <div class="mt-2 save-badge purple">SAVE ₦111,750!!</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-gradient-to-br from-blue-600 to-purple-700 py-16 my-12 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-4xl md:text-5xl font-extrabold text-center mb-4">Your Peace of Mind Is Our Priority</h3>
+      <p class="text-center text-blue-100 text-lg mb-12">Shop with confidence — your security is guaranteed</p>
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <article class="bg-white text-gray-900 rounded-2xl p-8 shadow-2xl hover-scale border-4 border-yellow-400" aria-labelledby="peace-bank">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg" aria-hidden="true">🏦</div>
+            <h4 id="peace-bank" class="text-2xl font-extrabold text-amber-700 mb-6">Bank Details</h4>
+            <div class="space-y-4">
+              <div><p class="text-xs text-gray-500 mb-1">Account Name</p><p class="text-lg font-extrabold">Fulani Hair Gro</p></div>
+              <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border-2 border-green-400">
+                <p class="text-xs text-gray-600 mb-2">Account Number</p>
+                <div class="flex items-center justify-between"><p class="text-3xl font-extrabold text-green-700 tracking-wider select-all">5633783114</p><button class="bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg transition ml-2 min-h-[44px] min-w-[44px]" aria-label="Copy account number (peace)"><i data-lucide="copy" class="w-4 h-4"></i></button></div>
+                <p class="hidden text-xs text-green-700 mt-1 font-semibold">Copied!</p>
+              </div>
+              <div><p class="text-xs text-gray-500 mb-1">Bank Name</p><p class="text-lg font-extrabold">Moniepoint</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="bg-white text-gray-900 rounded-2xl p-8 shadow-2xl hover-scale">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg" aria-hidden="true">📱</div>
+            <h4 class="text-2xl font-extrabold text-green-700 mb-6">Proof of Payment</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">After payment, please share proof via WhatsApp to:</p>
+            <a href="https://wa.me/2348101594734" target="_blank" rel="noopener" class="inline-block bg-green-600 hover:bg-green-700 text-white font-extrabold px-6 py-3 rounded-xl transition text-xl shadow-lg min-h-[44px]" aria-label="Open WhatsApp support">08101594734</a>
+          </div>
+        </article>
+        <article class="bg-white text-gray-900 rounded-2xl p-8 shadow-2xl hover-scale">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg" aria-hidden="true"><i data-lucide="truck" class="w-8 h-8 text-white"></i></div>
+            <h4 class="text-2xl font-extrabold text-blue-700 mb-6">Fast Delivery</h4>
+            <p class="text-gray-700">Expect your order within</p>
+            <p class="text-4xl font-extrabold text-green-600 my-3">24–48hrs</p>
+            <p class="text-sm text-gray-500">Express nationwide delivery</p>
+          </div>
+        </article>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+          <div class="flex items-start space-x-3"><i data-lucide="shield" class="w-8 h-8 text-green-300 flex-shrink-0"></i><div><h4 class="text-lg font-extrabold text-white mb-2">Safe & Secure Shopping</h4><p class="text-blue-100 text-sm">Payments go directly to a verified business account</p></div></div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+          <div class="flex items-start space-x-3"><i data-lucide="check-circle" class="w-8 h-8 text-green-300 flex-shrink-0"></i><div><h4 class="text-lg font-extrabold text-white mb-2">Dedicated Support Team</h4><p class="text-blue-100 text-sm">We're available before, during, and after your purchase</p></div></div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+          <div class="flex items-start space-x-3"><svg class="w-8 h-8 text-purple-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg><div><h4 class="text-lg font-extrabold text-white mb-2">Privacy Protection</h4><p class="text-blue-100 text-sm">Your personal information is kept confidential and secure</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <div class="bg-white rounded-3xl shadow-xl p-8">
+      <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-8">Why This Treatment Works for You</h3>
+      <div class="flex justify-center space-x-2 md:space-x-4 mb-8 border-b-2 border-gray-200 overflow-x-auto no-scrollbar">
+        <button data-tab="benefits" class="tab-btn px-4 md:px-8 py-3 font-semibold transition whitespace-nowrap text-amber-600 border-b-4 border-amber-600" aria-controls="tab-benefits" aria-selected="true">✨ Benefits</button>
+        <button data-tab="science" class="tab-btn px-4 md:px-8 py-3 font-semibold transition whitespace-nowrap text-gray-600 hover:text-gray-900" aria-controls="tab-science" aria-selected="false">🔬 Science</button>
+        <button data-tab="usage" class="tab-btn px-4 md:px-8 py-3 font-semibold transition whitespace-nowrap text-gray-600 hover:text-gray-900" aria-controls="tab-usage" aria-selected="false">📋 How to Use</button>
+      </div>
+      <div id="tab-benefits" role="tabpanel" class="tab-panel grid md:grid-cols-3 gap-6">
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-2xl border-2 border-amber-200 shadow-md hover:shadow-xl transition">
+          <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mb-4" aria-hidden="true">🧴</div>
+          <h4 class="font-extrabold text-xl mb-3">Scalp Soothing</h4>
+          <p class="text-gray-700">Gentle sulfate-free formula calms irritation and reduces flaking in 2–3 weeks.</p>
+        </div>
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl border-2 border-green-200 shadow-md hover:shadow-xl transition">
+          <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4" aria-hidden="true">🛡️</div>
+          <h4 class="font-extrabold text-xl mb-3">DHT Blocking</h4>
+          <p class="text-gray-700">Natural DHT modulation targets the root cause of androgenic alopecia.</p>
+        </div>
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200 shadow-md hover:shadow-xl transition">
+          <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4" aria-hidden="true">📅</div>
+          <h4 class="font-extrabold text-xl mb-3">3-Month Protocol</h4>
+          <p class="text-gray-700">Consistent treatment combo addresses your specific hair loss pattern.</p>
+        </div>
+      </div>
+      <div id="tab-science" role="tabpanel" class="tab-panel hidden">
+        <div class="max-w-3xl mx-auto">
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl mb-6 border-2 border-purple-200">
+            <div class="flex items-start space-x-4 mb-4">
+              <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">🔬</div>
+              <div>
+                <h4 class="font-extrabold text-2xl mb-3">Your Diagnosis: Androgenic Alopecia</h4>
+                <p class="text-gray-700 mb-4 leading-relaxed">Genetic hair loss pattern where hair follicles become sensitive to DHT hormone, causing gradual thinning.</p>
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl border-l-4 border-green-500 shadow-md">
+              <p class="text-sm font-extrabold text-green-800 mb-2">✓ Treatment Approach:</p>
+              <p class="text-gray-700">Daily DHT modulation + scalp optimization creates the best environment for regrowth.</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div class="bg-white p-4 rounded-xl shadow-md border-2 border-amber-200"><p class="text-3xl mb-2" aria-hidden="true">🏛️</p><p class="text-sm font-extrabold">400+ Years</p><p class="text-xs text-gray-600">Proven Heritage</p></div>
+            <div class="bg-white p-4 rounded-xl shadow-md border-2 border-green-200"><p class="text-3xl mb-2" aria-hidden="true">🌿</p><p class="text-sm font-extrabold">Fulani Hair Gro</p><p class="text-xs text-gray-600">Traditional Formula</p></div>
+            <div class="bg-white p-4 rounded-xl shadow-md border-2 border-blue-200"><p class="text-3xl mb-2" aria-hidden="true">🔬</p><p class="text-sm font-extrabold">Research Backed</p><p class="text-xs text-gray-600">Trichology Tested</p></div>
+          </div>
+        </div>
+      </div>
+      <div id="tab-usage" role="tabpanel" class="tab-panel hidden">
+        <div class="max-w-3xl mx-auto space-y-4">
+          <div class="flex items-start space-x-4 bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-2xl border-2 border-blue-300 shadow-md">
+            <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-extrabold text-xl flex-shrink-0" aria-hidden="true">1</div>
+            <div class="flex-1">
+              <div class="flex items-center space-x-2 mb-2"><span class="text-2xl" aria-hidden="true">🧴</span><h4 class="font-extrabold text-lg">Shampoo (every 2 weeks)</h4></div>
+              <p class="text-gray-700">Wash scalp thoroughly to clear issues before pomade application. Critical first step. Space shampoos roughly every 14 days to avoid over‑cleansing.</p>
+              <p class="text-xs text-blue-600 mt-2 font-semibold">⚠️ CRITICAL: Must be done before pomade</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4 bg-gradient-to-r from-amber-50 to-amber-100 p-6 rounded-2xl border-2 border-amber-300 shadow-md">
+            <div class="bg-amber-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-extrabold text-xl flex-shrink-0" aria-hidden="true">2</div>
+            <div class="flex-1">
+              <div class="flex items-center space-x-2 mb-2"><span class="text-2xl" aria-hidden="true">💆‍♀️</span><h4 class="font-extrabold text-lg">Pomade (1–2× daily)</h4></div>
+              <p class="text-gray-700">Apply directly to problem areas. Massage gently for 1–2 minutes for better absorption.</p>
+              <div class="mt-3 flex items-center space-x-2 bg-white p-2 rounded-lg"><i data-lucide="clock" class="w-4 h-4 text-amber-600"></i><span class="text-xs text-gray-600">Morning & Night for best results</span></div>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4 bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-2xl border-2 border-purple-300 shadow-md">
+            <div class="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-extrabold text-xl flex-shrink-0" aria-hidden="true">3</div>
+            <div class="flex-1">
+              <div class="flex items-center space-x-2 mb-2"><span class="text-2xl" aria-hidden="true">✨</span><h4 class="font-extrabold text-lg">Conditioner — Required for Best Results</h4></div>
+              <p class="text-gray-700">Conditioner is an essential part of your treatment plan. It helps strengthen your strands, reduce breakage, and lock in moisture — ensuring your scalp treatment works effectively.</p>
+              <p class="text-xs text-purple-700 mt-2 font-extrabold">💡 This step is not optional. It supports your primary regrowth goal and protects your progress.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-3xl mx-auto mt-10 space-y-4">
+        <details class="bg-white p-6 rounded-2xl shadow-md border-2 border-gray-200">
+          <summary class="font-extrabold text-gray-900 cursor-pointer flex items-center justify-between"><span>Payment Options</span><span class="text-amber-600 text-xl">+</span></summary>
+          <div class="mt-4 text-gray-700"><p>- Bank Transfer: Moniepoint (Account: 5633783114, Name: Fulani Hair Gro)</p><p>- Pay on Delivery: 3–5 days (inspect before paying)</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl md:text-4xl font-extrabold mb-3">Real Results from Nigerian Women</h3>
+      <p class="text-gray-600 text-lg">Over 10,000 women have transformed their hair with Fulani Hair Gro</p>
+      <div class="flex items-center justify-center space-x-6 mt-4">
+        <div class="text-center"><p class="text-4xl font-extrabold text-green-600">94%</p><p class="text-sm text-gray-600">See Results</p></div>
+        <div class="text-center"><p class="text-4xl font-extrabold text-blue-600">87%</p><p class="text-sm text-gray-600">Reorder Rate</p></div>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <article class="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-200 hover:border-amber-400 transition">
+        <div class="flex items-center mb-4"><div class="w-14 h-14 bg-gradient-to-br from-amber-200 to-amber-300 rounded-full flex items-center justify-center text-3xl mr-3 border-4 border-white shadow-md" aria-hidden="true">👩🏾</div><div><p class="font-extrabold">Chioma O.</p><p class="text-xs text-gray-600">Lagos</p><p class="text-xs text-green-600 font-semibold flex items-center mt-1"><i data-lucide="check-circle" class="w-3 h-3 mr-1"></i> Verified Buyer</p></div></div>
+        <div class="flex mb-3 text-yellow-500" aria-hidden="true"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+        <p class="text-gray-700">“My edges were GONE from years of frontal wigs. After 3 months of Fulani Hair Gro, I have baby hairs! I was skeptical about pay-on-delivery but I'm so glad I tried it.”</p>
+      </article>
+      <article class="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-200 hover:border-amber-400 transition">
+        <div class="flex items-center mb-4"><div class="w-14 h-14 bg-gradient-to-br from-amber-200 to-amber-300 rounded-full flex items-center justify-center text-3xl mr-3 border-4 border-white shadow-md" aria-hidden="true">👩🏿</div><div><p class="font-extrabold">Funmi A.</p><p class="text-xs text-gray-600">Abuja</p><p class="text-xs text-green-600 font-semibold flex items-center mt-1"><i data-lucide="check-circle" class="w-3 h-3 mr-1"></i> Verified Buyer</p></div></div>
+        <div class="flex mb-3 text-yellow-500" aria-hidden="true"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+        <p class="text-gray-700">“Postpartum hair loss had me crying. This actually WORKED. My hair is thicker now than before pregnancy. Worth every naira.”</p>
+      </article>
+      <article class="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-200 hover:border-amber-400 transition">
+        <div class="flex items-center mb-4"><div class="w-14 h-14 bg-gradient-to-br from-amber-200 to-amber-300 rounded-full flex items-center justify-center text-3xl mr-3 border-4 border-white shadow-md" aria-hidden="true">👩🏾‍🦱</div><div><p class="font-extrabold">Amaka N.</p><p class="text-xs text-gray-600">Port Harcourt</p><p class="text-xs text-green-600 font-semibold flex items-center mt-1"><i data-lucide="check-circle" class="w-3 h-3 mr-1"></i> Verified Buyer</p></div></div>
+        <div class="flex mb-3 text-yellow-500" aria-hidden="true"><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+        <p class="text-gray-700">“I ordered with pay-on-delivery expecting to reject it. But when I saw the quality packaging and tried it for 2 weeks, I ordered 3 more sets!”</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 py-16 my-12">
+    <div class="max-w-4xl mx-auto px-4 text-center text-white">
+      <h3 class="text-4xl md:text-5xl font-extrabold mb-4">Ready to Start Your Hair Transformation?</h3>
+      <p class="text-xl text-amber-100 mb-8">Only <span class="font-extrabold text-white text-2xl"><span id="stock-count-bottom">23</span> sets</span> left for Lagos delivery this week</p>
+      <div class="bg-white rounded-3xl p-8 md:p-10 shadow-2xl max-w-lg mx-auto text-gray-900 hover-rise">
+        <div class="mb-6">
+          <div class="flex items-center justify-center space-x-3 mb-2"><span class="text-5xl font-extrabold">₦66,750</span><div class="text-left"><span class="block text-xl text-gray-200 line-through">₦98,250</span><span class="block text-sm text-green-800 font-extrabold">SAVE ₦31,500</span></div></div>
+          <p class="text-sm text-gray-200">3-Month Intensive • Shampoo + Pomade + Conditioner</p>
+        </div>
+        <div class="mb-4 bg-gradient-to-br from-green-100 to-emerald-100 border-4 border-green-500 rounded-2xl p-6 shadow-xl hover-rise">
+          <div class="flex items-center justify-between mb-3"><div class="flex items-center space-x-2"><span class="text-3xl">⚡</span><span class="font-extrabold text-green-900 text-lg">FASTEST DELIVERY</span></div><span class="bg-red-500 text-white text-xs px-3 py-1 rounded-full font-extrabold animate-pulse">TOP CHOICE</span></div>
+          <h4 class="text-xl font-extrabold mb-4 text-center">Pay Now — Get it in 24–48hrs!</h4>
+          <div class="bg-white rounded-xl p-4 mb-4 border-2 border-green-400 shadow-md">
+            <p class="text-sm font-extrabold text-gray-700 mb-3 flex items-center"><i data-lucide="shield" class="w-4 h-4 text-green-600 mr-2"></i>Bank Transfer:</p>
+            <div class="space-y-2 text-sm mb-3"><div class="flex justify-between"><span class="text-gray-600">Bank:</span><span class="font-extrabold">Moniepoint</span></div><div class="flex justify-between"><span class="text-gray-600">Account:</span><span class="font-extrabold">Fulani Hair Gro</span></div></div>
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg border-2 border-green-400">
+              <p class="text-xs text-gray-600 mb-2">Account Number:</p>
+              <div class="flex items-center justify-between"><span class="text-3xl font-extrabold text-green-700 tracking-wider select-all">5633783114</span><button class="bg-green-600 text-white p-2 rounded-lg hover:bg-green-700 transition min-h-[44px] min-w-[44px]" aria-label="Copy account number (footer)"><i data-lucide="copy" class="w-5 h-5"></i></button></div>
+              <p class="hidden text-xs text-green-600 mt-1 font-extrabold">✓ Copied!</p>
+            </div>
+            <div class="mini-protect">⚠️ Cash or transfers to a delivery agent void your guarantee and put you at risk of counterfeit products. Protect your ₦66,750 — transfer only to our verified company account and keep your WhatsApp receipt.</div>
+          </div>
+          <div class="bg-amber-50 border-2 border-amber-400 rounded-xl p-4 mb-4 text-center"><p class="text-sm font-extrabold text-amber-900 mb-3">📱 Send Payment Proof:</p><a href="https://wa.me/2348101594734" target="_blank" rel="noopener" class="inline-block bg-green-600 hover:bg-green-700 text-white font-extrabold px-8 py-3 rounded-xl text-lg shadow-lg transition min-h-[44px]">WhatsApp: 08101594734</a><p class="text-xs text-amber-700 mt-2">Ships same day • Arrives in 24–48hrs</p></div>
+          <ul class="space-y-2 text-sm text-green-900"><li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>90% delivery fulfillment rate</li><li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>FREE delivery when you pay today</li></ul>
+        </div>
+        <div class="text-center mb-4"><p class="text-sm text-gray-600 font-semibold">OR</p></div>
+        <div class="mb-6 bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-2xl p-5 shadow-md hover-rise">
+          <div class="flex items-center justify-between mb-3"><div class="flex items-center space-x-2"><i data-lucide="truck" class="w-5 h-5 text-blue-700"></i><span class="font-extrabold text-blue-800">STANDARD DELIVERY</span></div><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-extrabold">3–5 DAYS</span></div>
+          <h4 class="text-lg font-extrabold mb-3 text-center">Pay on Delivery (Secure Process)</h4>
+          <button class="btn-secondary w-full mb-3" onclick="reservePayOnDelivery()">📱 Reserve via WhatsApp — Secure Pay on Delivery</button>
+          <ul class="space-y-2 text-sm text-blue-900"><li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>See sealed package, then transfer to company account</li><li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>Secure bank transfer while agent waits</li><li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>Delivery in 3–5 working days</li></ul>
+        </div>
+        <ul class="space-y-2 text-sm text-left text-gray-700"><li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>See sealed package, then transfer to company account</li><li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>Sealed products or refuse FREE</li><li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>WhatsApp support: <a href="https://wa.me/2348101594734" target="_blank" rel="noopener" class="font-extrabold text-blue-700 underline-offset-2 hover:underline ml-1">08101594734</a></li></ul>
+        <p class="mt-8 text-amber-100">📧 By reserving, you'll receive email reminders to stay consistent with your treatment plan.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Brand Story: placed just before FAQ to rebuild trust -->
+  <section class="max-w-4xl mx-auto px-4 my-12">
+    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 shadow-xl border-2 border-amber-300">
+      <div class="text-center mb-8">
+        <h3 class="text-3xl font-extrabold text-gray-900 mb-2">Get to Know Me</h3>
+        <p class="text-lg text-gray-700">A letter from Hajara</p>
+      </div>
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 mb-8">
+        <div class="w-24 h-24 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-4xl flex-shrink-0 border-4 border-white shadow-lg">👩🏾</div>
+        <div class="text-center md:text-left">
+          <p class="font-extrabold text-2xl text-gray-900">Hajara Nasir</p>
+          <p class="text-sm text-gray-600 mb-1">Founder & Formulator</p>
+          <p class="text-xs text-amber-700 font-semibold">Fulani Heritage • Maiduguri, Nigeria</p>
+        </div>
+      </div>
+      <div class="space-y-5 text-gray-800 leading-relaxed">
+        <p>Dear Sister,</p>
+        <p>If you’re reading this, it means you care about your hair enough to keep searching. I know that feeling. At 29, after my second baby, I looked in the mirror and saw edges that were no longer there. My dandruff was so thick that if I scratched, sometimes I saw a little blood. My hair felt limp, coarse, and lifeless. I tried everything—premium shampoos, treatments from a trichologist, diet changes, vitamins, protective styles. I waited and prayed. Nothing worked.</p>
+        <p>By 33, I began to make peace with the idea that maybe this was my life now—scarves, low confidence, and avoidance. Then my grandfather passed, and I traveled to Maiduguri for the burial. We buried him with the dignity he deserved, and I stayed with my grandmother—the one person who never rushes her love.</p>
+        <p>On the second morning, she woke me before sunrise, handed me a small bottle of shampoo and a jar of pomade, and said, “Use these once a week. Oil your scalp gently. Your hair will come back.” After all the science and the money and the salons, how could this simple thing be the answer? But something in her voice made me obedient. I took them home.</p>
+        <p>The first week, I followed her instructions exactly. The second week, the itching calmed. The flakes reduced. By the third week, I saw something I hadn’t seen in years—tiny baby hairs around my edges. I cried quietly in my bathroom. A burden was lifting.</p>
+        <p>People noticed. I went back to Maiduguri to learn properly. My grandmother sat with me and shared what her mother taught her, and her mother before that—a <span class="font-extrabold text-green-700">400‑year‑old Fulani family recipe</span>, prepared with patience and reverence. She blessed me to share it “so women will not suffer when help is within reach.”</p>
+        <p>I called my trichologist friend. Together, we refined the routine into a simple protocol that respects both culture and science. That is how Fulani Hair Gro was born—not in a boardroom, but in a family courtyard, with prayers, tradition, and a refusal to accept hopelessness.</p>
+        <p>If you are where I was—edges gone, confidence shaking—please know this: you are not broken. Your scalp can be reset, your strands can strengthen, and your hair can remember its own story. It takes consistency, the right order (cleanse → treat → seal), and a little faith. It’s not instant. But it is possible.</p>
+        <div class="bg-white rounded-xl p-5 border-2 border-green-200">
+          <p class="font-extrabold text-green-800 mb-2">My promise to you</p>
+          <ul class="list-disc pl-5 text-sm space-y-1">
+            <li>We stand behind what we make. If after 90 days of consistent use you don’t see visible progress, message us on WhatsApp. We’ll adjust your plan or refund you.</li>
+            <li>No fake scarcity or pressure. Your decision is yours; we will support you either way.</li>
+            <li>We’ll be here after you buy—because a journey needs companionship, not just a receipt.</li>
+          </ul>
+        </div>
+        <p>If you’re ready, start with the plan we recommend for you today. Pay on delivery if that makes you feel safer. And if you’re not ready yet, save this page and come back when your heart says “yes.”</p>
+        <p>I was you. Now I get to be the woman who tells you, “It can change.”</p>
+        <div class="pt-4">
+          <p class="font-extrabold">— Hajara Nasir</p>
+          <p class="text-sm text-gray-600">Founder, Fulani Hair Gro</p>
+        </div>
+        <div class="text-center md:text-right pt-2 border-t border-amber-200">
+          <p class="text-xs text-amber-700 font-semibold">Still have questions? Check the FAQ below.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final push block moved here: just before FAQ -->
+  <section class="max-w-4xl mx-auto px-4 mb-12">
+    <div class="bg-gradient-to-br from-amber-500 to-orange-600 text-white rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center">
+        <div class="mb-4"><div class="inline-block bg-white text-orange-600 px-6 py-2 rounded-full font-extrabold text-base shadow-xl">⏰ Secure Your Spot in This Week's Batch</div></div>
+        <h3 class="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">You're At A Crossroads Right Now</h3>
+        <div class="grid md:grid-cols-2 gap-6 mb-8 text-left text-sm">
+          <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border-2 border-white/40">
+            <div class="text-3xl mb-2">✅</div>
+            <h4 class="text-lg font-extrabold mb-2">You Order Today</h4>
+            <ul class="space-y-2">
+              <li>Ships within 4 hours (priority)</li>
+              <li>Arrives in 24–48hrs</li>
+              <li>Start treatment this weekend</li>
+              <li>See results in 3–6 weeks</li>
+              <li>Transform in 3 months</li>
+            </ul>
+          </div>
+          <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border-2 border-red-400/60">
+            <div class="text-3xl mb-2">⏸️</div>
+            <h4 class="text-lg font-extrabold mb-2">You "Think About It"</h4>
+            <ul class="space-y-2 text-white/90">
+              <li>Batch sells out (today/tomorrow)</li>
+              <li>Wait 9 days for next batch</li>
+              <li>More hair falls during wait</li>
+              <li>Life gets busy, you forget</li>
+              <li>6 months pass, nothing changes</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-xs text-white/90">“I wish I started sooner” — the most common message we get after results.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <h3 class="text-3xl font-extrabold text-center mb-10">Frequently Asked Questions</h3>
+    <div class="space-y-4">
+      <details class="bg-white p-6 rounded-2xl shadow-md border-2 border-gray-200 hover:border-amber-400 transition"><summary class="font-extrabold cursor-pointer flex items-center justify-between"><span>How long until I see results?</span><span class="text-amber-600 text-xl">+</span></summary><p class="mt-4 text-gray-700">Most women notice reduced shedding in 2–3 weeks. New growth typically visible at 6–8 weeks. Full results at 3–4 months with consistent use.</p></details>
+      <details class="bg-white p-6 rounded-2xl shadow-md border-2 border-gray-200 hover:border-amber-400 transition"><summary class="font-extrabold cursor-pointer flex items-center justify-between"><span>Why pay on delivery?</span><span class="text-amber-600 text-xl">+</span></summary><p class="mt-4 text-gray-700">We want you to feel 100% confident. Inspect the sealed products when they arrive. If anything seems wrong, refuse delivery at no cost.</p></details>
+      <details class="bg-white p-6 rounded-2xl shadow-md border-2 border-gray-200 hover:border-amber-400 transition"><summary class="font-extrabold cursor-pointer flex items-center justify-between"><span>Is it safe to use daily?</span><span class="text-amber-600 text-xl">+</span></summary><p class="mt-4 text-gray-700">Yes! The formula is gentle enough for daily pomade use. Shampoo 2–3x per week as directed to avoid over-cleansing.</p></details>
+      <details class="bg-white p-6 rounded-2xl shadow-md border-2 border-gray-200 hover:border-amber-400 transition"><summary class="font-extrabold cursor-pointer flex items-center justify-between"><span>Can I use with other hair products?</span><span class="text-amber-600 text-xl">+</span></summary><p class="mt-4 text-gray-700">Yes, but for best results during your 3-month protocol, minimize other treatments. You can resume your regular routine once you see results.</p></details>
+      <details class="bg-white p-6 rounded-2xl shadow-md border-2 border-gray-200 hover:border-amber-400 transition"><summary class="font-extrabold cursor-pointer flex items-center justify-between"><span>What if it doesn't work for me?</span><span class="text-amber-600 text-xl">+</span></summary><p class="mt-4 text-gray-700">While 94% of users see results, hair growth depends on consistency. Follow the protocol exactly for 3 months. Our support team is here to help you succeed.</p></details>
+    </div>
+  </section>
+  <!-- Contact Trust Section (before footer) -->
+  <section class="contact-trust-section" aria-labelledby="contact-trust-heading">
+    <h3 id="contact-trust-heading" class="text-xl md:text-2xl font-extrabold text-green-800">🇳🇬 We're a Real Nigerian Business in Maiduguri</h3>
+    <div class="contact-trust-grid">
+      <div class="item">
+        <div class="text-3xl mb-2">📞</div>
+        <a href="tel:+2348101594734">0810 159 4734</a>
+        <p class="text-sm text-gray-600 mt-1">Call Us Anytime</p>
+      </div>
+      <div class="item">
+        <div class="text-3xl mb-2">💬</div>
+        <a href="https://wa.me/2348101594734" target="_blank" rel="noopener">WhatsApp Chat</a>
+        <p class="text-sm text-gray-600 mt-1">Instant Response</p>
+      </div>
+      <div class="item">
+        <div class="text-3xl mb-2">📍</div>
+        <p class="font-bold text-green-800">Baga Road</p>
+        <p class="text-sm text-gray-600">Maiduguri, Nigeria</p>
+      </div>
+    </div>
+    <a class="btn-primary inline-block" href="https://wa.me/2348101594734?text=Hi,%20I%20have%20questions%20about%20the%20hair%20regrowth%20plan" target="_blank" rel="noopener">💬 Message Us on WhatsApp Now</a>
+    <p class="text-gray-500 text-sm mt-3">⏰ Available Mon–Sat, 9AM–6PM (WAT)</p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="/shipping-policy">Shipping & Delivery</a></li>
+          <li><a href="/refund-policy">90-Day Guarantee</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/disclaimer">Medical Disclaimer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="https://wa.me/2348101594734" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+        </div>
+        <p class="address">📍 Lagos, Nigeria<br/>📧 contact@fulanihairgro.com<br/>📞 WhatsApp: 08101594734</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Fulani Hair Gro • CAC Registration: [Number] • 400+ Years of Heritage</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => { if (window.lucide && typeof window.lucide.createIcons === 'function') { window.lucide.createIcons(); } });
+    (function initCountdown() {
+      if (window.FHG_STOCK_OVERRIDE) return; // guard: override with new stock system
+      var upper=23, lower=15, count=upper, total=50;
+      var elTop=document.getElementById('stock-count');
+      var elBottom=document.getElementById('stock-count-bottom');
+      var elLeftText=document.getElementById('stock-left-text');
+      var elTotal=document.getElementById('stock-total');
+      var elBar=document.getElementById('stock-bar');
+      function apply(){
+        if (elTop) elTop.textContent = String(count);
+        if (elBottom) elBottom.textContent = String(count);
+        if (elLeftText) elLeftText.textContent = String(count);
+        if (elTotal) elTotal.textContent = String(total);
+        if (elBar) {
+          var pct = Math.max(0, Math.min(100, Math.round((count/total)*100)));
+          elBar.style.width = pct + '%';
+        }
+      }
+      function update(){ if(count>lower) count--; apply(); }
+      apply();
+      setInterval(update, 300000);
+    })();
+    (function copyPrimary(){ var btn=document.getElementById('copy-btn'); var feedback=document.getElementById('copy-feedback'); var acct=document.getElementById('account-number'); if(!btn||!acct) return; btn.addEventListener('click', function(){ var val=(acct.textContent||'5633783114').trim(); navigator.clipboard.writeText(val).then(function(){ if(feedback){ feedback.classList.remove('hidden'); setTimeout(function(){ feedback.classList.add('hidden'); }, 2000);} btn.innerHTML='<i data-lucide="check" class="w-5 h-5"></i>'; if(window.lucide) window.lucide.createIcons(); setTimeout(function(){ btn.innerHTML='<i data-lucide="copy" class="w-5 h-5"></i>'; if(window.lucide) window.lucide.createIcons(); }, 1200); }); }); })();
+    (function bindAllCopyButtons(){ document.querySelectorAll('button[aria-label^="Copy account number"]').forEach(function(btn){ btn.addEventListener('click', function(){ navigator.clipboard.writeText('5633783114').then(function(){ btn.innerHTML='<i data-lucide="check" class="w-4 h-4"></i>'; if(window.lucide) window.lucide.createIcons(); setTimeout(function(){ btn.innerHTML='<i data-lucide="copy" class="w-4 h-4"></i>'; if(window.lucide) window.lucide.createIcons(); }, 1200); }); }); }); })();
+    (function tabs(){ var buttons=document.querySelectorAll('.tab-btn'); var panels=document.querySelectorAll('.tab-panel'); function activate(id){ panels.forEach(function(p){ if(p.id==='tab-'+id){ p.classList.remove('hidden'); } else { p.classList.add('hidden'); } }); buttons.forEach(function(b){ var active=b.getAttribute('data-tab')===id; b.setAttribute('aria-selected', active?'true':'false'); if(active){ b.classList.add('text-amber-600','border-b-4','border-amber-600'); b.classList.remove('text-gray-600','hover:text-gray-900'); } else { b.classList.remove('text-amber-600','border-b-4','border-amber-600'); b.classList.add('text-gray-600','hover:text-gray-900'); } }); } buttons.forEach(function(btn){ btn.addEventListener('click', function(){ var id=btn.getAttribute('data-tab'); activate(id); }); }); activate('benefits'); })();
+
+    // Secure Pay-on-Delivery WhatsApp reservation
+    function reservePayOnDelivery() {
+      const message = encodeURIComponent(
+        `Hi! I'd like to reserve my 3-month Fulani Hair Gro supply with SECURE Pay-on-Delivery.\n\n📦 Package: 3 Shampoos + 3 Pomades + 3 Conditioners (Buy 2 Get 1 FREE)\n💰 Amount: ₦66,750\n\nI understand the secure process:\n✅ I'll inspect the sealed package on arrival\n✅ Transfer ₦66,750 to Moniepoint (5633783114)\n✅ Send payment proof to company + agent WhatsApp\n✅ Agent releases package after confirmation\n\nPlease confirm my reservation!`
+      );
+      const whatsappURL = `https://wa.me/2348101594734?text=${message}`;
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
+  <!-- WhatsApp Floating Button -->
+  <a 
+    href="https://wa.me/2348101594734?text=Hi,%20I%20would%20love%20to%20discuss%20my%20hair%20regrowth%20plan" 
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp-float"
+    aria-label="Chat on WhatsApp"
+  >
+    <svg class="w-7 h-7" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+
+</body>
+<script>
+  // Analytics helper
+  function trackEvent(name, data = {}) {
+    try { if (typeof gtag !== 'undefined') { gtag('event', name, data); } } catch (e) {}
+    console.log('[event]', name, data);
+  }
+
+  // Initialize lucide icons
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.lucide && lucide.createIcons) lucide.createIcons();
+
+    // Copy account number
+    const copyBtn = document.getElementById('copy-btn');
+    const copyTarget = document.getElementById('account-number');
+    const feedback = document.getElementById('copy-feedback');
+    if (copyBtn && copyTarget) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(copyTarget.textContent.trim());
+          if (feedback) { feedback.classList.remove('hidden'); setTimeout(()=>feedback.classList.add('hidden'), 2000); }
+          trackEvent('copy_account');
+        } catch(e) { alert('Could not copy'); }
+      });
+    }
+
+    // Scarcity counters (legacy) — disabled by override
+    // Removed: legacy random stock changes that conflicted with single source of truth
+
+    // Per-day price
+    const perDayEls = document.querySelectorAll('#per-day');
+    const daily = Math.floor(66750 / 90); // ₦741/day
+    perDayEls.forEach(el => el.textContent = `₦${daily}/day`);
+
+    // Family Saves modal
+    const openBtn = document.getElementById('family-saves-learn');
+    const modal = document.getElementById('family-modal');
+    const closeBtn = document.getElementById('family-modal-close');
+    function openModal(){ if (modal){ modal.classList.remove('hidden'); document.body.classList.add('overflow-hidden'); trackEvent('family_saves_open'); } }
+    function closeModal(){ if (modal){ modal.classList.add('hidden'); document.body.classList.remove('overflow-hidden'); } }
+    if (openBtn) openBtn.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); });
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (modal) modal.addEventListener('click', (e)=>{ if (e.target === modal) closeModal(); });
+    // Festive Gift Bonus: dynamic totals and unlocks
+    (function festiveBonus(){
+      const BASE = 28000;
+      const FESTIVE = 19000;
+      const totalEl = document.getElementById('bonus-total');
+      const condEl = document.getElementById('bonus-condition');
+      const festiveItems = Array.from(document.querySelectorAll('#festive-bonus .festive-item'));
+      const festiveLocks = Array.from(document.querySelectorAll('#festive-bonus .festive-lock'));
+      if (!totalEl || !condEl) return;
+
+      function setMethod(method){
+        try{ localStorage.setItem('fhg-payment-method', method); }catch(e){}
+        update();
+      }
+      function getMethod(){
+        const url = new URL(window.location.href);
+        const p = url.searchParams.get('payment');
+        if (p === 'pre') return 'PayBeforeDelivery';
+        if (p === 'pod') return 'PayOnDelivery';
+        try {
+          const s = localStorage.getItem('fhg-payment-method');
+          if (s) return s;
+        } catch(e){}
+        // Default to PayBeforeDelivery during promo to show full bonus value
+        return 'PayBeforeDelivery';
+      }
+      function naira(n){ return '₦' + n.toLocaleString(); }
+      function update(){
+        const method = getMethod();
+        const isPBD = method === 'PayBeforeDelivery';
+        const total = isPBD ? (BASE + FESTIVE) : BASE;
+        totalEl.textContent = naira(total);
+        // Always state the rule explicitly (no alternative phrasing)
+        condEl.textContent = 'FREE Only For Customers who pay before Delivery';
+        // Keep tiles fully sharp; no opacity/blur changes
+        festiveItems.forEach(el => {
+          el.style.opacity = '1';
+          el.style.filter = 'none';
+          el.style.borderStyle = isPBD ? 'solid' : 'dashed';
+        });
+        festiveLocks.forEach(el => { el.style.display = isPBD ? 'none' : 'inline-block'; });
+        // Toggle lock ribbons
+        document.querySelectorAll('.festive-ribbon').forEach((rb) => {
+          if (rb instanceof HTMLElement) rb.style.display = isPBD ? 'none' : 'inline-block';
+        });
+        // Update pills
+        const unlockPill = document.getElementById('unlock-pill');
+        const totalPill = document.getElementById('total-pill');
+        if (unlockPill) {
+          unlockPill.classList.remove('bg-red-600','bg-green-600');
+          if (isPBD) {
+            unlockPill.classList.add('bg-green-600');
+            unlockPill.innerHTML = '<span aria-hidden="true">✅</span><span>All gifts UNLOCKED</span>';
+          } else {
+            unlockPill.classList.add('bg-red-600');
+            unlockPill.innerHTML = '<span aria-hidden="true">🔒</span><span>Gifts unlock only when you Pay Before Delivery</span>';
+          }
+        }
+        if (totalPill) {
+          totalPill.classList.remove('bg-red-600','bg-green-600');
+          if (isPBD) {
+            totalPill.classList.add('bg-green-600');
+            totalPill.innerHTML = '<span aria-hidden="true">✅</span><span>ALL GIFTS UNLOCKED</span>';
+          } else {
+            totalPill.classList.add('bg-red-600');
+            totalPill.innerHTML = '<span aria-hidden="true">🔒</span><span>UNLOCK WHEN YOU PAY BEFORE DELIVERY</span>';
+          }
+        }
+      }
+      // Bind triggers
+      const podBtn = document.getElementById('pod-btn');
+      if (podBtn) podBtn.addEventListener('click', () => setMethod('PayOnDelivery'));
+      const copyBtn2 = document.getElementById('copy-btn');
+      if (copyBtn2) copyBtn2.addEventListener('click', () => setMethod('PayBeforeDelivery'));
+      const proofLink = document.querySelector('a[href^="https://wa.me/2348101594734"]');
+      if (proofLink) proofLink.addEventListener('click', () => setMethod('PayBeforeDelivery'));
+
+      // Confetti: trigger once when bonus section is ~30% visible
+      (function setupConfetti(){
+        const sec = document.getElementById('festive-bonus');
+        const key = 'fhg-confetti-bonus';
+        if (!sec || typeof confetti === 'undefined') return;
+        if (sessionStorage.getItem(key)) return;
+        const isMobile = window.innerWidth < 768;
+        const triggerConfetti = () => {
+          const duration = isMobile ? 2000 : 3000;
+          const animationEnd = Date.now() + duration;
+          const colors = ['#FFD700', '#FFA500', '#FF6B6B', '#4ECDC4', '#A78BFA'];
+          const interval = setInterval(() => {
+            const timeLeft = animationEnd - Date.now();
+            if (timeLeft <= 0) { clearInterval(interval); return; }
+            const particleCount = isMobile ? 30 : 50;
+            confetti({ particleCount, angle: 60, spread: 55, origin: { x: 0,   y: 0.6 }, colors, gravity: 1.2, scalar: isMobile ? 1 : 1.2, ticks: 200 });
+            confetti({ particleCount, angle: 120,spread: 55, origin: { x: 1,   y: 0.6 }, colors, gravity: 1.2, scalar: isMobile ? 1 : 1.2, ticks: 200 });
+            confetti({ particleCount: Math.floor(particleCount/2), angle: 90, spread: 100, origin: { x: 0.5, y: 0.5 }, colors, gravity: 1.0, scalar: isMobile ? 1.2 : 1.5, ticks: 200 });
+          }, 250);
+        };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.intersectionRatio >= 0.3) {
+              sessionStorage.setItem(key, '1');
+              triggerConfetti();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: [0.3] });
+        observer.observe(sec);
+      })();
+
+      // Social proof count: daily persistence with midnight reset + avatar wiggle
+      (function setupSocialProof(){
+        const el = document.getElementById('social-count');
+        if (!el) return;
+        const lsKey = 'fhg-social-daily';
+        const today = new Date();
+        const dayKey = today.toISOString().slice(0,10);
+        const startVal = parseInt(el.textContent || '0', 10) || 0;
+        let data = { date: dayKey, count: startVal, adds: 0 };
+        try {
+          const raw = localStorage.getItem(lsKey);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (parsed && parsed.date === dayKey && typeof parsed.count === 'number') {
+              data = { date: dayKey, count: parsed.count, adds: parsed.adds || 0 };
+              el.textContent = String(data.count);
+            } else {
+              localStorage.setItem(lsKey, JSON.stringify(data));
+            }
+          } else {
+            localStorage.setItem(lsKey, JSON.stringify(data));
+          }
+        } catch(e){}
+
+        const dailyMaxAdds = 12; // cap increments per day
+        function persist() { try { localStorage.setItem(lsKey, JSON.stringify(data)); } catch(e){} }
+
+        function scheduleIncrement() {
+          if (data.adds >= dailyMaxAdds) return;
+          const delay = 20000 + Math.random()*20000; // 20–40s
+          setTimeout(() => {
+            if (data.adds >= dailyMaxAdds) return;
+            const inc = Math.random() < 0.75 ? 1 : 2;
+            data.count += inc;
+            data.adds += 1;
+            el.textContent = String(data.count);
+            persist();
+            scheduleIncrement();
+          }, delay);
+        }
+
+        // Reset at midnight local time
+        const nextMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate()+1, 0,0,0,0).getTime();
+        setTimeout(() => {
+          data = { date: new Date().toISOString().slice(0,10), count: startVal, adds: 0 };
+          el.textContent = String(data.count);
+          persist();
+          scheduleIncrement();
+        }, Math.max(1000, nextMidnight - Date.now()));
+
+        // Avatar wiggle every ~30–60s on a random avatar
+        function wiggleLoop(){
+          const avatars = Array.from(document.querySelectorAll('.sp-avatar'));
+          if (avatars.length) {
+            const who = avatars[Math.floor(Math.random()*avatars.length)];
+            if (who instanceof HTMLElement) {
+              who.classList.add('avatar-wiggle');
+              setTimeout(() => who.classList.remove('avatar-wiggle'), 800);
+            }
+          }
+          const delay = 30000 + Math.random()*30000;
+          setTimeout(wiggleLoop, delay);
+        }
+
+        scheduleIncrement();
+        wiggleLoop();
+      })();
+
+      <!-- Priority 3 stock logic moved to <head> with defer to run first -->
+
+      // ===== Priority 5: Exit-intent behavior with 30s delay, once per session =====
+      (function exitIntent(){
+        const modal = document.getElementById('exitIntentModal');
+        if (!modal) return;
+        const LS_KEY = 'fhg-exit-shown';
+        let exitIntentShown = sessionStorage.getItem(LS_KEY) === '1';
+        let canShowExitIntent = false;
+        setTimeout(() => { canShowExitIntent = true; }, 30000);
+
+        function showExitIntent(){
+          if (exitIntentShown) return;
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          exitIntentShown = true;
+          try { sessionStorage.setItem(LS_KEY, '1'); } catch(e) {}
+        }
+        function hide(){ modal.classList.add('hidden'); modal.classList.remove('flex'); }
+
+        document.addEventListener('mouseleave', (e) => {
+          if (e.clientY < 10 && !exitIntentShown && canShowExitIntent) {
+            showExitIntent();
+          }
+        });
+
+        const closeBtn = modal.querySelector('.close-modal');
+        if (closeBtn) closeBtn.addEventListener('click', hide);
+        modal.addEventListener('click', (e) => { if (e.target === modal) hide(); });
+
+        const claimBtn = modal.querySelector('.btn-claim-offer');
+        if (claimBtn) claimBtn.addEventListener('click', function(){
+          hide();
+          // Visual feedback badge
+          const successMsg = document.createElement('div');
+          successMsg.className = 'offer-claimed-badge';
+          successMsg.innerHTML = '✅ FREE Delivery Applied!';
+          document.body.appendChild(successMsg);
+          setTimeout(()=>{ successMsg.remove(); }, 5000);
+          // Scroll to payment options
+          const pay = document.querySelector('.payment-options-redesign');
+          if (pay && pay.scrollIntoView) setTimeout(()=> pay.scrollIntoView({behavior:'smooth', block:'start'}), 500);
+        });
+
+        const remindBtn = modal.querySelector('.btn-send-reminder');
+        const emailInput = modal.querySelector('.email-input');
+        if (remindBtn && emailInput) remindBtn.addEventListener('click', function(){
+          const email = (emailInput.value || '').trim();
+          if (email) {
+            try { trackEvent && trackEvent('exit_reminder', { email }); } catch(e) {}
+            alert('Reminder set! Check your email in 24 hours.');
+            hide();
+          }
+        });
+      })();
+
+      update();
+    })();
+  });
+</script>
+</html>
