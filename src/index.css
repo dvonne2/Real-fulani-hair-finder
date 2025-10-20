@@ -1,0 +1,1037 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fulani Hair Gro Luxury Design System - Sophisticated & Minimal */
+
+@layer base {
+  :root {
+    /* Core Luxury Palette */
+    --brand-gold: 43 74% 49%;                   /* Primary Gold #DAA520 */
+    --brand-gold-light: 44 89% 60%;             /* Secondary Gold #f4d03f */
+    --brand-blue: 227 79% 57%;                  /* Primary Blue CTA #243BE3 */
+    --brand-blue-light: 227 80% 61%;            /* Secondary Blue #4361ee */
+    
+    /* Neutrals - Sophisticated Grays */
+    --black: 0 0% 10%;                          /* Black #1a1a1a */
+    --gray-dark: 0 0% 33%;                      /* Dark Gray #555 */
+    --gray-medium: 0 0% 60%;                    /* Light Gray #999 */
+    --gray-light: 0 0% 90%;                     /* Very Light Gray #e5e5e5 */
+    
+    /* Backgrounds - Warm & Premium */
+    --bg-cream: 40 25% 98%;                     /* Background Cream #fafaf9 */
+    --bg-off-white: 40 50% 99%;                 /* Off-White #fdfbf7 */
+    --bg-pure-white: 0 0% 100%;                 /* Pure White #fff */
+    
+    /* Base Semantic Tokens */
+    --background: 40 25% 98%;                   /* Cream background */
+    --foreground: 0 0% 10%;                     /* Black text */
+    
+    --primary: 43 74% 49%;                      /* Gold */
+    --primary-foreground: 0 0% 100%;            /* White on gold */
+    
+    --secondary: 0 0% 96%;                      /* Light gray */
+    --secondary-foreground: 0 0% 33%;           /* Dark gray text */
+    
+    --muted: 0 0% 96%;                          
+    --muted-foreground: 0 0% 60%;               /* Medium gray */
+    
+    --accent: 43 74% 49%;                       /* Gold accent */
+    --accent-foreground: 0 0% 100%;             
+    
+    --border: 0 0% 90%;                         /* Light borders */
+    --input: 0 0% 90%;                          
+    --ring: 43 74% 49%;                         /* Gold focus ring */
+    
+    --card: 0 0% 100%;                          /* Pure white cards */
+    --card-foreground: 0 0% 10%;                
+    
+    /* Quiz Specific */
+    --quiz-bg: 40 25% 98%;                      /* Cream quiz background */
+    --quiz-card: 0 0% 100%;                     /* White cards */
+    --quiz-border: 0 0% 88%;                    /* Subtle borders */
+    
+    /* Progress Bar */
+    --progress-bg: 0 0% 94%;                    
+    --progress-fill-start: 43 74% 49%;          /* Gold gradient start */
+    --progress-fill-end: 44 89% 60%;            /* Gold gradient end */
+    
+    /* CTA Button Blue Gradient */
+    --cta-blue-start: 227 79% 57%;              /* #243BE3 */
+    --cta-blue-end: 227 80% 61%;                /* #4361ee */
+    
+    /* Shadows - Subtle & Elegant */
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.04);
+    --shadow-card: 0 8px 30px hsl(0 0% 0% / 0.08);
+    --shadow-elevated: 0 15px 50px hsl(0 0% 0% / 0.12);
+    --shadow-gold-glow: 0 8px 30px hsl(43 74% 49% / 0.15);
+    --shadow-blue-glow: 0 15px 50px hsl(227 79% 57% / 0.35);
+    --shadow-blue-hover: 0 20px 60px hsl(227 79% 57% / 0.45);
+    
+    /* Transitions - Smooth & Bouncy */
+    --transition-smooth: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-fast: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, serif;
+    --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  .dark {
+    --brand-primary: 158 50% 75%;
+    --brand-secondary: 88 40% 65%;
+    --wellness-bg: 210 20% 8%;
+    --wellness-card: 210 20% 12%;
+    --foreground: 0 0% 95%;
+    --background: 210 20% 8%;
+    --card: 210 20% 12%;
+    --card-foreground: 0 0% 95%;
+    --border: 210 16% 20%;
+    --input: 210 16% 20%;
+    --ring: 158 50% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-[hsl(var(--quiz-bg))] text-foreground;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Quiz Layout */
+  .quiz-container {
+    @apply min-h-screen bg-[hsl(var(--quiz-bg))] pb-12;
+  }
+  
+  .quiz-card {
+    @apply bg-[hsl(var(--quiz-card))] rounded-3xl p-8 md:p-12 shadow-[var(--shadow-card)] border border-[hsl(var(--quiz-border))];
+    transition: var(--transition-smooth);
+  }
+
+  /* Premium question card */
+  .premium-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 30px;
+    padding: 60px 50px;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.08);
+  }
+  
+  /* Premium question title */
+  .question-title-premium {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(6px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+}
+  
+  /* Progress Bar - Elegant Gold Gradient */
+  .progress-bar {
+    @apply w-full h-1.5 bg-[hsl(var(--progress-bg))] rounded-full overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full rounded-full;
+    background: linear-gradient(90deg, hsl(var(--progress-fill-start)), hsl(var(--progress-fill-end)));
+    transition: width 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* Premium progress text below bar */
+  .progress-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: #999;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+  
+  /* Primary CTA Button - Blue Gradient */
+  .btn-primary {
+    @apply relative text-white font-bold rounded-[60px] overflow-hidden;
+    font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+    padding: clamp(18px, 3vw, 20px) clamp(40px, 8vw, 50px);
+    background: linear-gradient(135deg, hsl(var(--cta-blue-start)), hsl(var(--cta-blue-end)));
+    box-shadow: var(--shadow-blue-glow);
+    transition: var(--transition-smooth);
+    font-family: var(--font-body);
+  }
+  
+  .btn-primary:hover:not(:disabled) {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-blue-hover);
+  }
+  
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(-2px) scale(0.98);
+  }
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed;
+    transform: none;
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Luxury option cards */
+  .option-card {
+    background: #fff;
+    border: 2px solid #e8e8e8;
+    border-radius: 18px;
+    padding: 25px 30px;
+    margin-bottom: 18px;
+    transition: var(--transition-smooth);
+  }
+  .option-card:hover {
+    border-color: #DAA520;
+    transform: translateX(8px);
+    box-shadow: 0 10px 40px rgba(218, 165, 32, 0.12);
+  }
+  .option-card.selected {
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.08), rgba(244, 208, 63, 0.05));
+    border-color: #DAA520;
+    border-width: 3px;
+  }
+  .option-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    color: #1a1a1a;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* Continue button shimmer & hover */
+  .continue-btn {
+    position: relative;
+    overflow: hidden;
+  }
+  .continue-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+  }
+  .continue-btn:hover::before { left: 100%; }
+  .continue-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(36, 59, 227, 0.45) !important;
+  }
+
+  /* Previous button hover */
+  .previous-btn:hover {
+    color: #DAA520;
+    transform: translateX(-5px);
+  }
+
+  /* Analysis Experience (LoadingScreen) */
+  .analysis-screen {
+    background: linear-gradient(135deg, #fdfbf7 0%, #ffffff 50%, #faf8f5 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .analysis-card {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    padding: 60px 50px;
+    border-radius: 30px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+
+  .analysis-icon {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+  }
+
+  .analysis-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .analysis-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .checklist {
+    margin: 40px 0;
+    text-align: left;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: rgba(218, 165, 32, 0.05);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .checklist-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .checkmark {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #DAA520, #f4d03f);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .item-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+
+  .gold-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+
+  .gold-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #DAA520, #f4d03f);
+    width: 0%;
+    border-radius: 10px;
+    animation: fillProgress 38s linear forwards;
+  }
+
+  @keyframes fillProgress {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+
+  .cta-container { margin-top: 40px; }
+
+  .view-results-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #243BE3 0%, #4361ee 100%);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 24px 50px;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    box-shadow: 0 15px 50px rgba(36, 59, 227, 0.35);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .view-results-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s;
+  }
+
+  .view-results-btn:hover::before { left: 100%; }
+
+  .view-results-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(36, 59, 227, 0.45);
+  }
+
+  .cta-subtext {
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .cta-subtext strong {
+    color: #DAA520;
+    font-weight: 700;
+  }
+ 
+/* Mobile Responsive for Analysis */
+@media (max-width: 768px) {
+  .analysis-card { padding: 40px 30px; }
+  .analysis-title { font-size: 1.6rem; }
+  .analysis-icon { font-size: 3rem; }
+  .view-results-btn { font-size: 1.1rem; padding: 20px 40px; }
+}
+  
+  /* Answer Option Buttons */
+  .question-option {
+    @apply bg-white border-2 border-[hsl(var(--gray-light))] rounded-2xl cursor-pointer;
+    padding: clamp(18px, 3vw, 20px) clamp(22px, 4vw, 25px);
+    font-size: clamp(1rem, 2vw, 1.05rem);
+    color: #1a1a1a;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  
+  .question-option-selected {
+    background: linear-gradient(135deg, hsl(var(--brand-gold) / 0.1), hsl(var(--brand-gold-light) / 0.1));
+    border-color: hsl(var(--brand-gold));
+    border-width: 3px;
+    box-shadow: var(--shadow-gold-glow);
+  }
+  
+  .question-option-selected-gold {
+    background: linear-gradient(135deg, hsl(var(--brand-gold) / 0.1), hsl(var(--brand-gold-light) / 0.1));
+    border-color: hsl(var(--brand-gold));
+    border-width: 3px;
+    box-shadow: var(--shadow-gold-glow);
+  }
+  
+  /* Loading Animations */
+  .loading-spinner {
+    @apply animate-spin rounded-full h-12 w-12 border-4 border-[hsl(var(--gray-light))] border-t-[hsl(var(--brand-gold))];
+  }
+  
+  /* Entrance Animations */
+  .fade-in {
+    animation: slideInFade 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+@layer utilities {
+  .text-luxury-gold {
+    color: hsl(var(--brand-gold));
+  }
+  
+  .text-luxury-blue {
+    color: hsl(var(--brand-blue));
+  }
+  
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--brand-gold)), hsl(var(--brand-gold-light)));
+  }
+  
+  .bg-gradient-blue {
+    background: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-blue-light)));
+  }
+}
+
+/* Luxury Animations */
+@keyframes slideInFade {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .primary-diagnosis-card { padding: 35px 25px; }
+  .diagnosis-name { font-size: 1.8rem; }
+}
+
+/* 3) Space Out Treatment Steps */
+.treatment-steps { display: flex; flex-direction: column; gap: 35px; }
+
+.treatment-step {
+  background: #fff;
+  border-radius: 25px;
+  padding: 40px 35px;
+  border-left: 5px solid #e0e0e0;
+  transition: all 0.3s;
+}
+
+.step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.step-action {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* 4) Simplify Product Card */
+.recommended-bundle-card {
+  background: linear-gradient(135deg, #fff 0%, #fafaf9 100%);
+  border: 3px solid #DAA520;
+  border-radius: 30px;
+  padding: 60px 50px;
+  position: relative;
+  box-shadow: 0 20px 80px rgba(218, 165, 32, 0.15);
+  margin-bottom: 50px;
+}
+
+.bundle-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.bundle-tagline {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.bundle-contents {
+  background: #fff;
+  border-radius: 20px;
+  padding: 35px;
+  margin-bottom: 40px;
+}
+
+.pricing-box {
+  text-align: center;
+  padding: 40px;
+  background: rgba(218, 165, 32, 0.05);
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.reasoning-box {
+  background: #fff;
+  border-left: 4px solid #243BE3;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.usage-guide {
+  background: #fff;
+  border-radius: 20px;
+  padding: 35px;
+  margin-bottom: 40px;
+}
+
+.urgency-box {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.05), rgba(245, 158, 11, 0.05));
+  border: 2px solid #f59e0b;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.guarantee-box {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(5, 150, 105, 0.03));
+  border: 3px solid #10b981;
+  border-radius: 20px;
+  padding: 35px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .recommended-bundle-card { padding: 40px 25px; }
+  .bundle-name { font-size: 2rem; }
+}
+
+/* 5) Hide Some Secondary Content on Mobile */
+@media (max-width: 768px) {
+  .secondary-diagnoses { margin-top: 25px; }
+  .recent-orders { font-size: 0.85rem; }
+}
+
+/* 6) Section Headers with More Space */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #1a1a1a;
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #666;
+  margin-bottom: 60px;
+  line-height: 1.8;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 7) Simplify Product Rows */
+.product-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.product-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* 8) Usage Instructions Spacing */
+.usage-guide h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+}
+
+.usage-row {
+  display: flex;
+  gap: 20px;
+  padding: 25px 20px;
+  background: rgba(218, 165, 32, 0.03);
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.usage-content {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* 9) Testimonials Spacing */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-bottom: 70px;
+}
+
+.testimonial-card {
+  background: #fff;
+  border: 2px solid #f0f0f0;
+  border-radius: 20px;
+  padding: 35px;
+  transition: all 0.3s;
+}
+
+.testimonial-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Optional: Show more button */
+.show-more-btn {
+  display: block;
+  margin: 30px auto;
+  padding: 15px 40px;
+  background: transparent;
+  border: 2px solid #DAA520;
+  color: #DAA520;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.show-more-btn:hover { background: #DAA520; color: #fff; }
+
+@media (min-width: 769px) {
+  .show-more-btn { display: none; }
+}
+
+/* Final touches - subtle dividers */
+.diagnosis-section::after,
+.treatment-plan-section::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #DAA520, transparent);
+  margin: 80px auto 0;
+}
+/* Max-width for readability */
+.diagnosis-section,
+.treatment-plan-section { max-width: 900px; margin-left: auto; margin-right: auto; }
+.product-recommendation-section { max-width: 1000px; margin-left: auto; margin-right: auto; }
+
+/* Dr. portrait styling */
+.dr-portrait {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 9999px; /* circle */
+  border: 4px solid #fff;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.12), 0 10px 30px rgba(218,165,32,0.15);
+}
+
+@media (max-width: 768px) {
+  .dr-portrait { width: 120px; height: 120px; }
+}
+
+/* ========================= */
+/* Hero with Doctor (TASK 1) */
+/* ========================= */
+.results-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(135deg, #fdfbf7 0%, #fff 100%);
+}
+.results-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+.consultation-badge {
+  display: inline-block;
+  background: rgba(218, 165, 32, 0.1);
+  color: #DAA520;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.doctor-profile { margin: 30px 0; }
+.doctor-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid #DAA520;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(218, 165, 32, 0.2);
+}
+.expert-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+.expert-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+.expert-intro {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+}
+@media (max-width: 768px) {
+  .results-hero { padding: 40px 20px 30px; }
+  .doctor-avatar { width: 100px; height: 100px; }
+}
+
+/* =============================== */
+/* Diagnosis Summary (TASK 3)     */
+/* =============================== */
+.diagnosis-summary {
+  max-width: 800px;
+  margin: -40px auto 60px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+.summary-card {
+  background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), rgba(244, 208, 63, 0.05));
+  border: 3px solid #DAA520;
+  border-radius: 25px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(218, 165, 32, 0.15);
+}
+.summary-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+}
+.diagnosis-quick { text-align: center; }
+.diagnosis-badge-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.diagnosis-badge.primary-badge {
+  background: linear-gradient(135deg, #DAA520, #f4d03f);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.confidence-badge {
+  background: rgba(0, 0, 0, 0.05);
+  color: #666;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.diagnosis-brief {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .diagnosis-summary { margin-top: -20px; }
+  .summary-card { padding: 30px 20px; }
+  .diagnosis-badge-wrapper { flex-direction: column; gap: 10px; }
+}
+
+/* ==================================== */
+/* Product Recommendation Priority (T4) */
+/* ==================================== */
+.product-recommendation-section.priority {
+  background: linear-gradient(135deg, #fdfbf7 0%, #fff 50%, #faf8f5 100%);
+  padding: 80px 20px 100px;
+  margin-bottom: 0;
+}
+.product-recommendation-section.priority h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 20px;
+}
+.product-recommendation-section.priority .section-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+.recommended-bundle-card {
+  border: 4px solid #DAA520; /* Thicker border per T4 */
+  box-shadow: 0 25px 100px rgba(218, 165, 32, 0.2);
+  animation: pulseGlow 3s infinite;
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 25px 100px rgba(218, 165, 32, 0.2); }
+  50% { box-shadow: 0 30px 120px rgba(218, 165, 32, 0.3); }
+}
+.add-to-cart-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #243BE3 0%, #4361ee 100%);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 28px 50px;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 0 20px 60px rgba(36, 59, 227, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  animation: buttonPulse 2s infinite;
+}
+@keyframes buttonPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@media (max-width: 768px) {
+  .product-recommendation-section.priority { padding: 60px 20px; }
+  .recommended-bundle-card { padding: 40px 25px; }
+  .add-to-cart-primary { font-size: 1.2rem; padding: 22px 30px; }
+}
+/* Two-Column Grid Section */
+.diagnosis-product-grid {
+  background: linear-gradient(135deg, #fdfbf7 0%, #fff 50%, #faf8f5 100%);
+  padding: 80px 20px 100px;
+}
+
+.container-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Left slightly smaller, right larger */
+  gap: 60px;
+  align-items: start;
+}
+
+/* LEFT COLUMN - Diagnosis */
+.diagnosis-column { position: relative; }
+
+.sticky-wrapper { position: sticky; top: 80px; }
+
+.diagnosis-column h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.diagnosis-card {
+  background: linear-gradient(135deg, rgba(218, 165, 32, 0.08), rgba(244, 208, 63, 0.05));
+  border: 3px solid #DAA520;
+  border-radius: 25px;
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+.diagnosis-header { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+.diagnosis-badge { display: inline-block; padding: 8px 20px; border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; width: fit-content; }
+.primary-badge { background: linear-gradient(135deg, #DAA520, #f4d03f); color: #fff; }
+.confidence-badge { background: rgba(0, 0, 0, 0.05); color: #666; padding: 8px 20px; border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 600; width: fit-content; }
+
+.diagnosis-name { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: #1a1a1a; margin-bottom: 20px; line-height: 1.2; }
+
+.diagnosis-explanation { font-family: 'Montserrat', sans-serif; font-size: 1.05rem; line-height: 1.8; color: #555; }
+
+.secondary-diagnoses { background: rgba(36, 59, 227, 0.05); border: 2px solid rgba(36, 59, 227, 0.2); border-radius: 20px; padding: 30px; }
+.secondary-diagnoses h4 { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 20px; }
+.secondary-list { display: flex; flex-direction: column; gap: 15px; }
+.secondary-item { display: flex; align-items: center; gap: 15px; }
+.secondary-badge { background: rgba(36, 59, 227, 0.1); color: #243BE3; border: 2px solid #243BE3; }
+.condition-name { font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #1a1a1a; font-weight: 500; }
+
+/* RIGHT COLUMN - Product */
+.product-column { position: relative; }
+
+.product-column h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: #1a1a1a; margin-bottom: 15px; text-align: left; }
+.column-subtitle { font-family: 'Montserrat', sans-serif; font-size: 1.15rem; color: #666; margin-bottom: 30px; line-height: 1.6; }
+
+/* Severity Indicator in Column */
+.severity-indicator-bar { margin-bottom: 30px; }
+.severity-level { display: inline-block; padding: 12px 25px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem; }
+
+/* Product Card in Column */
+.recommended-bundle-card { background: linear-gradient(135deg, #fff 0%, #fafaf9 100%); border: 4px solid #DAA520; border-radius: 30px; padding: 50px 40px; position: relative; box-shadow: 0 25px 100px rgba(218, 165, 32, 0.2); animation: pulseGlow 3s infinite; }
+
+/* MOBILE - Stack Columns */
+@media (max-width: 1024px) {
+  .two-column-layout { grid-template-columns: 1fr; gap: 40px; }
+  .sticky-wrapper { position: static; }
+  .diagnosis-column h2, .product-column h2 { text-align: center; }
+  .diagnosis-card { padding: 30px 25px; }
+  .recommended-bundle-card { padding: 40px 25px; }
+}
+
+@media (max-width: 768px) {
+  .diagnosis-product-grid { padding: 60px 20px; }
+  .diagnosis-column h2, .product-column h2 { font-size: 2rem; }
+  .diagnosis-name { font-size: 1.6rem; }
+}
