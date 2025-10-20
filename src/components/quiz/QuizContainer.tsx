@@ -192,7 +192,7 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
           {/* Brand */}
           <div>
             <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900">FULANI HAIR GRO</h1>
-            <p className="text-xs md:text-sm text-amber-700 font-medium">Much Cheaper Than A Hair Transplant</p>
+            <p className="text-xs md:text-sm font-medium text-[#DAA520]">Much Cheaper Than A Hair Transplant</p>
           </div>
           {/* Progress Meta */}
           <div className="text-right">
