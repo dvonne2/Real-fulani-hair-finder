@@ -655,54 +655,228 @@
             </p>
           </div>
         </section>
-        <!-- Before/After Image Section (Priority 2) -->
-        <section class="before-after-section bg-white rounded-2xl p-6 md:p-8 shadow-xl border-2 border-gray-200">
-          <h2 class="text-2xl md:text-3xl font-extrabold mb-6">📸 Real Transformation Timeline</h2>
-          <div class="before-after-grid grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Card 1 -->
-            <div class="ba-card bg-gray-50 rounded-xl p-4 border border-gray-200 hover:shadow-lg transition">
-              <div class="flex gap-3">
-                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
-                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</span>
-                  <span class="text-[11px] text-gray-600">Add Before Image</span>
+        <!-- Condition Education (replaces Real Transformation Timeline) -->
+        <section id="condition-education" class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 md:p-8 shadow-xl border-2 border-amber-300">
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-2 flex items-center">
+            <span class="text-3xl mr-2" aria-hidden="true">🧠</span>
+            Understanding Your Condition: <span id="cond-title" class="ml-2 text-gray-900">Loading…</span>
+          </h2>
+          <p id="cond-note" class="text-sm text-gray-700 mb-6"></p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <article class="bg-white rounded-xl p-5 border-2 border-amber-200 shadow">
+              <h3 class="text-lg font-extrabold text-amber-800 mb-2 flex items-center"><span class="mr-2">❓</span>What is <span class="ml-1" id="what-name">this</span>?</h3>
+              <p id="what-body" class="text-sm text-gray-800 leading-relaxed"></p>
+            </article>
+
+            <article class="bg-white rounded-xl p-5 border-2 border-amber-200 shadow">
+              <h3 class="text-lg font-extrabold text-amber-800 mb-2 flex items-center"><span class="mr-2">⚙️</span>What Causes It?</h3>
+              <ul id="causes-list" class="text-sm text-gray-800 space-y-2 list-disc pl-5"></ul>
+            </article>
+
+            <article class="bg-white rounded-xl p-5 border-2 border-amber-200 shadow">
+              <h3 class="text-lg font-extrabold text-amber-800 mb-2 flex items-center"><span class="mr-2">🔍</span>Common Signs & Symptoms</h3>
+              <ul id="symptoms-list" class="text-sm text-gray-800 space-y-2 list-disc pl-5"></ul>
+            </article>
+
+            <article class="bg-white rounded-xl p-5 border-2 border-amber-200 shadow">
+              <h3 class="text-lg font-extrabold text-amber-800 mb-2 flex items-center"><span class="mr-2">👥</span>Who Does It Affect?</h3>
+              <ul id="who-list" class="text-sm text-gray-800 space-y-2 list-disc pl-5"></ul>
+            </article>
+
+            <article class="bg-white rounded-xl p-5 border-2 border-amber-200 shadow md:col-span-2">
+              <h3 class="text-lg font-extrabold text-amber-800 mb-3 flex items-center"><span class="mr-2">🧪</span>How Fulani Hair Gro Treats <span id="treat-name" class="ml-1"></span></h3>
+              <div class="grid md:grid-cols-3 gap-4">
+                <div>
+                  <p class="text-xs font-extrabold text-gray-600 mb-1">Key Ingredients</p>
+                  <ul id="ingredients-list" class="text-sm text-gray-800 space-y-1 list-disc pl-5"></ul>
                 </div>
-                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
-                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">AFTER 8 WEEKS</span>
-                  <span class="text-[11px] text-gray-600">Add After Image</span>
+                <div>
+                  <p class="text-xs font-extrabold text-gray-600 mb-1">Expected Timeline</p>
+                  <p id="timeline-text" class="text-sm text-gray-800"></p>
+                </div>
+                <div>
+                  <p class="text-xs font-extrabold text-gray-600 mb-1">Why Our Formula Works</p>
+                  <p id="why-text" class="text-sm text-gray-800"></p>
                 </div>
               </div>
-              <p class="ba-caption text-center text-sm text-gray-700 mt-3">Amaka, Lagos - Crown area regrowth</p>
-            </div>
-            <!-- Card 2 -->
-            <div class="ba-card bg-gray-50 rounded-xl p-4 border border-gray-200 hover:shadow-lg transition">
-              <div class="flex gap-3">
-                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
-                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</span>
-                  <span class="text-[11px] text-gray-600">Add Before Image</span>
-                </div>
-                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
-                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">AFTER 12 WEEKS</span>
-                  <span class="text-[11px] text-gray-600">Add After Image</span>
-                </div>
-              </div>
-              <p class="ba-caption text-center text-sm text-gray-700 mt-3">Funmi, Abuja - Edges restoration</p>
-            </div>
-            <!-- Card 3 -->
-            <div class="ba-card bg-gray-50 rounded-xl p-4 border border-gray-200 hover:shadow-lg transition">
-              <div class="flex gap-3">
-                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
-                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</span>
-                  <span class="text-[11px] text-gray-600">Add Before Image</span>
-                </div>
-                <div class="ba-image-placeholder flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center relative">
-                  <span class="ba-label absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">AFTER 10 WEEKS</span>
-                  <span class="text-[11px] text-gray-600">Add After Image</span>
-                </div>
-              </div>
-              <p class="ba-caption text-center text-sm text-gray-700 mt-3">Chioma, Port Harcourt - Overall density</p>
-            </div>
+            </article>
           </div>
-          <p class="disclaimer text-xs text-gray-500 text-center mt-4">*Individual results may vary</p>
+
+          <p class="text-xs text-gray-700 mt-4 bg-white/70 border-2 border-amber-200 rounded-lg p-3"><strong>Note:</strong> Dr. Amina has diagnosed you with <span id="note-cond">your condition</span> based on your quiz responses. This personalized treatment plan is designed specifically for your condition.</p>
+          <p class="text-xs text-gray-500 text-center mt-3">Individual results may vary. This information is for educational purposes.</p>
+
+          <script>
+            (function(){
+              function safeGet(key, obj){ return (obj && typeof obj[key] !== 'undefined') ? obj[key] : undefined; }
+              function toArray(v){ return Array.isArray(v) ? v : []; }
+              function includesAny(val, patterns){ if(!val) return false; return patterns.some(function(rx){ return rx.test(String(val)); }); }
+              function arrayIncludesAny(arr, patterns){ return toArray(arr).some(function(v){ return includesAny(v, patterns); }); }
+
+              var raw = null; try { raw = localStorage.getItem('fulani-hair-quiz'); } catch(e) {}
+              var quiz = null; try { quiz = raw ? JSON.parse(raw) : null; } catch(e) {}
+              var responses = quiz && quiz.responses ? quiz.responses : [];
+              var map = {}; responses.forEach(function(r){ map[r.questionId] = r.answer; });
+
+              var ageRange = safeGet('age-range', map);
+              var primaryConcern = safeGet('primary-concern', map);
+              var whenNoticed = safeGet('noticed-when', map);
+              var affectedAreas = toArray(safeGet('affected-areas', map));
+              var hairBehavior = safeGet('shedding-vs-breakage', map);
+              var lengthComparison = safeGet('length-distribution', map);
+              var protectiveStyles = toArray(safeGet('protective-styles-often', map));
+              var coveredHairIssues = safeGet('covered-hair-effects', map);
+              var bonnetUse = safeGet('sleep-bonnet', map);
+              var scalpIssues = toArray(safeGet('scalp-issues-detailed', map));
+              var washFrequency = safeGet('wash-frequency', map);
+              var lifeEvents = toArray(safeGet('life-events-2years', map));
+              var familyHistory = safeGet('family-history-detailed', map);
+              var medicalConditions = toArray(safeGet('diagnosed-conditions', map));
+
+              function getDiagnosis(){
+                var diagnoses = []; var confidence = {};
+                var tractionIndicators = [
+                  arrayIncludesAny(affectedAreas, [/edge/i, /temple/i]),
+                  arrayIncludesAny(protectiveStyles, [/box braids/i, /cornrows/i, /tight ponytails/i, /(frontal|full lace).*uses glue/i, /ghana weaving|shuku/i]),
+                  includesAny(lengthComparison || '', [/edges.*short/i]),
+                  includesAny(hairBehavior || '', [/breaks|both/i])
+                ];
+                var tractionScore = tractionIndicators.filter(Boolean).length; if (tractionScore >= 2){ diagnoses.push('Traction Alopecia'); confidence.traction = tractionScore/tractionIndicators.length; }
+
+                var telogenIndicators = [
+                  arrayIncludesAny(lifeEvents, [/postpartum/i, /breastfeeding/i]),
+                  arrayIncludesAny(lifeEvents, [/stress|job change|relocation|loss/i, /surgery|illness/i]),
+                  includesAny(hairBehavior || '', [/falls out|shedding|both/i]),
+                  includesAny(whenNoticed || '', [/less than 3/i, /^3-6/i]),
+                  includesAny(primaryConcern || '', [/excessive shedding/i])
+                ];
+                var telogenScore = telogenIndicators.filter(Boolean).length; if (telogenScore >= 3){ diagnoses.push('Telogen Effluvium'); confidence.telogen = telogenScore/telogenIndicators.length; }
+
+                var androgenicIndicators = [
+                  includesAny(familyHistory || '', [/mother|both/i]),
+                  includesAny(ageRange || '', [/46-55|56\+/i]),
+                  arrayIncludesAny(lifeEvents, [/menopause|perimenopause/i]),
+                  arrayIncludesAny(affectedAreas, [/crown/i, /even thinning|overall/i]),
+                  includesAny(whenNoticed || '', [/1-2 years/i, /more than 2/i]),
+                  includesAny(primaryConcern || '', [/overall thinning/i])
+                ];
+                var androgenicScore = androgenicIndicators.filter(Boolean).length; if (androgenicScore >= 3){ diagnoses.push('Androgenic Alopecia'); confidence.androgenic = androgenicScore/androgenicIndicators.length; }
+
+                var cicatricialIndicators = [
+                  arrayIncludesAny(scalpIssues, [/ringworm|infection|sores|painful/i]),
+                  includesAny(primaryConcern || '', [/bald patches/i]),
+                  arrayIncludesAny(affectedAreas, [/patch/i])
+                ];
+                var cicatricialScore = cicatricialIndicators.filter(Boolean).length; if (cicatricialScore >= 2){ diagnoses.push('Cicatricial (Scarring) Alopecia'); confidence.cicatricial = cicatricialScore/cicatricialIndicators.length; }
+
+                var nutritionalIndicators = [
+                  arrayIncludesAny(medicalConditions, [/anemia|iron/i, /vitamin/i]),
+                  includesAny(hairBehavior || '', [/breaks/i]),
+                  includesAny(primaryConcern || '', [/breakage/i]),
+                  arrayIncludesAny(lifeEvents, [/breastfeeding/i])
+                ];
+                var nutritionalScore = nutritionalIndicators.filter(Boolean).length; if (nutritionalScore >= 2){ diagnoses.push('Nutritional Deficiency-Related Hair Loss'); confidence.nutritional = nutritionalScore/nutritionalIndicators.length; }
+
+                var areataIndicators = [
+                  arrayIncludesAny(medicalConditions, [/autoimmune/i]),
+                  includesAny(primaryConcern || '', [/bald patches/i]),
+                  arrayIncludesAny(affectedAreas, [/patch/i]),
+                  arrayIncludesAny(lifeEvents, [/stress/i])
+                ];
+                var areataScore = areataIndicators.filter(Boolean).length; if (areataScore >= 2){ diagnoses.push('Alopecia Areata'); confidence.areata = areataScore/areataIndicators.length; }
+
+                if (!diagnoses.length) return { primary: 'General Hair Thinning', secondary: [], confidence: confidence };
+                diagnoses.sort(function(a,b){ var ka=a.toLowerCase().split(' ')[0]; var kb=b.toLowerCase().split(' ')[0]; return (confidence[kb]||0)-(confidence[ka]||0); });
+                return { primary: diagnoses[0], secondary: diagnoses.slice(1), confidence: confidence };
+              }
+
+              var diagnosis = getDiagnosis();
+
+              var content = {
+                'Traction Alopecia': {
+                  what: 'Traction alopecia is hair loss caused by repeated tension on hair follicles, especially along the edges and temples from tight styles.',
+                  causes: ['Tight braids/cornrows and ponytails', 'Glue-on frontals and high-tension wigs', 'Frequent extensions without rest periods'],
+                  symptoms: ['Thinning or breakage at the hairline/temples', 'Small bumps or tenderness on edges', 'Short, fragile hairs that won\'t retain length'],
+                  who: ['Common in women who wear tight protective styles', 'Higher risk with frequent glue/gel use', 'Often worsens under constant tension'],
+                  ingredients: ['Chebe + fenugreek for strength', 'Black seed oil for scalp balance', 'Peppermint + rosemary for circulation'],
+                  timeline: 'Edges typically start to look fuller in 6–12 weeks once tension is reduced and routine is consistent.',
+                  why: 'Targets inflammation and breakage while stimulating blood flow so weakened follicles can recover.'
+                },
+                'Telogen Effluvium': {
+                  what: 'Telogen effluvium is a shedding surge triggered by stress, postpartum changes, illness, or nutrient shifts that push hairs into rest.',
+                  causes: ['Postpartum or major stress', 'Illness, surgery, or fever', 'Low iron or nutrient shifts'],
+                  symptoms: ['Excess daily shedding', 'Overall thinning without distinct bald patches', 'Hair feels less dense to touch'],
+                  who: ['Common after childbirth', 'Affects anyone under prolonged stress', 'Often temporary with proper care'],
+                  ingredients: ['Fenugreek for strengthening', 'Black seed oil for scalp balance', 'Peppermint to support growth cycle reset'],
+                  timeline: 'Shedding usually settles within 6–12 weeks; visible density improves over 3–6 months.',
+                  why: 'Soothes scalp, supports growth phase return, and reduces breakage while density rebuilds.'
+                },
+                'Androgenic Alopecia': {
+                  what: 'Androgenic alopecia is pattern thinning influenced by hormones and genetics, often more visible at the crown and part.',
+                  causes: ['Genetic sensitivity to DHT', 'Hormonal changes (e.g., peri/menopause)', 'Family history'],
+                  symptoms: ['Widening part line', 'Thinner ponytails', 'Diffuse crown thinning'],
+                  who: ['More common with age and after menopause', 'Family history increases risk'],
+                  ingredients: ['DHT-modulating botanicals (e.g., black seed)', 'Scalp-circulation boosters', 'Strengthening herbs to reduce breakage'],
+                  timeline: 'Expect a steady improvement over 3–6 months with strict consistency.',
+                  why: 'Helps calm DHT impact locally, nourishes follicles, and supports thicker-looking density.'
+                },
+                'Cicatricial (Scarring) Alopecia': {
+                  what: 'A group of conditions where inflammation damages follicles, sometimes after infections or sores. Requires medical evaluation.',
+                  causes: ['Scalp infections (e.g., ringworm)', 'Inflammatory scalp disorders', 'Untreated sores leading to scarring'],
+                  symptoms: ['Tender, painful patches', 'Shiny or scarred areas', 'Patchy loss'],
+                  who: ['Anyone with persistent scalp sores/infections'],
+                  ingredients: ['Soothing oils for comfort (post-clearance)', 'Strength support for remaining hair'],
+                  timeline: 'Begin after medical clearance. Support remaining follicles over 3–6 months.',
+                  why: 'Focuses on comfort and support; medical care is primary.'
+                },
+                'Nutritional Deficiency-Related Hair Loss': {
+                  what: 'Hair loss/breakage linked to low iron, vitamins, or postpartum nutrient demands.',
+                  causes: ['Low iron or ferritin', 'Vitamin deficiencies', 'Postpartum demands'],
+                  symptoms: ['Breakage and shedding together', 'Brittle strands', 'Slow growth'],
+                  who: ['Common in postpartum and low-iron states'],
+                  ingredients: ['Strength-focused herbs (fenugreek, chebe)', 'Scalp-supporting oils', 'Moisture retention with conditioner'],
+                  timeline: '3–6 months as nutrient stores rebuild and breakage reduces.',
+                  why: 'Reduces breakage and supports scalp health while nutrition is corrected.'
+                },
+                'Alopecia Areata': {
+                  what: 'An autoimmune condition causing sudden round patches of hair loss. Often stress-associated; medical guidance recommended.',
+                  causes: ['Autoimmune activity', 'Stress triggers'],
+                  symptoms: ['Round/oval bald patches', 'Regrowth may be unpredictable'],
+                  who: ['All ages; may co-exist with other autoimmune issues'],
+                  ingredients: ['Gentle scalp support and circulation boosters'],
+                  timeline: 'Varies widely; many see gradual improvements over months with supportive care.',
+                  why: 'Aims to create a healthy scalp environment; coordinate with your clinician.'
+                },
+                'General Hair Thinning': {
+                  what: 'Overall density reduction from mixed factors such as stress, styling, and scalp health.',
+                  causes: ['Chronic stress and poor scalp hygiene', 'High-tension styles', 'Infrequent washing and buildup'],
+                  symptoms: ['Thinner ponytail, more scalp showing'],
+                  who: ['Very common; any age'],
+                  ingredients: ['Balanced scalp oils, strengthening herbs, conditioner for breakage control'],
+                  timeline: '2–4 months to notice fullness with routine',
+                  why: 'Combines cleansing, stimulation, and breakage reduction to rebuild density outlook.'
+                }
+              };
+
+              var key = diagnosis.primary;
+              var data = content[key] || content['General Hair Thinning'];
+              function fill(id, val){ var el = document.getElementById(id); if (el) el.textContent = val; }
+              function fillList(id, arr){ var el = document.getElementById(id); if (!el) return; el.innerHTML=''; (arr||[]).forEach(function(t){ var li=document.createElement('li'); li.textContent=t; el.appendChild(li); }); }
+
+              fill('cond-title', key);
+              fill('what-name', key);
+              fill('treat-name', key);
+              fill('note-cond', key);
+              document.getElementById('cond-note').textContent = 'Dr. Amina has diagnosed you with ' + key + ' based on your quiz responses.';
+              fill('what-body', data.what);
+              fillList('causes-list', data.causes);
+              fillList('symptoms-list', data.symptoms);
+              fillList('who-list', data.who);
+              fillList('ingredients-list', data.ingredients);
+              fill('timeline-text', data.timeline);
+              fill('why-text', data.why);
+            })();
+          </script>
         </section>
 
         <!-- 2) Without Using Grandmother's Formula -->
@@ -801,11 +975,42 @@
             <div class="flex items-center gap-3 mb-3"><div class="text-2xl">👩🏾</div><div><p class="font-extrabold">Funmi A., Abuja • Mother of 2</p><p class="text-xs text-gray-600">Verified Purchase</p></div></div>
             <div class="grid md:grid-cols-2 gap-4">
               <div class="bg-red-50 border border-red-200 rounded-lg p-3"><p class="font-extrabold text-red-700 mb-1">BEFORE</p><p class="text-gray-700">Postpartum hair loss, thin crown, low confidence.</p></div>
-              <div class="bg-green-50 border border-green-200 rounded-lg p-3"><p class="font-extrabold text-green-700 mb-1">AFTER</p><p class="text-gray-700">Full crown regrowth, edges filled, thriving.</p></div>
             </div>
             <blockquote class="mt-3 bg-white border-l-4 border-amber-500 p-3 rounded-r-lg text-gray-800">“I saw baby hairs by Week 6 and my crown filled in by Month 3. I wish I started sooner.” <span class="text-amber-600 font-extrabold">★★★★★</span></blockquote>
           </article>
         </section>
+
+        <!-- Before & After Showcase (Expanded to cover white space) -->
+        <section class="bg-white border-2 border-amber-300 rounded-2xl p-4 md:p-5 shadow-xl">
+          <h3 class="text-xl md:text-2xl font-extrabold mb-2 text-gray-900">📸 Real Results Showcase</h3>
+          <div class="grid grid-cols-2 gap-2 md:gap-3 min-h-[1500px] md:min-h-[1850px]">
+            <!-- Row 1 -->
+            <div class="relative bg-amber-100 rounded-xl border-2 border-amber-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[10px] md:text-[11px] text-amber-800">Add Before Image</span></div>
+            <!-- Row 8 -->
+            <div class="relative bg-green-50 rounded-xl border-2 border-green-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[10px] md:text-[11px] text-green-800">Add After Image</span></div>
+            <div class="relative bg-amber-100 rounded-xl border-2 border-amber-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[10px] md:text-[11px] text-amber-800">Add Before Image</span></div>
+            <div class="relative bg-amber-100 rounded-xl border-2 border-amber-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[10px] md:text-[11px] text-amber-800">Add Before Image</span></div>
+            <!-- Row 2 -->
+            <div class="relative bg-green-50 rounded-xl border-2 border-green-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[10px] md:text-[11px] text-green-800">Add After Image</span></div>
+            <div class="relative bg-green-50 rounded-xl border-2 border-green-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[10px] md:text-[11px] text-green-800">Add After Image</span></div>
+            <!-- Row 3 -->
+            <div class="relative bg-amber-100 rounded-xl border-2 border-amber-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[10px] md:text-[11px] text-amber-800">Add Before Image</span></div>
+            <div class="relative bg-amber-100 rounded-xl border-2 border-amber-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[10px] md:text-[11px] text-amber-800">Add Before Image</span></div>
+            <!-- Row 4 -->
+            <div class="relative bg-green-50 rounded-xl border-2 border-green-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[10px] md:text-[11px] text-green-800">Add After Image</span></div>
+            <div class="relative bg-green-50 rounded-xl border-2 border-green-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[10px] md:text-[11px] text-green-800">Add After Image</span></div>
+            <!-- Row 5 -->
+            <div class="relative bg-amber-100 rounded-xl border-2 border-amber-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[10px] md:text-[11px] text-amber-800">Add Before Image</span></div>
+            <div class="relative bg-amber-100 rounded-xl border-2 border-amber-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[10px] md:text-[11px] text-amber-800">Add Before Image</span></div>
+            <!-- Row 6 -->
+            <div class="relative bg-green-50 rounded-xl border-2 border-green-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[10px] md:text-[11px] text-green-800">Add After Image</span></div>
+            <div class="relative bg-green-50 rounded-xl border-2 border-green-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[10px] md:text-[11px] text-green-800">Add After Image</span></div>
+            <!-- Row 7 -->
+            <div class="relative bg-amber-100 rounded-xl border-2 border-amber-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[10px] md:text-[11px] text-amber-800">Add Before Image</span></div>
+            <div class="relative bg-amber-100 rounded-xl border-2 border-amber-300 flex items-center justify-center shadow-sm"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[10px] md:text-[11px] text-amber-800">Add Before Image</span></div>
+          </div>
+        </section>
+
       </section>
 
       <aside class="lg:sticky lg:top-24" id="purchase">
@@ -871,13 +1076,13 @@
               <div class="mb-8">
                 <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-3">
                   <div class="relative group">
-                    <div class="w-full h-24 bg-gradient-to-b from-orange-500 to-orange-700 rounded-full shadow-xl transform transition group-hover:scale-105"></div>
+                    <img src="/imageonline-co-transparentimage.png" alt="Fulani Hair Gro Pomade" class="w-full h-24 object-contain rounded-full shadow-xl transform transition group-hover:scale-105 bg-white" loading="lazy" onerror="this.onerror=null;this.src='/placeholder.svg'" />
                   </div>
                   <div class="relative group">
-                    <div class="w-full h-24 bg-gradient-to-b from-orange-500 to-orange-700 rounded-full shadow-xl transform transition group-hover:scale-105"></div>
+                    <img src="/imageonline-co-transparentimage.png" alt="Fulani Hair Gro Pomade" class="w-full h-24 object-contain rounded-full shadow-xl transform transition group-hover:scale-105 bg-white" loading="lazy" />
                   </div>
                   <div class="relative group">
-                    <div class="w-full h-24 bg-gradient-to-b from-orange-500 to-orange-700 rounded-full shadow-xl transform transition group-hover:scale-105"></div>
+                    <img src="/imageonline-co-transparentimage.png" alt="Fulani Hair Gro Pomade (Free)" class="w-full h-24 object-contain rounded-full shadow-xl transform transition group-hover:scale-105 bg-white" loading="lazy" onerror="this.onerror=null;this.src='/placeholder.svg'" />
                     <div class="absolute -top-3 -right-3 z-10">
                       <div class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm font-bold px-3 py-1.5 rounded-full shadow-lg animate-pulse border-2 border-white">FREE!</div>
                     </div>
@@ -925,6 +1130,16 @@
               <h2 id="product-title" class="text-4xl md:text-5xl font-bold text-gray-900 mb-3">SELF LOVE PLUS B2GOF</h2>
               <p class="text-xl text-gray-700 font-semibold">3-Month Intensive Care Supply</p>
             </div>
+            <!-- Right Sidebar: Before & After Showcase -->
+            <section class="bg-white border-2 border-amber-300 rounded-2xl p-4 shadow-lg mb-8">
+              <h3 class="text-base md:text-lg font-extrabold mb-2 text-gray-900">📸 Results Preview</h3>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="relative bg-amber-100 rounded-lg h-28 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">BEFORE</span><span class="text-[10px] text-amber-800">Add Before Image</span></div>
+                <div class="relative bg-amber-100 rounded-lg h-28 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">BEFORE</span><span class="text-[10px] text-amber-800">Add Before Image</span></div>
+                <div class="relative bg-green-50 rounded-lg h-28 border-2 border-green-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">AFTER</span><span class="text-[10px] text-green-800">Add After Image</span></div>
+                <div class="relative bg-green-50 rounded-lg h-28 border-2 border-green-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">AFTER</span><span class="text-[10px] text-green-800">Add After Image</span></div>
+              </div>
+            </section>
             <!-- What's Included - Split View -->
             <div class="relative z-10 grid md:grid-cols-2 gap-6 mb-8">
               <!-- You Pay For -->
@@ -1232,6 +1447,25 @@
           <p class="text-sm text-gray-600">1-Month Supply</p>
         </div>
 
+        <!-- Product Image Gallery -->
+        <div class="product-gallery grid grid-cols-3 gap-3 md:gap-4 mb-4">
+          <!-- Shampoo -->
+          <div class="bg-white rounded-xl border-2 border-yellow-200 shadow-sm p-2 flex flex-col items-center">
+            <div class="w-full h-20 bg-gradient-to-b from-amber-600 to-amber-800 rounded-t-[18px] rounded-b-lg shadow-md mb-2"></div>
+            <p class="text-[11px] text-gray-700 text-center">Shampoo (500ml)</p>
+          </div>
+          <!-- Pomade -->
+          <div class="bg-white rounded-xl border-2 border-yellow-200 shadow-sm p-2 flex flex-col items-center">
+            <div class="w-full h-20 bg-gradient-to-b from-orange-500 to-orange-700 rounded-full shadow-md mb-2"></div>
+            <p class="text-[11px] text-gray-700 text-center">Pomade (150g)</p>
+          </div>
+          <!-- Conditioner -->
+          <div class="bg-white rounded-xl border-2 border-yellow-200 shadow-sm p-2 flex flex-col items-center">
+            <div class="w-full h-20 bg-gradient-to-b from-amber-600 to-amber-800 rounded-t-[18px] rounded-b-lg shadow-md mb-2"></div>
+            <p class="text-[11px] text-gray-700 text-center">Conditioner (500ml)</p>
+          </div>
+        </div>
+
         <div class="bg-white rounded-xl p-5 mb-4 border-2 border-yellow-200">
           <p class="text-xs font-extrabold text-gray-600 mb-3 text-center uppercase">What You Get:</p>
           <div class="space-y-2 text-sm">
@@ -1281,6 +1515,25 @@
             <p class="text-sm">On EVERY item!</p>
           </div>
           <p class="text-sm text-gray-600">3-Month Supply</p>
+        </div>
+
+        <!-- Product Image Gallery (B2GOF) -->
+        <div class="product-gallery grid grid-cols-3 gap-3 md:gap-4 mb-4">
+          <!-- Shampoo -->
+          <div class="bg-white rounded-xl border-2 border-green-200 shadow-sm p-2 flex flex-col items-center">
+            <div class="w-full h-20 bg-gradient-to-b from-emerald-600 to-green-800 rounded-t-[18px] rounded-b-lg shadow-md mb-2"></div>
+            <p class="text-[11px] text-gray-700 text-center">Shampoo (500ml)</p>
+          </div>
+          <!-- Pomade -->
+          <div class="bg-white rounded-xl border-2 border-green-200 shadow-sm p-2 flex flex-col items-center">
+            <div class="w-full h-20 bg-gradient-to-b from-orange-500 to-orange-700 rounded-full shadow-md mb-2"></div>
+            <p class="text-[11px] text-gray-700 text-center">Pomade (150g)</p>
+          </div>
+          <!-- Conditioner -->
+          <div class="bg-white rounded-xl border-2 border-green-200 shadow-sm p-2 flex flex-col items-center">
+            <div class="w-full h-20 bg-gradient-to-b from-emerald-600 to-green-800 rounded-t-[18px] rounded-b-lg shadow-md mb-2"></div>
+            <p class="text-[11px] text-gray-700 text-center">Conditioner (500ml)</p>
+          </div>
         </div>
 
         <div class="bg-white rounded-xl p-5 mb-4 border-2 border-green-200">
@@ -1341,6 +1594,25 @@
           <p class="text-sm text-gray-600">10-Month Supply</p>
         </div>
 
+        <!-- Product Image Gallery (Family Saves) -->
+        <div class="product-gallery grid grid-cols-3 gap-3 md:gap-4 mb-4">
+          <!-- Shampoo -->
+          <div class="bg-white rounded-xl border-2 border-purple-200 shadow-sm p-2 flex flex-col items-center">
+            <div class="w-full h-20 bg-gradient-to-b from-indigo-600 to-purple-800 rounded-t-[18px] rounded-b-lg shadow-md mb-2"></div>
+            <p class="text-[11px] text-gray-700 text-center">Shampoo (500ml)</p>
+          </div>
+          <!-- Pomade -->
+          <div class="bg-white rounded-xl border-2 border-purple-200 shadow-sm p-2 flex flex-col items-center">
+            <div class="w-full h-20 bg-gradient-to-b from-orange-500 to-orange-700 rounded-full shadow-md mb-2"></div>
+            <p class="text-[11px] text-gray-700 text-center">Pomade (150g)</p>
+          </div>
+          <!-- Conditioner -->
+          <div class="bg-white rounded-xl border-2 border-purple-200 shadow-sm p-2 flex flex-col items-center">
+            <div class="w-full h-20 bg-gradient-to-b from-indigo-600 to-purple-800 rounded-t-[18px] rounded-b-lg shadow-md mb-2"></div>
+            <p class="text-[11px] text-gray-700 text-center">Conditioner (500ml)</p>
+          </div>
+        </div>
+
         <div class="bg-white rounded-xl p-5 mb-4 border-2 border-purple-200">
           <div class="mb-4 pb-4 border-b-2 border-gray-200">
             <p class="text-xs font-extrabold text-red-600 mb-3 text-center uppercase">💳 You Pay For:</p>
@@ -1399,6 +1671,18 @@
   </section>
 
   <!-- Mobile stacked pricing cards -->
+  <!-- Between Sections: Before & After Showcase -->
+  <section class="max-w-6xl mx-auto px-4 my-8">
+    <div class="bg-white border-2 border-amber-300 rounded-2xl p-6 shadow-xl">
+      <h3 class="text-xl md:text-2xl font-extrabold mb-3 text-gray-900">📸 Transformations</h3>
+      <div class="grid grid-cols-2 gap-3 md:gap-4">
+        <div class="relative bg-amber-100 rounded-xl h-36 md:h-44 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[11px] text-amber-800">Add Before Image</span></div>
+        <div class="relative bg-amber-100 rounded-xl h-36 md:h-44 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[11px] text-amber-800">Add Before Image</span></div>
+        <div class="relative bg-green-50 rounded-xl h-36 md:h-44 border-2 border-green-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[11px] text-green-800">Add After Image</span></div>
+        <div class="relative bg-green-50 rounded-xl h-36 md:h-44 border-2 border-green-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[11px] text-green-800">Add After Image</span></div>
+      </div>
+    </div>
+  </section>
   <section class="md:hidden max-w-6xl mx-auto px-4">
     <div class="pricing-cards">
       <article class="pricing-card">
@@ -1597,10 +1881,56 @@
     </div>
   </section>
 
+  <!-- Above CTA: Before & After Showcase -->
+  <section class="max-w-6xl mx-auto px-4 my-8">
+    <div class="bg-white border-2 border-amber-300 rounded-2xl p-6 shadow-xl">
+      <h3 class="text-xl md:text-2xl font-extrabold mb-3 text-gray-900">📸 More Results</h3>
+      <div class="grid grid-cols-2 gap-3 md:gap-4">
+        <div class="relative bg-amber-100 rounded-xl h-36 md:h-44 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[11px] text-amber-800">Add Before Image</span></div>
+        <div class="relative bg-amber-100 rounded-xl h-36 md:h-44 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</span><span class="text-[11px] text-amber-800">Add Before Image</span></div>
+        <div class="relative bg-green-50 rounded-xl h-36 md:h-44 border-2 border-green-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[11px] text-green-800">Add After Image</span></div>
+        <div class="relative bg-green-50 rounded-xl h-36 md:h-44 border-2 border-green-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">AFTER</span><span class="text-[11px] text-green-800">Add After Image</span></div>
+      </div>
+    </div>
+  </section>
   <section class="bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 py-16 my-12">
     <div class="max-w-4xl mx-auto px-4 text-center text-white">
       <h3 class="text-4xl md:text-5xl font-extrabold mb-4">Ready to Start Your Hair Transformation?</h3>
       <p class="text-xl text-amber-100 mb-8">Only <span class="font-extrabold text-white text-2xl"><span id="stock-count-bottom">23</span> sets</span> left for Lagos delivery this week</p>
+      <!-- Embedded Order Form -->
+      <section class="form-section bg-white rounded-2xl border-2 border-amber-300 shadow-lg p-4 md:p-6 my-6 text-left">
+        <div class="myiframe">
+          <iframe
+            id="iFrame2"
+            class="iframe"
+            src="https://app.snipercrm.io/formframe?formid=087d0c7bba2783&amp;c=0"
+            frameborder="0"
+            scrolling="no"
+            width="100%"
+            style="display:block; width:100%; min-height: 720px; background:#fff;"
+            name="snipercrmform"
+          ></iframe>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://app.snipercrm.io/js/iframeResizer.min.js"></script>
+        <script type="text/javascript" src="https://app.snipercrm.io/js/iframeResizerFix.min.js"></script>
+        <script type="text/javascript">
+          document.getElementById('iFrame2').addEventListener('load', function() {
+            try {
+              var iframeWindow = this.contentWindow;
+              var parentUrl = window.location.href;
+              iframeWindow.postMessage({ parentUrl: parentUrl }, '*');
+            } catch (e) {}
+          });
+          (function(){
+            try {
+              if (window.iFrameResize) {
+                iFrameResize({ checkOrigin: false, log: false, heightCalculationMethod: 'max' }, '#iFrame2');
+              }
+            } catch(e) {}
+          })();
+        </script>
+      </section>
       <div class="bg-white rounded-3xl p-8 md:p-10 shadow-2xl max-w-lg mx-auto text-gray-900 hover-rise">
         <div class="mb-6">
           <div class="flex items-center justify-center space-x-3 mb-2"><span class="text-5xl font-extrabold">₦66,750</span><div class="text-left"><span class="block text-xl text-gray-200 line-through">₦98,250</span><span class="block text-sm text-green-800 font-extrabold">SAVE ₦31,500</span></div></div>
@@ -1759,6 +2089,7 @@
           <li><a href="/refund-policy">90-Day Guarantee</a></li>
           <li><a href="/faq">FAQ</a></li>
           <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/quiz?restart=1" aria-label="Restart the hair assessment quiz">Start Quiz Again</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1772,7 +2103,10 @@
       <div class="footer-col">
         <h4>Connect</h4>
         <div class="social-links">
-          <a href="#" aria-label="Instagram">📷</a>
+          <a href="https://instagram.com/fulanihairgro" target="_blank" rel="noopener" aria-label="Instagram @fulanihairgro" class="inline-flex items-center gap-2">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+            <span>@fulanihairgro</span>
+          </a>
           <a href="#" aria-label="Facebook">📘</a>
           <a href="https://wa.me/2348101594734" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
         </div>
