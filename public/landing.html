@@ -791,6 +791,7 @@
               }
 
               var diagnosis = getDiagnosis();
+              try { window.__fhgDiagnosis = diagnosis; } catch(e){}
 
               var content = {
                 'Traction Alopecia': {
@@ -857,6 +858,7 @@
                   why: 'Combines cleansing, stimulation, and breakage reduction to rebuild density outlook.'
                 }
               };
+              try { window.__fhgContent = content; } catch(e){}
 
               var key = diagnosis.primary;
               var data = content[key] || content['General Hair Thinning'];
@@ -1800,10 +1802,54 @@
             <div class="flex items-start space-x-4 mb-4">
               <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">🔬</div>
               <div>
-                <h4 class="font-extrabold text-2xl mb-3">Your Diagnosis: Androgenic Alopecia</h4>
-                <p class="text-gray-700 mb-4 leading-relaxed">Genetic hair loss pattern where hair follicles become sensitive to DHT hormone, causing gradual thinning.</p>
+                <h4 class="font-extrabold text-2xl mb-3">Your Diagnosis: <span id="dx-name">Loading…</span></h4>
+                <p id="dx-desc" class="text-gray-700 mb-4 leading-relaxed"></p>
               </div>
             </div>
+            <script>
+              (function(){
+                try{
+                  var dx = (window.__fhgDiagnosis && window.__fhgDiagnosis.primary) ? window.__fhgDiagnosis.primary : null;
+                  var content = window.__fhgContent || {};
+                  if (!dx) {
+                    // fallback minimal local read if needed
+                    var raw = null; try { raw = localStorage.getItem('fulani-hair-quiz'); } catch(e) {}
+                    var quiz = null; try { quiz = raw ? JSON.parse(raw) : null; } catch(e) {}
+                    var responses = quiz && quiz.responses ? quiz.responses : [];
+                    var map = {}; responses.forEach(function(r){ map[r.questionId] = r.answer; });
+                    function toArray(v){ return Array.isArray(v) ? v : []; }
+                    function includesAny(val, patterns){ if(!val) return false; return patterns.some(function(rx){ return rx.test(String(val)); }); }
+                    function arrayIncludesAny(arr, patterns){ return toArray(arr).some(function(v){ return includesAny(v, patterns); }); }
+                    var affectedAreas = toArray(map['affected-areas']); var protectiveStyles = toArray(map['protective-styles-often']);
+                    var hairBehavior = map['shedding-vs-breakage']; var lengthComparison = map['length-distribution'];
+                    var ageRange = map['age-range']; var whenNoticed = map['noticed-when']; var primaryConcern = map['primary-concern'];
+                    var lifeEvents = toArray(map['life-events-2years']); var familyHistory = map['family-history-detailed'];
+                    var scalpIssues = toArray(map['scalp-issues-detailed']); var medicalConditions = toArray(map['diagnosed-conditions']);
+                    var diagnoses = []; var confidence = {};
+                    var traction = [arrayIncludesAny(affectedAreas, [/edge/i, /temple/i]), arrayIncludesAny(protectiveStyles, [/box braids/i, /cornrows/i, /tight ponytails/i, /(frontal|full lace).*uses glue/i, /ghana weaving|shuku/i]), includesAny(lengthComparison||'', [/edges.*short/i]), includesAny(hairBehavior||'', [/breaks|both/i])];
+                    if (traction.filter(Boolean).length >= 2) { diagnoses.push('Traction Alopecia'); confidence.traction = traction.filter(Boolean).length/traction.length; }
+                    var telogen = [arrayIncludesAny(lifeEvents, [/postpartum/i, /breastfeeding/i]), arrayIncludesAny(lifeEvents, [/stress|job change|relocation|loss/i, /surgery|illness/i]), includesAny(hairBehavior||'', [/falls out|shedding|both/i]), includesAny(whenNoticed||'', [/less than 3/i, /^3-6/i]), includesAny(primaryConcern||'', [/excessive shedding/i])];
+                    if (telogen.filter(Boolean).length >= 3) { diagnoses.push('Telogen Effluvium'); confidence.telogen = telogen.filter(Boolean).length/telogen.length; }
+                    var androgenic = [includesAny(familyHistory||'', [/mother|both/i]), includesAny(ageRange||'', [/46-55|56\+/i]), arrayIncludesAny(lifeEvents, [/menopause|perimenopause/i]), arrayIncludesAny(affectedAreas, [/crown/i, /even thinning|overall/i]), includesAny(whenNoticed||'', [/1-2 years/i, /more than 2/i]), includesAny(primaryConcern||'', [/overall thinning/i])];
+                    if (androgenic.filter(Boolean).length >= 3) { diagnoses.push('Androgenic Alopecia'); confidence.androgenic = androgenic.filter(Boolean).length/androgenic.length; }
+                    var cic = [arrayIncludesAny(scalpIssues, [/ringworm|infection|sores|painful/i]), includesAny(primaryConcern||'', [/bald patches/i]), arrayIncludesAny(affectedAreas, [/patch/i])];
+                    if (cic.filter(Boolean).length >= 2) { diagnoses.push('Cicatricial (Scarring) Alopecia'); confidence.cicatricial = cic.filter(Boolean).length/cic.length; }
+                    var nut = [arrayIncludesAny(medicalConditions, [/anemia|iron/i, /vitamin/i]), includesAny(hairBehavior||'', [/breaks/i]), includesAny(primaryConcern||'', [/breakage/i]), arrayIncludesAny(lifeEvents, [/breastfeeding/i])];
+                    if (nut.filter(Boolean).length >= 2) { diagnoses.push('Nutritional Deficiency-Related Hair Loss'); confidence.nutritional = nut.filter(Boolean).length/nut.length; }
+                    var areata = [arrayIncludesAny(medicalConditions, [/autoimmune/i]), includesAny(primaryConcern||'', [/bald patches/i]), arrayIncludesAny(affectedAreas, [/patch/i]), arrayIncludesAny(lifeEvents, [/stress/i])];
+                    if (areata.filter(Boolean).length >= 2) { diagnoses.push('Alopecia Areata'); confidence.areata = areata.filter(Boolean).length/areata.length; }
+                    if (!diagnoses.length) dx = 'General Hair Thinning';
+                    else { diagnoses.sort(function(a,b){ var ka=a.toLowerCase().split(' ')[0]; var kb=b.toLowerCase().split(' ')[0]; return (confidence[kb]||0)-(confidence[ka]||0); }); dx = diagnoses[0]; }
+                  }
+                  var nameEl = document.getElementById('dx-name'); if (nameEl) nameEl.textContent = dx;
+                  var descEl = document.getElementById('dx-desc');
+                  if (descEl) {
+                    var c = content && content[dx];
+                    descEl.textContent = c && c.what ? c.what : '';
+                  }
+                }catch(e){}
+              })();
+            </script>
             <div class="bg-white p-6 rounded-xl border-l-4 border-green-500 shadow-md">
               <p class="text-sm font-extrabold text-green-800 mb-2">✓ Treatment Approach:</p>
               <p class="text-gray-700">Daily DHT modulation + scalp optimization creates the best environment for regrowth.</p>
