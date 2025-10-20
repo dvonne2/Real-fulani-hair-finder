@@ -38,7 +38,7 @@ const Index = () => {
 
       {/* Section: 3 Cards */}
       <section className="min-h-screen flex flex-col items-center justify-center px-6 py-20">
-        <h2 className="text-center font-extrabold mb-16 max-w-4xl" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', letterSpacing: '-0.04em' }}>
+        <h2 className="text-center font-extrabold mb-16 max-w-4xl text-white" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', letterSpacing: '-0.04em' }}>
           We're going to uncover and improve these 3 key things
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl w-full">
@@ -60,7 +60,7 @@ const Index = () => {
 
       {/* Science Section */}
       <section className="min-h-screen flex flex-col items-center justify-center px-6 py-20" style={{ backgroundImage: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)' }}>
-        <h2 className="text-center font-extrabold mb-10 max-w-4xl" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)' }}>
+        <h2 className="text-center font-extrabold mb-10 max-w-4xl text-white" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)' }}>
           This isn't guesswork. It's backed by science.
         </h2>
         <p className="text-center max-w-3xl text-white/80 leading-8 mb-10" style={{ fontSize: 'clamp(1rem,2vw,1.2rem)' }}>
