@@ -71,3 +71,31 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## 🔗 Related Repositories
+
+- **Backend API:** [Real-fulani-hair-finder-backend](https://github.com/dvonne2/Real-fulani-hair-finder-backend)
+
+## 🏗️ Architecture
+
+This repository contains the **frontend application** built with:
+- React + TypeScript
+- Vite for build tooling
+- Tailwind CSS + shadcn/ui
+- Interactive quiz system
+- Dynamic condition education
+
+## 🚀 Development Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server (http://localhost:8080)
+npm run dev
+
+# Build for production
+npm run build
+```
+
+**Note:** To run the full application, you'll also need to set up and run the [backend API](https://github.com/dvonne2/Real-fulani-hair-finder-backend).
