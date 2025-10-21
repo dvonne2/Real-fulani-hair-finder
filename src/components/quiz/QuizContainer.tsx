@@ -4,6 +4,9 @@ import { ProgressBar } from './ProgressBar';
 import { LoadingScreen, loadingPhases } from './LoadingScreen';
 import { ResultsPage } from './ResultsPage';
 import { quizQuestions, QuizResponse, Question } from './quizData';
+import { useNavigate } from 'react-router-dom';
+import { createQuizResult } from '@/services/api/quiz.service';
+import { toast } from '@/components/ui/sonner';
 
 type QuizStep = 'quiz' | 'loading' | 'results';
 
@@ -15,6 +18,7 @@ interface QuizState {
 }
 
 export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved = false }) => {
+  const navigate = useNavigate();
   const [quizState, setQuizState] = useState<QuizState>(() => {
     if (!ignoreSaved) {
       // Load saved state from localStorage
@@ -110,17 +114,16 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
     const nextQuestionIndex = safeIndex + 1;
 
     if (nextQuestionIndex >= quizQuestions.length) {
-      // Start multi-phase loading process (38s total + CTA)
+      // Start multi-phase loading process (origin)
       setQuizState(prev => ({
         ...prev,
         step: 'loading',
         loadingPhase: 0
       }));
 
-      // Phase scheduler: auto-advance through all but the final CTA phase
+      // Phase scheduler: auto-advance through all but the final CTA phase (origin)
       let phaseIndex = 0;
       const scheduleNext = () => {
-        // Determine next phase index
         const next = phaseIndex + 1;
         if (next >= loadingPhases.length) return; // safety
         phaseIndex = next;
@@ -131,9 +134,42 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
           window.setTimeout(scheduleNext, dur);
         }
       };
-
       const firstDuration = loadingPhases[0].duration || 0;
       window.setTimeout(scheduleNext, firstDuration);
+
+      // Submit answers to backend (integration)
+      try {
+        const answersObject = quizState.responses.reduce((acc: Record<string, any>, r) => {
+          acc[r.questionId] = r.answer;
+          return acc;
+        }, {});
+
+        createQuizResult({
+          answers: answersObject,
+          recommendation: null,
+          name: null,
+          email: null,
+          phone: null,
+          state: null,
+        })
+          .then((res: any) => {
+            if (res && res._isAcceptedFallback) {
+              toast('Saved', { description: 'Accepted but may be processed later.' });
+              navigate('/results');
+            } else if (res && res.id) {
+              toast.success('Quiz saved successfully');
+              navigate(`/results/${res.id}`);
+            } else {
+              toast('Saved', { description: 'Submission accepted.' });
+              navigate('/results');
+            }
+          })
+          .catch((e: any) => {
+            toast.error(e?.message || 'Failed to save quiz');
+          });
+      } catch (e: any) {
+        toast.error('Failed to prepare submission');
+      }
     } else {
       setQuizState(prev => ({
         ...prev,

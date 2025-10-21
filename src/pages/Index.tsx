@@ -1,5 +1,7 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { listQuizResults } from '@/services/api/quiz.service';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -104,8 +106,60 @@ const Index = () => {
           <ArrowRight className="w-5 h-5" />
         </button>
       </div>
+
+      <RecentResultsPreview />
     </div>
   );
 };
 
 export default Index;
+
+function RecentResultsPreview() {
+  const { data, isLoading, isError, refetch } = useQuery({
+    queryKey: ['quizResults', { limit: 5, offset: 0 }],
+    queryFn: () => listQuizResults({ limit: 5, offset: 0 }),
+    staleTime: 5 * 60 * 1000,
+  });
+
+  return (
+    <div className="max-w-6xl mx-auto px-6 pb-16">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="font-playfair font-bold text-foreground" style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)' }}>
+          Recent Results
+        </h3>
+        <Link to="/results" className="text-sm underline">View all</Link>
+      </div>
+      {isLoading ? (
+        <div className="grid gap-2">
+          <div className="h-10 bg-white rounded-2xl border" />
+          <div className="h-10 bg-white rounded-2xl border" />
+          <div className="h-10 bg-white rounded-2xl border" />
+        </div>
+      ) : isError ? (
+        <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded p-3">
+          Failed to load. <button className="underline" onClick={() => refetch()}>Retry</button>
+        </div>
+      ) : !data || (data.items?.length ?? 0) === 0 ? (
+        <div className="text-sm text-[hsl(var(--gray-medium))]">No results yet.</div>
+      ) : (
+        <div className="grid gap-2">
+          {data.items?.map((r) => (
+            <Link
+              key={String(r.id) + (r.createdAt || '')}
+              to={r.id ? `/results/${r.id}` : '/results'}
+              className="flex items-center justify-between bg-white rounded-2xl border p-3 hover:shadow-[var(--shadow-soft)]"
+            >
+              <div className="font-montserrat text-[hsl(var(--gray-dark))]">
+                <span className="font-medium">#{r.id ?? 'pending'}</span>
+                <span className="ml-2 text-sm text-[hsl(var(--gray-medium))]">{r.createdAt || '—'}</span>
+              </div>
+              <div className="text-sm text-[hsl(var(--gray-medium))] truncate max-w-[50%]">
+                {r.answers ? JSON.stringify(r.answers).slice(0, 60) : '—'}
+              </div>
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
