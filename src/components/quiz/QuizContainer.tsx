@@ -130,7 +130,6 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
           const dur = loadingPhases[phaseIndex].duration || 0;
           window.setTimeout(scheduleNext, dur);
         }
-        // If final (CTA) phase, stop scheduling and wait for user click
       };
 
       const firstDuration = loadingPhases[0].duration || 0;
@@ -174,7 +173,6 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
   }
 
   if (quizState.step === 'results') {
-    // Lightweight redirect component
     const RedirectToLanding: React.FC = () => {
       useEffect(() => {
         window.location.assign('/landing.html');
@@ -200,17 +198,18 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
             <span className="inline-block text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">
               {Math.round(((safeIndex + 1) / Math.max(1, total)) * 100)}% Complete
             </span>
+            <div className="text-[10px] text-gray-500 mt-1">🔒 Secure • Quick 3-min quiz</div>
           </div>
         </div>
         {/* Progress Bar */}
         <div
-          className="h-2 bg-gradient-to-r from-green-400 to-green-600 transition-all duration-500"
+          className="h-1 bg-gradient-to-r from-green-400 to-green-600 transition-all duration-500"
           style={{ width: `${(((safeIndex + 1) / Math.max(1, total)) * 100)}%` }}
         />
       </div>
 
       {/* Main Content - Centered, No Scroll Needed */}
-      <div className="flex-1 flex items-center justify-center px-4 pt-32 pb-8">
+      <div className="flex-1 flex items-center justify-center px-4 pt-28 pb-8">
         <div className="w-full max-w-3xl">
           <QuestionCard
             question={currentQuestion}
@@ -225,8 +224,9 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
       </div>
 
       {/* Trust Badge - Bottom (optional) */}
-      <div className="text-center pb-6 text-sm text-gray-600">
-        <p>🔒 Your answers are private and secure • 10,000+ women completed this quiz</p>
+      <div className="text-center pb-4 text-sm text-gray-600">
+        <p className="font-medium">🔒 Your answers are private and secure <span className="mx-1">✓</span> <span className="font-semibold text-gray-800">10,000+ women</span> completed this quiz</p>
+        <p className="mt-0.5 text-[9px] text-gray-300">By clicking any of the options above, you agree with the Terms of Use and Service and Privacy Policy.</p>
       </div>
     </div>
   );

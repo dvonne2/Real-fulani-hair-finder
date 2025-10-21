@@ -665,7 +665,7 @@
 
           <div class="grid md:grid-cols-2 gap-6">
             <article class="bg-white rounded-xl p-5 border-2 border-amber-200 shadow">
-              <h3 class="text-lg font-extrabold text-amber-800 mb-2 flex items-center"><span class="mr-2">❓</span>What is <span class="ml-1" id="what-name">Androgenic Alopecia</span>?</h3>
+              <h3 class="text-lg font-extrabold text-amber-800 mb-2 flex items-center gap-2 flex-wrap"><span class="mr-2">❓</span><span>What is</span><span id="what-name">Androgenic Alopecia</span>?</h3>
               <p id="what-body" class="text-sm text-gray-800 leading-relaxed"></p>
             </article>
 
@@ -878,6 +878,111 @@
               fill('timeline-text', data.timeline);
               fill('why-text', data.why);
             })();
+
+      // ===== Hydrate Condition Education from Diagnosis =====
+      (function hydrateConditionEducation(){
+        const elTitle = document.getElementById('cond-title');
+        const elNote = document.getElementById('cond-note');
+        const elWhatName = document.getElementById('what-name');
+        const elWhatBody = document.getElementById('what-body');
+        const elCauses = document.getElementById('causes-list');
+        const elSymptoms = document.getElementById('symptoms-list');
+        const elWho = document.getElementById('who-list');
+        if (!elTitle || !elNote || !elWhatName || !elWhatBody || !elCauses || !elSymptoms || !elWho) return;
+
+        function pickDiagnosis(){
+          try {
+            const ls = localStorage.getItem('fhg-primary-diagnosis');
+            if (ls && typeof ls === 'string' && ls.trim()) return ls.trim();
+          } catch(e) {}
+          // Fallback: parse from hero card if present
+          const heroDxSpan = document.querySelector('.font-extrabold.text-amber-700');
+          if (heroDxSpan && heroDxSpan.textContent) {
+            return heroDxSpan.textContent.replace(/^May be\s+/i, '').trim();
+          }
+          return 'General Hair Thinning';
+        }
+
+        const diagnosis = pickDiagnosis();
+
+        const content = {
+          'Androgenic Alopecia': {
+            what: 'A genetic form of hair thinning driven by sensitivity to DHT (a hormone derived from testosterone). It typically shows as progressive thinning over the crown or overall density reduction over time.',
+            causes: [
+              'Genetic sensitivity to DHT (dihydrotestosterone)',
+              'Hormonal shifts (perimenopause/menopause)',
+              'Family history of pattern thinning'
+            ],
+            symptoms: [
+              'Widening part or crown thinning',
+              'Gradual, long-term density reduction',
+              'Miniaturized (finer) hair strands over time'
+            ],
+            who: [
+              'More common with family history (mother’s side or both parents)',
+              'Often appears 30s–50s and beyond',
+              'Can accelerate around hormonal changes'
+            ]
+          },
+          'General Hair Thinning': {
+            what: 'A diffuse reduction in hair density caused by everyday factors like stress, tight styles, poor scalp hygiene, or inconsistent routines. Often reversible with consistent care.',
+            causes: [
+              'Chronic stress and poor scalp hygiene',
+              'Tight protective styles and frequent tension',
+              'Infrequent washing and product buildup'
+            ],
+            symptoms: [
+              'Overall thinner ponytail/density',
+              'Shedding and breakage during styling',
+              'Dry, irritated scalp with buildup'
+            ],
+            who: [
+              'Common across all ages and hair types',
+              'Worsens with harsh styling habits',
+              'Improves with a consistent healthy routine'
+            ]
+          },
+          'Telogen Effluvium': {
+            what: 'Temporary, stress-triggered shedding where many hairs enter the resting (telogen) phase at once. Usually recovers over months once the trigger resolves.',
+            causes: [
+              'Postpartum and breastfeeding-related changes',
+              'Major stress, illness, surgery, or rapid weight change',
+              'Nutrient deficiencies or medication changes'
+            ],
+            symptoms: [
+              'Diffuse shedding (hair on pillows, shower, comb)',
+              'Sudden onset within the last 3–6 months',
+              'Scalp often looks normal without clear patches'
+            ],
+            who: [
+              'Very common after childbirth',
+              'Anyone after major stressors or illness',
+              'Typically self-resolving with supportive care'
+            ]
+          }
+        };
+
+        const dxKey = content[diagnosis] ? diagnosis : 'General Hair Thinning';
+        const data = content[dxKey];
+
+        elTitle.textContent = dxKey;
+        elNote.textContent = `Dr. Amina has diagnosed you with ${dxKey} based on your quiz responses.`;
+        elWhatName.textContent = dxKey;
+        elWhatBody.textContent = data.what;
+
+        function setList(el, items){
+          el.innerHTML = '';
+          items.forEach(txt => {
+            const li = document.createElement('li');
+            li.textContent = txt;
+            el.appendChild(li);
+          });
+        }
+
+        setList(elCauses, data.causes);
+        setList(elSymptoms, data.symptoms);
+        setList(elWho, data.who);
+      })();
           </script>
         </section>
 

@@ -9,12 +9,12 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-16 text-center bg-[radial-gradient(circle_at_50%_0%,rgba(138,43,226,0.15),transparent_60%)]" style={{ backgroundImage: 'linear-gradient(180deg, #1a1a2e 0%, #0a0a0a 100%)' }}>
         <h1 className="font-extrabold leading-tight tracking-tight max-w-5xl mb-6" style={{ fontSize: 'clamp(2.4rem,6vw,4.5rem)', letterSpacing: '-0.06em' }}>
-          Feeling frustrated that your hair just refuses to grow — no matter what you use?
+          Frustrated that hair sometimes just refuses to grow — no matter what products are used?
         </h1>
         <p className="opacity-85 font-light max-w-3xl mb-8" style={{ fontSize: 'clamp(1rem,2.2vw,1.3rem)', lineHeight: 1.7 }}>
-          You've spent time, money, and hope on oils, creams, and "miracle" products... yet your edges still look thin and your hairline hasn't bounced back.
+          Time, money, and hope have been spent on oils, creams, and "miracle" products... yet edges can still look thin and hairlines may not bounce back easily.
           <br className="hidden md:block" />
-          It's not that your hair can't grow — something's blocking it.
+          It's not that hair can't grow — something's blocking it.
         </p>
         <button
           onClick={() => navigate('/quiz')}
@@ -78,7 +78,7 @@ const Index = () => {
           <div className="flex items-center gap-2"><span className="text-yellow-400">⚡</span><span>Made for African Hair</span></div>
           <div className="flex items-center gap-2"><span className="text-yellow-400">⚡</span><span>AI Results-Focused</span></div>
         </div>
-        <div className="mt-10">
+        <div className="mt-10 text-center">
           <button
             onClick={() => navigate('/quiz')}
             className="rounded-full px-10 py-4 font-semibold text-white"
