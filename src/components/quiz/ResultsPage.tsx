@@ -1,4 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { normalizeAnswers } from '@/lib/recommendation/normalize';
+import { generateRecommendations } from '@/lib/recommendation/recommendationEngine';
 import OrderFormModal from './OrderFormModal';
 import { Button } from '@/components/ui/button';
 import { Star, Check, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -96,6 +98,7 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({ responses, onRestart }
   const [showOrderForm, setShowOrderForm] = useState(false);
   const [showFamilyModal, setShowFamilyModal] = useState(false);
   const [stockLeft, setStockLeft] = useState(22);
+  const [engineResult, setEngineResult] = useState<any | null>(null);
 
   // Lead contact fields
   const [name, setName] = useState('');
@@ -525,6 +528,7 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({ responses, onRestart }
 
   // Keep a short expert paragraph using diagnosis + plan highlights
   const getPersonalizedRecommendation = () => {
+    if (engineResult?.summary) return engineResult.summary as string;
     const confKey = diagnosis.primary.toLowerCase().split(' ')[0];
     const confPct = Math.round(((diagnosis.confidence as any)[confKey] || 0) * 100);
     return `Primary finding: ${diagnosis.primary}${confPct ? ` (${confPct}% confidence)` : ''}. We will focus on restoring scalp balance, protecting fragile areas, and stimulating follicles with a consistent routine tailored to your selections.`;
