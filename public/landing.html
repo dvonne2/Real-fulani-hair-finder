@@ -667,7 +667,9 @@
             </div>
           </section>
 
+        
         </section>
+        
         <!-- Condition Education (replaces Real Transformation Timeline) -->
         <section id="condition-education" class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 md:p-8 shadow-xl border-2 border-amber-300">
           <h2 class="text-2xl md:text-3xl font-extrabold mb-2 flex items-center">
@@ -1140,6 +1142,40 @@
           </div>
         </section>
 
+        <!-- Secondary Order Form: placed directly below 📸 Real Results Showcase -->
+        <section class="form-section bg-white rounded-2xl border-2 border-amber-300 shadow-lg p-4 md:p-6 my-4 text-left">
+          <div class="myiframe">
+            <iframe
+              id="iFrameLeft"
+              class="iframe"
+              src="https://app.snipercrm.io/formframe?formid=087d0c7bba2783&amp;c=0"
+              frameborder="0"
+              scrolling="no"
+              width="100%"
+              style="display:block; width:100%; min-height: 720px; background:#fff;"
+              name="snipercrmform-left"
+              title="Order Form Left"
+            ></iframe>
+          </div>
+          <script type="text/javascript">
+            (function(){
+              var left = document.getElementById('iFrameLeft');
+              if (left) {
+                left.addEventListener('load', function(){
+                  try {
+                    var w = this.contentWindow; var parentUrl = window.location.href; w.postMessage({ parentUrl: parentUrl }, '*');
+                  } catch(e) {}
+                });
+              }
+              function initResize(){
+                try { if (window.iFrameResize) { window.iFrameResize({ checkOrigin:false, heightCalculationMethod:'max' }, '#iFrameLeft'); } } catch(e) {}
+              }
+              if (document.readyState === 'complete') { initResize(); }
+              else { window.addEventListener('load', initResize); }
+            })();
+          </script>
+        </section>
+
       </section>
 
       <aside class="lg:sticky lg:top-24" id="purchase">
@@ -1593,6 +1629,9 @@
           <div class="bg-white/10 rounded-xl p-5 border-2 border-white/20 text-center card"><div class="text-3xl mb-2">💬</div><p class="font-extrabold">90‑Day Personal Hair Coach</p><p class="text-purple-100">Priority WhatsApp support (Mon–Sat, 9am–6pm)</p><p class="text-yellow-300 font-extrabold mt-1">Worth ₦15,000</p></div>
           <div class="bg-white/10 rounded-xl p-5 border-2 border-white/20 text-center card"><div class="text-3xl mb-2">📔</div><p class="font-extrabold">Exclusive Hair Growth Tracker Journal</p><p class="text-purple-100">Track week‑by‑week with guides</p><p class="text-yellow-300 font-extrabold mt-1">Worth ₦8,000</p></div>
           <div class="bg-white/10 rounded-xl p-5 border-2 border-white/20 text-center card"><div class="text-3xl mb-2">⚡</div><p class="font-extrabold">FREE Delivery Today</p><p class="text-purple-100">Door delivery on us</p><p class="text-yellow-300 font-extrabold mt-1">Worth ₦5,000</p></div>
+          <div class="bg-white/10 rounded-xl p-5 border-2 border-white/20 text-center card"><div class="text-3xl mb-2">🪮</div><p class="font-extrabold">Branded Paddle Brush</p><p class="text-purple-100">Detangling with less breakage</p><p class="text-yellow-300 font-extrabold mt-1">Included FREE</p></div>
+          <div class="bg-white/10 rounded-xl p-5 border-2 border-white/20 text-center card"><div class="text-3xl mb-2">💾</div><p class="font-extrabold">USB Storage</p><p class="text-purple-100">Tips, guides and routines preloaded</p><p class="text-yellow-300 font-extrabold mt-1">Included FREE</p></div>
+          <div class="bg-white/10 rounded-xl p-5 border-2 border-white/20 text-center card"><div class="text-3xl mb-2">🎀</div><p class="font-extrabold">Satin Hair Bonnet</p><p class="text-purple-100">Protects hair while you sleep</p><p class="text-yellow-300 font-extrabold mt-1">Included FREE</p></div>
         </div>
         <!-- Total bar (dynamic) -->
         <div aria-live="polite" class="bg-yellow-400 text-purple-900 rounded-xl p-4 text-center">
