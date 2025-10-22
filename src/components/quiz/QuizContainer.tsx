@@ -3,18 +3,21 @@ import { QuestionCard } from './QuestionCard';
 import { ProgressBar } from './ProgressBar';
 import { LoadingScreen, loadingPhases } from './LoadingScreen';
 import { ResultsPage } from './ResultsPage';
+import { LeadCaptureForm } from './LeadCaptureForm';
 import { quizQuestions, QuizResponse, Question } from './quizData';
 import { useNavigate } from 'react-router-dom';
-import { createQuizResult } from '@/services/api/quiz.service';
+import { createQuizResult, updateQuizResult } from '@/services/api/quiz.service';
 import { toast } from '@/components/ui/sonner';
 
-type QuizStep = 'quiz' | 'loading' | 'results';
+type QuizStep = 'quiz' | 'loading' | 'lead' | 'results';
 
 interface QuizState {
   currentQuestion: number;
   responses: QuizResponse[];
   step: QuizStep;
   loadingPhase: number;
+  resultId?: number | null;
+  answersObject?: Record<string, any>;
 }
 
 export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved = false }) => {
@@ -32,6 +35,8 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
             responses: Array.isArray(parsed.responses) ? parsed.responses : [],
             step: 'quiz',
             loadingPhase: 0,
+            resultId: null,
+            answersObject: {},
           } as QuizState;
         } catch {
           // fallthrough to fresh state
@@ -42,7 +47,9 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
       currentQuestion: 0,
       responses: [],
       step: 'quiz' as QuizStep,
-      loadingPhase: 0
+      loadingPhase: 0,
+      resultId: null,
+      answersObject: {},
     };
   });
 
@@ -150,12 +157,15 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
       const firstDuration = loadingPhases[0].duration || 0;
       window.setTimeout(scheduleNext, firstDuration);
 
-      // Submit answers to backend (integration)
+      // Prepare answers for submission and submit to backend early (we will update with lead fields later)
       try {
         const answersObject = quizState.responses.reduce((acc: Record<string, any>, r) => {
           acc[r.questionId] = r.answer;
           return acc;
         }, {});
+
+        // store answers locally for potential fallback create if DB returned no id
+        setQuizState(prev => ({ ...prev, answersObject }));
 
         createQuizResult({
           answers: answersObject,
@@ -170,6 +180,7 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
               toast('Saved', { description: 'Accepted but may be processed later.' });
             } else if (res && res.id) {
               toast.success('Quiz saved successfully');
+              setQuizState(prev => ({ ...prev, resultId: res.id }));
             } else {
               toast('Saved', { description: 'Submission accepted.' });
             }
@@ -239,8 +250,45 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
       <LoadingScreen
         phase={quizState.loadingPhase}
         responses={quizState.responses}
-        onViewResults={() => setQuizState(prev => ({ ...prev, step: 'results' }))}
+        onViewResults={() => setQuizState(prev => ({ ...prev, step: 'lead' }))}
       />
+    );
+  }
+
+  if (quizState.step === 'lead') {
+    const handleLeadSubmit = async (values: { name: string; email?: string; phone: string; state: string; }) => {
+      // Navigate immediately so user is not blocked by network
+      setQuizState(prev => ({ ...prev, step: 'results' }));
+      // Fire-and-forget network call
+      try {
+        if (quizState.resultId) {
+          updateQuizResult(quizState.resultId, {
+            name: values.name,
+            email: values.email ?? null,
+            phone: values.phone,
+            state: values.state,
+          }).catch(() => {/* no-op */});
+        } else {
+          // Fallback: create now with lead fields + answers if we didn't get an id earlier
+          const answers = quizState.answersObject || (quizState.responses || []).reduce((acc: Record<string, any>, r: any) => {
+            acc[r.questionId] = r.answer; return acc;
+          }, {});
+          createQuizResult({
+            answers,
+            recommendation: null,
+            name: values.name,
+            email: values.email ?? null,
+            phone: values.phone,
+            state: values.state,
+          }).catch(() => {/* no-op */});
+        }
+      } catch {
+        // ignore — we already navigated
+      }
+    };
+
+    return (
+      <LeadCaptureForm onSubmit={handleLeadSubmit} />
     );
   }
 
