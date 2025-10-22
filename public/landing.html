@@ -532,9 +532,9 @@
     </div>
   </div>
 
-  <main class="max-w-6xl mx-auto px-4 py-8 md:py-12">
-    <div class="grid lg:grid-cols-2 gap-8 items-start">
-      <section aria-labelledby="hero-title" class="space-y-6">
+  <main class="max-w-6xl mx-auto px-4 py-6 md:py-10">
+    <div class="grid lg:grid-cols-2 gap-6 items-start">
+      <section aria-labelledby="hero-title" class="space-y-5">
         <!-- Qualified banner -->
         <div class="bg-gradient-to-r from-green-600 via-emerald-600 to-green-600 text-white px-4 py-3 rounded-2xl shadow-xl border-4 border-green-400">
           <div class="text-center">
@@ -654,6 +654,19 @@
               *Based on user surveys. Individual results may vary.
             </p>
           </div>
+          <!-- Compact Before/After Grid to fill bottom-left whitespace -->
+          <section class="bg-white border-2 border-amber-200 rounded-2xl p-4 shadow-lg mt-6">
+            <h3 class="text-base md:text-lg font-extrabold mb-2 text-gray-900">📸 Results Preview</h3>
+            <div class="grid grid-cols-2 gap-2">
+              <!-- Top row: AFTER (left and right) -->
+              <div class="relative bg-green-50 rounded-lg h-28 border-2 border-green-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">AFTER</span><span class="text-[10px] text-green-800">Add After Image</span></div>
+              <div class="relative bg-green-50 rounded-lg h-28 border-2 border-green-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">AFTER</span><span class="text-[10px] text-green-800">Add After Image</span></div>
+              <!-- Bottom row: BEFORE (left and right) -->
+              <div class="relative bg-amber-100 rounded-lg h-28 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">BEFORE</span><span class="text-[10px] text-amber-800">Add Before Image</span></div>
+              <div class="relative bg-amber-100 rounded-lg h-28 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">BEFORE</span><span class="text-[10px] text-amber-800">Add Before Image</span></div>
+            </div>
+          </section>
+
         </section>
         <!-- Condition Education (replaces Real Transformation Timeline) -->
         <section id="condition-education" class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 md:p-8 shadow-xl border-2 border-amber-300">
@@ -665,13 +678,19 @@
 
           <div class="grid md:grid-cols-2 gap-6">
             <article class="bg-white rounded-xl p-5 border-2 border-amber-200 shadow">
-              <h3 class="text-lg font-extrabold text-amber-800 mb-2 flex items-center gap-2 flex-wrap"><span class="mr-2">❓</span><span>What is</span><span id="what-name">Androgenic Alopecia</span>?</h3>
+              <h3 class="text-lg font-extrabold text-amber-800 mb-2 flex items-start gap-2">
+                <span class="mt-0.5" aria-hidden="true">❓</span>
+                <span class="leading-snug break-words">What is <span id="what-name">Androgenic Alopecia</span>?</span>
+              </h3>
               <p id="what-body" class="text-sm text-gray-800 leading-relaxed"></p>
             </article>
 
             <article class="bg-white rounded-xl p-5 border-2 border-amber-200 shadow">
-              <h3 class="text-lg font-extrabold text-amber-800 mb-2 flex items-center"><span class="mr-2">⚙️</span>What Causes It?</h3>
-              <ul id="causes-list" class="text-sm text-gray-800 space-y-2 list-disc pl-5"></ul>
+              <h3 class="text-lg md:text-xl font-extrabold text-amber-800 mb-2 flex items-start gap-2">
+                <span class="mt-0.5" aria-hidden="true">⚙️</span>
+                <span class="leading-snug break-words">What Causes It?</span>
+              </h3>
+              <ul id="causes-list" class="text-sm text-gray-800 leading-relaxed space-y-1.5 list-disc pl-5 break-words"></ul>
             </article>
 
             <article class="bg-white rounded-xl p-5 border-2 border-amber-200 shadow">
@@ -685,7 +704,10 @@
             </article>
 
             <article class="bg-white rounded-xl p-5 border-2 border-amber-200 shadow md:col-span-2">
-              <h3 class="text-lg font-extrabold text-amber-800 mb-3 flex items-center"><span class="mr-2">🧪</span>How Fulani Hair Gro Treats <span id="treat-name" class="ml-1"></span></h3>
+              <h3 class="text-lg md:text-xl font-extrabold text-amber-800 mb-3 flex items-start gap-2">
+                <span class="mt-0.5" aria-hidden="true">🧪</span>
+                <span class="leading-snug break-words">How Fulani Hair Gro Treats <span id="treat-name"></span></span>
+              </h3>
               <div class="grid md:grid-cols-3 gap-4">
                 <div>
                   <p class="text-xs font-extrabold text-gray-600 mb-1">Key Ingredients</p>
@@ -1121,7 +1143,7 @@
       </section>
 
       <aside class="lg:sticky lg:top-24" id="purchase">
-        <section class="bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 rounded-3xl shadow-2xl p-8 md:p-10 border-4 border-amber-400 relative overflow-hidden hover-rise max-w-4xl mx-auto" aria-labelledby="product-title">
+        <section class="bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 rounded-3xl shadow-2xl p-6 md:p-8 border-4 border-amber-400 relative overflow-hidden hover-rise max-w-4xl mx-auto" aria-labelledby="product-title">
           <!-- Background decorative elements -->
           <div class="absolute top-0 right-0 w-64 h-64 bg-amber-200/20 rounded-full -mr-32 -mt-32 blur-3xl" aria-hidden="true"></div>
           <div class="absolute bottom-0 left-0 w-48 h-48 bg-orange-200/20 rounded-full -ml-24 -mb-24 blur-3xl" aria-hidden="true"></div>
@@ -1131,7 +1153,7 @@
             </div>
             <!-- BUY 2 GET 1 FREE Banner -->
             <!-- BUY 2 GET 1 FREE Hero Banner -->
-            <div class="relative z-10 mt-8 mb-8">
+            <div class="relative z-10 mt-6 mb-6">
               <div class="bg-gradient-to-r from-green-600 via-emerald-600 to-green-600 text-white rounded-2xl px-8 py-6 shadow-2xl border-4 border-green-400 relative overflow-hidden">
                 <!-- Animated background circles -->
                 <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 animate-pulse" aria-hidden="true"></div>
@@ -1147,9 +1169,9 @@
               </div>
             </div>
             <!-- Product Visualization -->
-            <div class="relative z-10 bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-8 shadow-lg border-2 border-amber-200">
+            <div class="relative z-10 bg-white/80 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-lg border-2 border-amber-200">
               <!-- Shampoos Row -->
-              <div class="mb-8">
+              <div class="mb-6">
                 <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-3">
                   <div class="relative group">
                     <div class="relative">
@@ -1241,10 +1263,12 @@
             <section class="bg-white border-2 border-amber-300 rounded-2xl p-4 shadow-lg mb-8">
               <h3 class="text-base md:text-lg font-extrabold mb-2 text-gray-900">📸 Results Preview</h3>
               <div class="grid grid-cols-2 gap-2">
-                <div class="relative bg-amber-100 rounded-lg h-28 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">BEFORE</span><span class="text-[10px] text-amber-800">Add Before Image</span></div>
-                <div class="relative bg-amber-100 rounded-lg h-28 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">BEFORE</span><span class="text-[10px] text-amber-800">Add Before Image</span></div>
+                <!-- Top row: AFTER (left and right) -->
                 <div class="relative bg-green-50 rounded-lg h-28 border-2 border-green-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">AFTER</span><span class="text-[10px] text-green-800">Add After Image</span></div>
                 <div class="relative bg-green-50 rounded-lg h-28 border-2 border-green-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">AFTER</span><span class="text-[10px] text-green-800">Add After Image</span></div>
+                <!-- Bottom row: BEFORE (left and right) -->
+                <div class="relative bg-amber-100 rounded-lg h-28 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">BEFORE</span><span class="text-[10px] text-amber-800">Add Before Image</span></div>
+                <div class="relative bg-amber-100 rounded-lg h-28 border-2 border-amber-300 flex items-center justify-center"><span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">BEFORE</span><span class="text-[10px] text-amber-800">Add Before Image</span></div>
               </div>
             </section>
             <!-- What's Included - Split View -->
@@ -1314,12 +1338,53 @@
             </div>
 
             <div class="payment-options-redesign">
+
+            <!-- Embedded Order Form removed per request: will show only inside FASTEST OPTION -->
+
             <section class="mb-4 bg-gradient-to-br from-green-100 to-emerald-100 border-4 border-green-500 rounded-3xl p-6 shadow-2xl hover-rise" aria-labelledby="primary-cta-title">
               <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center space-x-2"><span class="text-2xl">⚡</span><span class="font-extrabold text-green-900">FASTEST OPTION</span></div>
                 <span class="bg-yellow-400 text-gray-900 text-xs px-3 py-1 rounded-full font-extrabold shadow">⭐ MOST POPULAR — RECOMMENDED</span>
               </div>
               <h2 id="primary-cta-title" class="text-xl md:text-2xl font-extrabold mb-3">Pay Now — Express Delivery in 24–48hrs</h2>
+
+              <!-- Order Form (embedded directly under the 24–48hrs heading per request) -->
+              <section class="form-section bg-white rounded-2xl border-2 border-amber-300 shadow-lg p-4 md:p-6 my-4 text-left">
+                <div class="myiframe">
+                  <iframe
+                    id="iFrame2"
+                    class="iframe"
+                    src="https://app.snipercrm.io/formframe?formid=087d0c7bba2783&amp;c=0"
+                    frameborder="0"
+                    scrolling="no"
+                    width="100%"
+                    style="display:block; width:100%; min-height: 720px; background:#fff;"
+                    name="snipercrmform"
+                  ></iframe>
+                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                <script type="text/javascript" src="https://app.snipercrm.io/js/iframeResizer.min.js"></script>
+                <script type="text/javascript" src="https://app.snipercrm.io/js/iframeResizerFix.min.js"></script>
+                <script type="text/javascript">
+                  document.getElementById('iFrame2').addEventListener('load', function() {
+                    try {
+                      var iframeWindow = this.contentWindow;
+                      var parentUrl = window.location.href;
+                      iframeWindow.postMessage({ parentUrl: parentUrl }, '*');
+                    } catch (e) {}
+                  });
+                  (function(){
+                    try {
+                      if (window.iFrameResize) {
+                        iFrameResize({ checkOrigin: false, log: false, heightCalculationMethod: 'max' }, '#iFrame2');
+                      }
+                    } catch(e) {}
+                  })();
+                </script>
+              </section>
+
+              
+
               <article class="bg-white rounded-xl p-4 mb-4 border-2 border-green-300 shadow-md" aria-labelledby="bank-title">
                 <div class="flex items-center mb-3"><i data-lucide="shield" class="w-5 h-5 text-green-600 mr-2"></i><p id="bank-title" class="text-sm font-extrabold">Bank Transfer Details:</p></div>
                 <div class="space-y-3">
@@ -1401,7 +1466,7 @@
                     <strong>Send payment proof to 2 WhatsApp numbers:</strong>
                     <div class="whatsapp-numbers">
                       <p>📱 Company: <a href="https://wa.me/2348101594734" class="wa-link" target="_blank" rel="noopener">08101594734</a></p>
-                      <p>📱 Delivery Agent: <span class="da-number">[Agent's number shown at delivery]</span></p>
+                      <p>📱 Delivery Agent: <span class="da-number">[ We will share thier contact with you via y order]</span></p>
                     </div>
                   </div>
                 </div>
@@ -1827,10 +1892,10 @@
     </div>
   </section>
 
-  <section class="bg-gradient-to-br from-blue-600 to-purple-700 py-16 my-12 text-white">
+  <section class="bg-gradient-to-br from-blue-600 to-purple-700 py-12 my-8 text-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-4xl md:text-5xl font-extrabold text-center mb-4">Your Peace of Mind Is Our Priority</h3>
-      <p class="text-center text-blue-100 text-lg mb-12">Shop with confidence — your security is guaranteed</p>
+      <h3 class="text-4xl md:text-5xl font-extrabold text-center mb-3">Your Peace of Mind Is Our Priority</h3>
+      <p class="text-center text-blue-100 text-lg mb-8">Shop with confidence — your security is guaranteed</p>
       <div class="grid md:grid-cols-3 gap-6 mb-8">
         <article class="bg-white text-gray-900 rounded-2xl p-8 shadow-2xl hover-scale border-4 border-yellow-400" aria-labelledby="peace-bank">
           <div class="text-center">
@@ -2047,44 +2112,11 @@
       </div>
     </div>
   </section>
-  <section class="bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 py-16 my-12">
+  <section class="bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 py-12 my-8">
     <div class="max-w-4xl mx-auto px-4 text-center text-white">
-      <h3 class="text-4xl md:text-5xl font-extrabold mb-4">Ready to Start Your Hair Transformation?</h3>
-      <p class="text-xl text-amber-100 mb-8">Only <span class="font-extrabold text-white text-2xl"><span id="stock-count-bottom">23</span> sets</span> left for Lagos delivery this week</p>
-      <!-- Embedded Order Form -->
-      <section class="form-section bg-white rounded-2xl border-2 border-amber-300 shadow-lg p-4 md:p-6 my-6 text-left">
-        <div class="myiframe">
-          <iframe
-            id="iFrame2"
-            class="iframe"
-            src="https://app.snipercrm.io/formframe?formid=087d0c7bba2783&amp;c=0"
-            frameborder="0"
-            scrolling="no"
-            width="100%"
-            style="display:block; width:100%; min-height: 720px; background:#fff;"
-            name="snipercrmform"
-          ></iframe>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script type="text/javascript" src="https://app.snipercrm.io/js/iframeResizer.min.js"></script>
-        <script type="text/javascript" src="https://app.snipercrm.io/js/iframeResizerFix.min.js"></script>
-        <script type="text/javascript">
-          document.getElementById('iFrame2').addEventListener('load', function() {
-            try {
-              var iframeWindow = this.contentWindow;
-              var parentUrl = window.location.href;
-              iframeWindow.postMessage({ parentUrl: parentUrl }, '*');
-            } catch (e) {}
-          });
-          (function(){
-            try {
-              if (window.iFrameResize) {
-                iFrameResize({ checkOrigin: false, log: false, heightCalculationMethod: 'max' }, '#iFrame2');
-              }
-            } catch(e) {}
-          })();
-        </script>
-      </section>
+      <h3 class="text-4xl md:text-5xl font-extrabold mb-3">Ready to Start Your Hair Transformation?</h3>
+      <p class="text-xl text-amber-100 mb-6">Only <span class="font-extrabold text-white text-2xl"><span id="stock-count-bottom">23</span> sets</span> left for Nationwide delivery this week</p>
+      
       <div class="bg-white rounded-3xl p-8 md:p-10 shadow-2xl max-w-lg mx-auto text-gray-900 hover-rise">
         <div class="mb-6">
           <div class="flex items-center justify-center space-x-3 mb-2"><span class="text-5xl font-extrabold">₦66,750</span><div class="text-left"><span class="block text-xl text-gray-200 line-through">₦98,250</span><span class="block text-sm text-green-800 font-extrabold">SAVE ₦31,500</span></div></div>
@@ -2122,7 +2154,7 @@
     </div>
   </section>
   <!-- Brand Story: placed just before FAQ to rebuild trust -->
-  <section class="max-w-4xl mx-auto px-4 my-12">
+  <section class="max-w-4xl mx-auto px-4 my-8">
     <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 shadow-xl border-2 border-amber-300">
       <div class="text-center mb-8">
         <h3 class="text-3xl font-extrabold text-gray-900 mb-2">Get to Know Me</h3>
@@ -2267,7 +2299,7 @@
           <a href="#" aria-label="Facebook">📘</a>
           <a href="https://wa.me/2348101594734" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
         </div>
-        <p class="address">📍 Lagos, Nigeria<br/>📧 contact@fulanihairgro.com<br/>📞 WhatsApp: 08101594734</p>
+        <p class="address">📍 Lagos, Nigeria<br/>📧 fulanihairgro@gmail.com<br/>📞 WhatsApp: 08101594734</p>
       </div>
     </div>
     <div class="footer-bottom">

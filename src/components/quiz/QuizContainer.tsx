@@ -25,7 +25,14 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
       const saved = localStorage.getItem('fulani-hair-quiz');
       if (saved) {
         try {
-          return JSON.parse(saved);
+          const parsed = JSON.parse(saved);
+          // Merge with defaults; do not trust transient fields
+          return {
+            currentQuestion: typeof parsed.currentQuestion === 'number' ? parsed.currentQuestion : 0,
+            responses: Array.isArray(parsed.responses) ? parsed.responses : [],
+            step: 'quiz',
+            loadingPhase: 0,
+          } as QuizState;
         } catch {
           // fallthrough to fresh state
         }
@@ -39,10 +46,14 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
     };
   });
 
-  // Save state to localStorage whenever it changes
+  // Save only durable state to localStorage (avoid persisting loading state)
   useEffect(() => {
-    localStorage.setItem('fulani-hair-quiz', JSON.stringify(quizState));
-  }, [quizState]);
+    const durable = {
+      currentQuestion: quizState.currentQuestion,
+      responses: quizState.responses,
+    };
+    localStorage.setItem('fulani-hair-quiz', JSON.stringify(durable));
+  }, [quizState.currentQuestion, quizState.responses]);
 
   const total = quizQuestions.length;
   const safeIndex = Math.min(
@@ -133,10 +144,7 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
           const dur = loadingPhases[phaseIndex].duration || 0;
           window.setTimeout(scheduleNext, dur);
         } else {
-          // Auto-finish quickly on the final phase to avoid waiting for user CTA
-          window.setTimeout(() => {
-            setQuizState(prev => ({ ...prev, step: 'results' }));
-          }, 500);
+          // Final phase shows CTA; wait for user to click "View Your Complete Hair Analysis"
         }
       };
       const firstDuration = loadingPhases[0].duration || 0;
@@ -160,13 +168,10 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
           .then((res: any) => {
             if (res && res._isAcceptedFallback) {
               toast('Saved', { description: 'Accepted but may be processed later.' });
-              navigate('/results');
             } else if (res && res.id) {
               toast.success('Quiz saved successfully');
-              navigate(`/results/${res.id}`);
             } else {
               toast('Saved', { description: 'Submission accepted.' });
-              navigate('/results');
             }
           })
           .catch((e: any) => {
@@ -182,6 +187,32 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
       }));
     }
   };
+
+  // If the page was refreshed during loading, resume the phase scheduler so it doesn't stick on phase 0
+  useEffect(() => {
+    if (quizState.step === 'loading') {
+      let cancelled = false;
+      let phaseIndex = quizState.loadingPhase;
+      const scheduleNext = () => {
+        if (cancelled) return;
+        const next = phaseIndex + 1;
+        if (next >= loadingPhases.length) return; // safety
+        phaseIndex = next;
+        setQuizState(prev => ({ ...prev, loadingPhase: phaseIndex }));
+        const isFinal = phaseIndex === loadingPhases.length - 1;
+        if (!isFinal) {
+          const dur = loadingPhases[phaseIndex].duration || 0;
+          window.setTimeout(scheduleNext, dur);
+        } else {
+          // Final phase shows CTA; wait for user click
+        }
+      };
+      // Kick off from the current phase
+      const dur = loadingPhases[Math.max(0, Math.min(phaseIndex, loadingPhases.length - 1))].duration || 0;
+      const timer = window.setTimeout(scheduleNext, dur);
+      return () => { cancelled = true; window.clearTimeout(timer); };
+    }
+  }, [quizState.step, quizState.loadingPhase]);
 
   const handlePrevious = () => {
     if (safeIndex > 0) {

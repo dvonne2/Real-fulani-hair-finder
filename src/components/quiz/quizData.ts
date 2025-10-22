@@ -95,6 +95,7 @@ export const quizQuestions: Question[] = [
     title: 'Which part of your hair is the longest? Which is the shortest?',
     options: [
       'Crown is longest, edges are shortest',
+      'Front/crown is longest, back/nape is shortest',
       'Back/nape is longest, front is shortest',
       'Sides are longest, middle is shortest',
       'All relatively the same length',
@@ -141,11 +142,12 @@ export const quizQuestions: Question[] = [
   {
     id: 'sleep-bonnet',
     type: 'single',
-    title: 'Do you sleep with a silk/satin bonnet or pillowcase?',
+    title: 'Do you sleep with a silk/satin bonnet or silk/ satin pillowcase?',
     options: [
       'Yes, always',
       'Sometimes',
       'No, I use cotton',
+      'I sleep with nothing on my head',
       'I sleep with my wig/weave on'
     ]
   },
@@ -158,7 +160,7 @@ export const quizQuestions: Question[] = [
     options: [
       'Dandruff (white flakes)',
       'Itchy scalp',
-      'Painful or tender spots',
+      'Painful or tender spots when pressed',
       'Ringworm or fungal infection',
       'Sores or scabs',
       'Excessive oiliness',

@@ -1246,7 +1246,7 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({ responses, onRestart }
             {/* Urgency Box */}
             <div className="urgency-box">
               <div className="urgency-header"><span className="urgency-icon">⚡</span><strong>Limited Stock Alert</strong></div>
-              <p className="urgency-text">Only <span className="stock-count">23 sets</span> of {productRecommendation.bundle} left in stock for Lagos delivery this week. <strong>Reserve yours now before they're gone.</strong></p>
+              <p className="urgency-text">Only <span className="stock-count">23 sets</span> of {productRecommendation.bundle} left in stock for Nationwide delivery this week. <strong>Reserve yours now before they're gone.</strong></p>
               <div className="social-proof-banner bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white rounded-2xl px-4 py-3 shadow-md mt-3">
                 <div className="flex items-center justify-between">
                   <div className="flex -space-x-3">
@@ -1381,7 +1381,7 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({ responses, onRestart }
             You can chat with us: <span className="text-[hsl(var(--brand-primary))] font-medium cursor-pointer">Open chat →</span>
           </p>
           <p className="text-muted-foreground">
-            Or reach us via email at: <span className="text-[hsl(var(--brand-primary))] font-medium">contact@fulanihairgro.com</span>
+            Or reach us via email at: <span className="text-[hsl(var(--brand-primary))] font-medium">fulanihairgro@gmail.com</span>
           </p>
           
           <div className="mt-8 pt-6 border-t border-[hsl(var(--wellness-border))]">
