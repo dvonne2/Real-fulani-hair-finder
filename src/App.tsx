@@ -20,12 +20,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/quiz" element={<Quiz />} />
-<<<<<<< HEAD
           <Route path="/admin" element={<Admin />} />
-=======
           <Route path="/results" element={<Results />} />
           <Route path="/results/:id" element={<ResultDetail />} />
->>>>>>> a38d435 (feat: backend integration infrastructure\n\n- Add API service layer (config, health, quiz endpoints)\n- Add React Query provider with caching\n- Add TypeScript types for API responses\n- Add HealthBadge component\n- Wire quiz submission to backend\n- Add loading/error/toast states\n- Install axios and React Query dependencies)
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -36,3 +33,4 @@ const App = () => (
 );
 
 export default App;
+

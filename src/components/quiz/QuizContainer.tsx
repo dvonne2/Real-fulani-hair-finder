@@ -132,6 +132,11 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
         if (!isFinal) {
           const dur = loadingPhases[phaseIndex].duration || 0;
           window.setTimeout(scheduleNext, dur);
+        } else {
+          // Auto-finish quickly on the final phase to avoid waiting for user CTA
+          window.setTimeout(() => {
+            setQuizState(prev => ({ ...prev, step: 'results' }));
+          }, 500);
         }
       };
       const firstDuration = loadingPhases[0].duration || 0;

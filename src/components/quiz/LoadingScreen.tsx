@@ -12,7 +12,7 @@ export interface AnalysisPhase {
 
 export const loadingPhases: AnalysisPhase[] = [
   {
-    duration: 5000,
+    duration: 900,
     icon: '🔍',
     title: 'Analyzing your responses...',
     items: [
@@ -22,7 +22,7 @@ export const loadingPhases: AnalysisPhase[] = [
     ]
   },
   {
-    duration: 6000,
+    duration: 900,
     icon: '🧬',
     title: 'Cross-referencing with trichology database...',
     items: [
@@ -33,7 +33,7 @@ export const loadingPhases: AnalysisPhase[] = [
     ]
   },
   {
-    duration: 6000,
+    duration: 900,
     icon: '🩺',
     title: 'Matching your symptoms to hair loss types...',
     items: [
@@ -45,7 +45,7 @@ export const loadingPhases: AnalysisPhase[] = [
     ]
   },
   {
-    duration: 5000,
+    duration: 800,
     icon: '💎',
     title: 'Creating your personalized treatment plan...',
     items: [
@@ -56,7 +56,7 @@ export const loadingPhases: AnalysisPhase[] = [
     ]
   },
   {
-    duration: 5000,
+    duration: 800,
     icon: '🌿',
     title: 'Matching you with targeted Fulani Hair Gro herbs...',
     items: [
@@ -68,7 +68,7 @@ export const loadingPhases: AnalysisPhase[] = [
     ]
   },
   {
-    duration: 6000,
+    duration: 800,
     icon: '📊',
     title: 'Evaluating contributing factors...',
     items: [
@@ -79,7 +79,7 @@ export const loadingPhases: AnalysisPhase[] = [
     ]
   },
   {
-    duration: 5000,
+    duration: 800,
     icon: '📋',
     title: 'Compiling your comprehensive report...',
     items: [
@@ -113,7 +113,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ phase, responses: 
   useEffect(() => {
     setVisibleItems(0);
     if (currentPhase.items.length > 0 && currentPhase.duration > 0) {
-      const itemDelay = Math.max(150, Math.floor(currentPhase.duration / currentPhase.items.length));
+      const itemDelay = Math.max(120, Math.floor(currentPhase.duration / currentPhase.items.length));
       const timers: number[] = [];
       currentPhase.items.forEach((_, index) => {
         const t = window.setTimeout(() => setVisibleItems(index + 1), itemDelay * index);
