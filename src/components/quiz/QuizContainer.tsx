@@ -6,8 +6,7 @@ import { ResultsPage } from './ResultsPage';
 import { LeadCaptureForm } from './LeadCaptureForm';
 import { quizQuestions, QuizResponse, Question } from './quizData';
 import { useNavigate } from 'react-router-dom';
-import { createQuizResult, updateQuizResult } from '@/services/api/quiz.service';
-import { toast } from '@/components/ui/sonner';
+import axios from 'axios';
 
 type QuizStep = 'quiz' | 'loading' | 'lead' | 'results';
 
@@ -52,6 +51,37 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
       answersObject: {},
     };
   });
+
+  const buildResponsesObject = () => {
+    return (quizState.responses || []).reduce((acc: Record<string, any>, r: any) => {
+      acc[r.questionId] = r.answer;
+      return acc;
+    }, {} as Record<string, any>);
+  };
+
+  const handleQuizSubmit = async (emailValue?: string) => {
+    try {
+      setIsSubmitting(true);
+      setSubmitError(null);
+      const responses = buildResponsesObject();
+      const resp = await axios.post('/api/quiz/submit', {
+        responses,
+        email: emailValue || undefined,
+      });
+      const submissionId = resp?.data?.submissionId;
+      if (submissionId) {
+        navigate(`/results/${submissionId}`);
+      } else {
+        throw new Error('Failed to submit quiz');
+      }
+    } catch (error: any) {
+      setSubmitError(error?.response?.data?.error || error?.message || 'Failed to submit quiz. Please try again.');
+      setIsSubmitting(false);
+    }
+  };
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Save only durable state to localStorage (avoid persisting loading state)
   useEffect(() => {
@@ -166,31 +196,7 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
 
         // store answers locally for potential fallback create if DB returned no id
         setQuizState(prev => ({ ...prev, answersObject }));
-
-        createQuizResult({
-          answers: answersObject,
-          recommendation: null,
-          name: null,
-          email: null,
-          phone: null,
-          state: null,
-        })
-          .then((res: any) => {
-            if (res && res._isAcceptedFallback) {
-              toast('Saved', { description: 'Accepted but may be processed later.' });
-            } else if (res && res.id) {
-              toast.success('Quiz saved successfully');
-              setQuizState(prev => ({ ...prev, resultId: res.id }));
-            } else {
-              toast('Saved', { description: 'Submission accepted.' });
-            }
-          })
-          .catch((e: any) => {
-            toast.error(e?.message || 'Failed to save quiz');
-          });
-      } catch (e: any) {
-        toast.error('Failed to prepare submission');
-      }
+      } catch {}
     } else {
       setQuizState(prev => ({
         ...prev,
@@ -214,8 +220,6 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
         if (!isFinal) {
           const dur = loadingPhases[phaseIndex].duration || 0;
           window.setTimeout(scheduleNext, dur);
-        } else {
-          // Final phase shows CTA; wait for user click
         }
       };
       // Kick off from the current phase
@@ -245,6 +249,20 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
     });
   };
 
+  // Submitting state UI
+  if (isSubmitting) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-purple-600 mb-4"></div>
+        <h2 className="text-2xl font-bold text-gray-800">Analyzing Your Hair Loss...</h2>
+        <p className="text-gray-600 mt-2">Creating your personalized treatment plan</p>
+        {submitError && (
+          <div className="mt-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">{submitError}</div>
+        )}
+      </div>
+    );
+  }
+
   if (quizState.step === 'loading') {
     return (
       <LoadingScreen
@@ -257,34 +275,7 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
 
   if (quizState.step === 'lead') {
     const handleLeadSubmit = async (values: { name: string; email?: string; phone: string; state: string; }) => {
-      // Navigate immediately so user is not blocked by network
-      setQuizState(prev => ({ ...prev, step: 'results' }));
-      // Fire-and-forget network call
-      try {
-        if (quizState.resultId) {
-          updateQuizResult(quizState.resultId, {
-            name: values.name,
-            email: values.email ?? null,
-            phone: values.phone,
-            state: values.state,
-          }).catch(() => {/* no-op */});
-        } else {
-          // Fallback: create now with lead fields + answers if we didn't get an id earlier
-          const answers = quizState.answersObject || (quizState.responses || []).reduce((acc: Record<string, any>, r: any) => {
-            acc[r.questionId] = r.answer; return acc;
-          }, {});
-          createQuizResult({
-            answers,
-            recommendation: null,
-            name: values.name,
-            email: values.email ?? null,
-            phone: values.phone,
-            state: values.state,
-          }).catch(() => {/* no-op */});
-        }
-      } catch {
-        // ignore — we already navigated
-      }
+      await handleQuizSubmit(values.email ?? undefined);
     };
 
     return (

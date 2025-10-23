@@ -9,7 +9,7 @@ import Admin from "./pages/Admin";
 import QueryProvider from "@/providers/QueryProvider";
 import HealthBadge from "@/components/HealthBadge";
 import Results from "./pages/Results";
-import ResultDetail from "./pages/ResultDetail";
+import QuizResults from "./pages/QuizResults";
 
 const App = () => (
   <QueryProvider>
@@ -22,7 +22,7 @@ const App = () => (
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/results" element={<Results />} />
-          <Route path="/results/:id" element={<ResultDetail />} />
+          <Route path="/results/:submissionId" element={<QuizResults />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
