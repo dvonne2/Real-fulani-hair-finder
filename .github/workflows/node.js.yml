@@ -13,25 +13,25 @@ jobs:
         node-version: [22.x]
 
     steps:
-      - name: Checkout repository
+      - name: 🧩 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js ${{ matrix.node-version }}
+      - name: ⚙️ Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: 📦 Install dependencies
+        run: npm install
 
-      - name: Build React App
+      - name: 🏗️ Build React app
         run: npm run build
 
-      - name: Archive production dist folder
+      - name: 📦 Archive production dist folder
         run: tar -czf dist.tar.gz dist
 
-      - name: Upload dist artifact
+      - name: 🚀 Upload dist artifact
         uses: actions/upload-artifact@v4
         with:
           name: react-dist
@@ -42,13 +42,13 @@ jobs:
     needs: build
 
     steps:
-      - name: Download dist artifact
+      - name: 📥 Download dist artifact
         uses: actions/download-artifact@v4
         with:
           name: react-dist
           path: .
 
-      - name: Copy dist to EC2 via SCP
+      - name: 🔐 Copy dist to EC2 via SCP
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -57,47 +57,46 @@ jobs:
           source: dist.tar.gz
           target: ~/Real-fulani-hair-finder
 
-      - name: SSH into EC2 and deploy
+      - name: ⚙️ SSH into EC2 and deploy React app
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            echo "🔧 Checking environment..."
+            echo "🔧 Preparing environment..."
+            cd ~/Real-fulani-hair-finder
 
-            # Ensure Node.js and npm exist
-            if ! command -v node &> /dev/null
-            then
+            # Ensure Node.js is installed
+            if ! command -v node &> /dev/null; then
               echo "🚀 Installing Node.js 22..."
               curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
               sudo apt-get install -y nodejs
             fi
 
             # Ensure PM2 is installed
-            if ! command -v pm2 &> /dev/null
-            then
+            if ! command -v pm2 &> /dev/null; then
               echo "🧩 Installing PM2..."
               sudo npm install -g pm2
             fi
 
-            # Ensure 'serve' is installed for static hosting
-            if ! command -v serve &> /dev/null
-            then
+            # Ensure serve is installed
+            if ! command -v serve &> /dev/null; then
               echo "🍃 Installing serve..."
               sudo npm install -g serve
             fi
 
-            # Go to project folder
-            cd ~/Real-fulani-hair-finder
-
-            echo "📦 Extracting latest dist..."
+            echo "🧹 Cleaning old dist..."
             rm -rf dist
+            rm -f dist.tar.gz
+
+            echo "📦 Extracting new dist..."
             tar -xzf dist.tar.gz
             rm dist.tar.gz
 
-            echo "🚦 Restarting React app with PM2..."
-            pm2 reload react-app || pm2 start "serve -s dist -l 3000" --name react-app
+            echo "🚦 Restarting app with PM2..."
+            pm2 delete react-app || true
+            pm2 start "serve -s dist -l 3000" --name react-app
             pm2 save
 
-            echo "✅ Frontend deployment complete!"
+            echo "✅ Deployment complete!"
