@@ -5,6 +5,7 @@ import type {
   PaginatedQuizResults,
   PaginationParams,
   AcceptedFallback,
+  UpdateQuizResultPayload,
 } from '../types/api.types';
 
 export async function listQuizResults(
@@ -16,6 +17,14 @@ export async function listQuizResults(
       offset: params.offset ?? 0,
     },
   });
+  return res.data;
+}
+
+export async function updateQuizResult(
+  id: number,
+  payload: UpdateQuizResultPayload
+): Promise<QuizResult> {
+  const res = await apiClient.patch<QuizResult>(`/quiz-results/${id}`, payload);
   return res.data;
 }
 
@@ -37,5 +46,6 @@ export async function getQuizResultById(id: number): Promise<QuizResult> {
 export default {
   listQuizResults,
   createQuizResult,
+  updateQuizResult,
   getQuizResultById,
 };

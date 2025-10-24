@@ -24,6 +24,14 @@ export interface CreateQuizResultPayload {
   state?: string | null;
 }
 
+export interface UpdateQuizResultPayload {
+  recommendation?: Record<string, any> | null;
+  name?: string | null;
+  email?: string | null;
+  phone?: string | null;
+  state?: string | null;
+}
+
 export interface AcceptedFallback {
   id: null;
   answers: Record<string, any> | null;

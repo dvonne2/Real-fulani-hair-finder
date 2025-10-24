@@ -3,18 +3,20 @@ import { QuestionCard } from './QuestionCard';
 import { ProgressBar } from './ProgressBar';
 import { LoadingScreen, loadingPhases } from './LoadingScreen';
 import { ResultsPage } from './ResultsPage';
+import { LeadCaptureForm } from './LeadCaptureForm';
 import { quizQuestions, QuizResponse, Question } from './quizData';
 import { useNavigate } from 'react-router-dom';
-import { createQuizResult } from '@/services/api/quiz.service';
-import { toast } from '@/components/ui/sonner';
+import apiClient from '../../services/api/config';
 
-type QuizStep = 'quiz' | 'loading' | 'results';
+type QuizStep = 'quiz' | 'loading' | 'lead' | 'results';
 
 interface QuizState {
   currentQuestion: number;
   responses: QuizResponse[];
   step: QuizStep;
   loadingPhase: number;
+  resultId?: number | null;
+  answersObject?: Record<string, any>;
 }
 
 export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved = false }) => {
@@ -32,6 +34,8 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
             responses: Array.isArray(parsed.responses) ? parsed.responses : [],
             step: 'quiz',
             loadingPhase: 0,
+            resultId: null,
+            answersObject: {},
           } as QuizState;
         } catch {
           // fallthrough to fresh state
@@ -42,9 +46,45 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
       currentQuestion: 0,
       responses: [],
       step: 'quiz' as QuizStep,
-      loadingPhase: 0
+      loadingPhase: 0,
+      resultId: null,
+      answersObject: {},
     };
   });
+
+  const buildResponsesObject = () => {
+    const mapped: Record<string, any> = {};
+    quizQuestions.forEach((q, index) => {
+      const ans = quizState.responses.find(r => r.questionId === q.id)?.answer;
+      const key = `q${index + 1}`;
+      mapped[key] = ans ?? null;
+    });
+    return mapped;
+  };
+
+  const handleQuizSubmit = async (emailValue?: string) => {
+    try {
+      setIsSubmitting(true);
+      setSubmitError(null);
+      const responses = buildResponsesObject();
+      const resp = await apiClient.post('/api/quiz/submit', {
+        responses,
+        email: emailValue || undefined,
+      });
+      const submissionId = resp?.data?.submissionId;
+      if (submissionId) {
+        window.location.assign(`/landing.html?submissionId=${submissionId}`);
+      } else {
+        throw new Error('Failed to submit quiz');
+      }
+    } catch (error: any) {
+      setSubmitError(error?.response?.data?.error || error?.message || 'Failed to submit quiz. Please try again.');
+      setIsSubmitting(false);
+    }
+  };
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Save only durable state to localStorage (avoid persisting loading state)
   useEffect(() => {
@@ -150,36 +190,16 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
       const firstDuration = loadingPhases[0].duration || 0;
       window.setTimeout(scheduleNext, firstDuration);
 
-      // Submit answers to backend (integration)
+      // Prepare answers for submission and submit to backend early (we will update with lead fields later)
       try {
         const answersObject = quizState.responses.reduce((acc: Record<string, any>, r) => {
           acc[r.questionId] = r.answer;
           return acc;
         }, {});
 
-        createQuizResult({
-          answers: answersObject,
-          recommendation: null,
-          name: null,
-          email: null,
-          phone: null,
-          state: null,
-        })
-          .then((res: any) => {
-            if (res && res._isAcceptedFallback) {
-              toast('Saved', { description: 'Accepted but may be processed later.' });
-            } else if (res && res.id) {
-              toast.success('Quiz saved successfully');
-            } else {
-              toast('Saved', { description: 'Submission accepted.' });
-            }
-          })
-          .catch((e: any) => {
-            toast.error(e?.message || 'Failed to save quiz');
-          });
-      } catch (e: any) {
-        toast.error('Failed to prepare submission');
-      }
+        // store answers locally for potential fallback create if DB returned no id
+        setQuizState(prev => ({ ...prev, answersObject }));
+      } catch {}
     } else {
       setQuizState(prev => ({
         ...prev,
@@ -203,8 +223,6 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
         if (!isFinal) {
           const dur = loadingPhases[phaseIndex].duration || 0;
           window.setTimeout(scheduleNext, dur);
-        } else {
-          // Final phase shows CTA; wait for user click
         }
       };
       // Kick off from the current phase
@@ -234,13 +252,37 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
     });
   };
 
+  // Submitting state UI
+  if (isSubmitting) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-purple-600 mb-4"></div>
+        <h2 className="text-2xl font-bold text-gray-800">Analyzing Your Hair Loss...</h2>
+        <p className="text-gray-600 mt-2">Creating your personalized treatment plan</p>
+        {submitError && (
+          <div className="mt-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">{submitError}</div>
+        )}
+      </div>
+    );
+  }
+
   if (quizState.step === 'loading') {
     return (
       <LoadingScreen
         phase={quizState.loadingPhase}
         responses={quizState.responses}
-        onViewResults={() => setQuizState(prev => ({ ...prev, step: 'results' }))}
+        onViewResults={() => setQuizState(prev => ({ ...prev, step: 'lead' }))}
       />
+    );
+  }
+
+  if (quizState.step === 'lead') {
+    const handleLeadSubmit = async (values: { name: string; email?: string; phone: string; state: string; }) => {
+      await handleQuizSubmit(values.email ?? undefined);
+    };
+
+    return (
+      <LeadCaptureForm onSubmit={handleLeadSubmit} />
     );
   }
 

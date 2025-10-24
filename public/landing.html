@@ -2676,4 +2676,146 @@
     })();
   });
 </script>
+<script>
+  (function(){
+    'use strict';
+
+    function el(type, attrs = {}, children = []){
+      const node = document.createElement(type);
+      Object.entries(attrs).forEach(([k,v]) => {
+        if (k === 'class') node.className = v; else if (k === 'html') node.innerHTML = v; else node.setAttribute(k, v);
+      });
+      children.forEach(c => node.appendChild(typeof c === 'string' ? document.createTextNode(c) : c));
+      return node;
+    }
+
+    function getParam(name){
+      try { return new URLSearchParams(location.search).get(name); } catch(e) { return null; }
+    }
+
+    function formatText(s){ return (s || '').toString().replace(/_/g,' ').trim(); }
+
+    function buildResultsSection(data, products){
+      const risk = formatText(data?.riskLevel || data?.risk_level || '');
+      const urgency = formatText(data?.urgency || '');
+      const pattern = formatText(data?.patternType || data?.pattern_type || '');
+      const causes = Array.isArray(data?.rootCauses || data?.root_causes) ? (data.rootCauses || data.root_causes) : [];
+      const recos = Array.isArray(data?.recommendations) ? data.recommendations : [];
+      const plan = data?.actionPlan || data?.action_plan || {};
+
+      const wrap = el('section', { class: 'section bg-white rounded-2xl border-2 border-amber-300 shadow-md' });
+
+      const header = el('div', { class: 'mb-4' }, [
+        el('h2', { class: 'text-2xl md:text-3xl font-extrabold mb-2' }, [document.createTextNode('Your Personalized Results')]),
+        el('div', { class: 'flex flex-wrap gap-2 items-center' }, [
+          risk ? el('span', { class: 'px-3 py-1 rounded-full bg-red-100 text-red-800 text-sm font-bold' }, [document.createTextNode(`Risk: ${risk.toUpperCase()}`)]) : document.createTextNode(''),
+          urgency ? el('span', { class: 'px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-sm font-bold' }, [document.createTextNode(`Urgency: ${urgency}`)]) : document.createTextNode(''),
+          pattern ? el('span', { class: 'px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-bold' }, [document.createTextNode(`Type: ${pattern}`)]) : document.createTextNode(''),
+        ].filter(Boolean))
+      ]);
+
+      // Causes
+      const causesBox = el('div', { class: 'card bg-amber-50 rounded-xl border border-amber-200' });
+      causesBox.appendChild(el('h3', { class: 'text-xl font-extrabold mb-2' }, [document.createTextNode("What's Causing Your Hair Loss")]))
+      if (causes.length){
+        const list = el('ul', { class: 'list-disc pl-5 space-y-1 text-gray-700' });
+        causes.forEach((c, idx) => {
+          const li = el('li', {}, [ document.createTextNode(`${idx+1}. ${formatText(c?.type)}`) ]);
+          list.appendChild(li);
+        });
+        causesBox.appendChild(list);
+      } else {
+        causesBox.appendChild(el('p', { class: 'text-gray-600' }, [document.createTextNode('We could not determine clear causes. Focus on scalp health and low-tension practices.')]))
+      }
+
+      // Action Plan (limited preview)
+      const planBox = el('div', { class: 'card bg-white rounded-xl border' });
+      planBox.appendChild(el('h3', { class: 'text-xl font-extrabold mb-2' }, [document.createTextNode('Your 90-Day Action Plan')]))
+      const sections = [
+        ['immediate','This Week'],
+        ['week1','Week 1'],
+        ['month1','Month 1'],
+        ['month3','Month 3']
+      ];
+      sections.forEach(([key,label]) => {
+        const items = Array.isArray(plan?.[key]) ? plan[key] : [];
+        if (!items.length) return;
+        const sec = el('div', { class: 'mb-3' });
+        sec.appendChild(el('h4', { class: 'font-bold text-gray-800' }, [document.createTextNode(label)]));
+        const ul = el('ul', { class: 'list-disc pl-5 text-gray-700' });
+        items.slice(0,4).forEach(it => {
+          if (it?.action) ul.appendChild(el('li', {}, [document.createTextNode(it.action)]));
+          else if (it?.milestone) ul.appendChild(el('li', {}, [document.createTextNode(`Milestone: ${it.milestone}`)]));
+        });
+        sec.appendChild(ul);
+        planBox.appendChild(sec);
+      });
+
+      // Recommendations
+      const recoBox = el('div', { class: 'card bg-white rounded-xl border' });
+      recoBox.appendChild(el('h3', { class: 'text-xl font-extrabold mb-2' }, [document.createTextNode('Recommended Products For You')]))
+      const pList = el('div', { class: 'grid grid-cols-1 md:grid-cols-2 gap-3' });
+      const productsArr = Array.isArray(products?.products) ? products.products : [];
+      productsArr.slice(0,8).forEach(p => {
+        const card = el('div', { class: 'p-3 border rounded-lg' });
+        card.appendChild(el('div', { class: 'text-sm font-bold text-gray-800' }, [document.createTextNode(p?.name || 'Recommended Item')]));
+        if (p?.reason) card.appendChild(el('div', { class: 'text-xs text-gray-600' }, [document.createTextNode(p.reason)]));
+        if (p?.frequency) card.appendChild(el('div', { class: 'text-xs text-gray-500' }, [document.createTextNode(`Use: ${p.frequency}`)]));
+        pList.appendChild(card);
+      });
+      if (!productsArr.length){
+        pList.appendChild(el('div', { class: 'text-gray-600' }, [document.createTextNode('We will recommend products after we finish analyzing your results.')]))
+      }
+      recoBox.appendChild(pList);
+
+      wrap.appendChild(header);
+      wrap.appendChild(causesBox);
+      wrap.appendChild(planBox);
+      wrap.appendChild(recoBox);
+      return wrap;
+    }
+
+    function injectNotice(kind, message){
+      const main = document.querySelector('main') || document.body;
+      const cls = kind === 'error' ? 'bg-red-50 border-red-300 text-red-800' : 'bg-blue-50 border-blue-300 text-blue-800';
+      const box = el('div', { class: `mb-4 p-4 border rounded-xl ${cls}` }, [ document.createTextNode(message) ]);
+      main.insertBefore(box, main.firstChild);
+      return box;
+    }
+
+    async function run(){
+      const id = getParam('submissionId');
+      if (!id){ injectNotice('error', 'Missing submissionId. Please complete the quiz again.'); return; }
+
+      const main = document.querySelector('main') || document.body;
+      const loading = el('div', { class: 'mb-4 p-4 border rounded-xl bg-amber-50 text-amber-800' }, [ document.createTextNode('Loading your personalized results...') ]);
+      main.insertBefore(loading, main.firstChild);
+
+      try {
+        const API_BASE = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+          ? 'http://localhost:8000'
+          : 'https://admin.fulanihairsecrets.com';
+        const [resResp, prodResp] = await Promise.all([
+          fetch(`${API_BASE}/api/quiz/results/${encodeURIComponent(id)}`),
+          fetch(`${API_BASE}/api/products/recommendations/${encodeURIComponent(id)}`)
+        ]);
+
+        if (!resResp.ok){ throw new Error(`Failed to load results (${resResp.status})`); }
+        const results = await resResp.json();
+        const products = prodResp.ok ? await prodResp.json() : { products: [] };
+
+        const panel = buildResultsSection(results, products);
+        main.insertBefore(panel, loading.nextSibling);
+
+      } catch (e){
+        injectNotice('error', 'We could not load your results right now. Please refresh the page or retake the quiz.');
+        try { console.error('landing hydrate error', e); } catch(_) {}
+      } finally {
+        loading.remove();
+      }
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+  })();
+</script>
 </html>
