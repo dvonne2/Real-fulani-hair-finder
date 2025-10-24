@@ -25,7 +25,7 @@ export const quizQuestions: Question[] = [
   {
     id: 'age-range',
     type: 'single',
-    title: 'What is your age range?',
+    title: 'What is ur age range?',
     description: 'Age helps us understand hormonal factors',
     options: [
       '18-25 years',
