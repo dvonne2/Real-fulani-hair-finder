@@ -8,10 +8,13 @@ if (!import.meta.env.VITE_API_URL) {
 }
 
 // Axios instance configured for Fulani Hair Finder API
+const prodBase = (import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL || 'https://admin.fulanihairsecrets.com') as string;
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000',
+  // In dev, use same-origin so Vite proxy handles /api
+  baseURL: import.meta.env.DEV ? '' : prodBase,
   timeout: Number(import.meta.env.VITE_API_TIMEOUT) || 30000,
   headers: { 'Content-Type': 'application/json' },
+  withCredentials: true,
 });
 
 // Request interceptor

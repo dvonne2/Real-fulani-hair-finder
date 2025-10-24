@@ -6,7 +6,7 @@ import { ResultsPage } from './ResultsPage';
 import { LeadCaptureForm } from './LeadCaptureForm';
 import { quizQuestions, QuizResponse, Question } from './quizData';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import apiClient from '../../services/api/config';
 
 type QuizStep = 'quiz' | 'loading' | 'lead' | 'results';
 
@@ -53,10 +53,13 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
   });
 
   const buildResponsesObject = () => {
-    return (quizState.responses || []).reduce((acc: Record<string, any>, r: any) => {
-      acc[r.questionId] = r.answer;
-      return acc;
-    }, {} as Record<string, any>);
+    const mapped: Record<string, any> = {};
+    quizQuestions.forEach((q, index) => {
+      const ans = quizState.responses.find(r => r.questionId === q.id)?.answer;
+      const key = `q${index + 1}`;
+      mapped[key] = ans ?? null;
+    });
+    return mapped;
   };
 
   const handleQuizSubmit = async (emailValue?: string) => {
@@ -64,13 +67,13 @@ export const QuizContainer: React.FC<{ ignoreSaved?: boolean }> = ({ ignoreSaved
       setIsSubmitting(true);
       setSubmitError(null);
       const responses = buildResponsesObject();
-      const resp = await axios.post('/api/quiz/submit', {
+      const resp = await apiClient.post('/api/quiz/submit', {
         responses,
         email: emailValue || undefined,
       });
       const submissionId = resp?.data?.submissionId;
       if (submissionId) {
-        navigate(`/results/${submissionId}`);
+        window.location.assign(`/landing.html?submissionId=${submissionId}`);
       } else {
         throw new Error('Failed to submit quiz');
       }
