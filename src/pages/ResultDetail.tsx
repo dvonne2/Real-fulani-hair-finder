@@ -28,7 +28,7 @@ export default function ResultDetail() {
           </div>
         ) : isError || !data ? (
           <div className="bg-red-50 text-red-700 p-4 rounded border border-red-200">
-            Failed to load this result. <button className="underline" onClick={() => refetch()}>Retry</button>
+            Failed to load this result.. <button className="underline" onClick={() => refetch()}>Retry</button>
           </div>
         ) : (
           <div className="space-y-6">
